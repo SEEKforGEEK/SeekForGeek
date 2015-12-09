@@ -1,0 +1,25 @@
+{
+  "name": "SeeKforGeeK",
+  "authors": [
+    "Valentin Georgiev",
+    "Elena Stoyanova"
+  ],
+  "description": "SPA app for geeks",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "handlebars": "~4.0.5",
+    "sammy": "~0.7.6",
+    "parse-1.6.7.min": "http://www.parsecdn.com/js/parse-1.6.7.min.js"
+  }
+}

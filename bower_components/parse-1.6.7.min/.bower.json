@@ -1,0 +1,15 @@
+{
+  "name": "parse-1.6.7.min",
+  "_cacheHeaders": {
+    "ETag": "\"992d819b29ba452fcb84e61a49b110d0\"",
+    "Last-Modified": "Wed, 09 Dec 2015 16:25:35 GMT",
+    "Content-Length": "110574",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:992d819b2",
+  "main": "index.js",
+  "_source": "http://www.parsecdn.com/js/parse-1.6.7.min.js",
+  "_target": "*",
+  "_originalSource": "http://www.parsecdn.com/js/parse-1.6.7.min.js",
+  "_direct": true
+}
