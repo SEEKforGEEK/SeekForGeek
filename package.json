@@ -2,16 +2,10 @@
   "name": "seekforgeek",
   "version": "1.0.0",
   "description": "SPA app",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server.js",
   "author": "Valentin Georgiev and Elena Stoyanova",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "mongodb": "^2.0.49",
-    "mongoose": "^4.2.9"
+    "http-server": "^0.8.5"
   }
 }
