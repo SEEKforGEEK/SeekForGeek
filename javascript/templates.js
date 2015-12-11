@@ -14,6 +14,7 @@ var templates = (function(){
                 reject(err);
             });
         });
+        
         return promise;
     }
 
