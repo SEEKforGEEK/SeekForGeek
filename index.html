@@ -7,20 +7,27 @@
 <body>
     <h1>Seek for Geek</h1>
 
+    <div id="content">
 
+    </div>
+
+
+
+    <!--    Libs     -->
     <script src="bower_components/parse-1.6.7.min/index.js"></script>
-    <script>
-        Parse.initialize("2GC1FHhSOkCGggQX8qvsO4jCyrHg28BoPEz5XOq4", "bd9nZ2eez7cZDsjDu0wOMk4orFAVJPkAMRrYMVKz");
-        var Person = Parse.Object.extend('Person');
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
 
-        var p = new Person();
 
-        p.set("name", 'Valentin');
+    <!--    App    -->
 
-        p.save()
-            .then(function(){
-                console.log("success");
-            });
-    </script>
+    <!--    App: Controllers    -->
+    <script src="javascript/controllers/homeController.js"></script>
+
+    <!--    App: Setup   -->
+    <script src="javascript/templates.js"></script>
+    <script src="javascript/app.js"></script>
+
 </body>
 </html>
