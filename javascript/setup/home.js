@@ -6,6 +6,8 @@ $(document).ready(function(){
 	$('#btnForgotPass').click(registerInLogin);
 
 	$('#registerButton').click(registerForm);
+	$('#register-customer').click(registerFormCustomer);
+	$('#register-geek').click(registerFormGeek);
 
 
 });
@@ -84,4 +86,13 @@ function validateRegisterForm(registerData){
 		return false;
 	}
 	return true;
+}
+
+function registerFormCustomer(){
+	$("#register-button").trigger("click");
+	$("#register-hire").prop("checked",true);
+}
+function registerFormGeek(){
+	$("#register-button").trigger("click");
+	$("#register-work").prop("checked",true);
 }
