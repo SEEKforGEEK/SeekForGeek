@@ -34,9 +34,35 @@ function registerForm(){
 	};
 
 	if(validateRegisterForm(registerData)){
-		//todo save in parse.com
-	}else{
-		//todo
+
+		if(registerData.type === 'geek'){
+			var Geek = Parse.Object.extend('Geek');
+
+			var newGeek = new Geek();
+			newGeek.set('username', registerData.username);
+			newGeek.set('email', registerData.email);
+			newGeek.set('password', registerData.password);
+			newGeek.set('type', registerData.type);
+
+			newGeek.save()
+				.then(function(){
+					alert('New Geek is created!');
+				});
+		}else{
+			var Customer = Parse.Object.extend('Customer');
+
+			var newCustomer = new Customer();
+			newCustomer.set('username', registerData.username);
+			newCustomer.set('email', registerData.email);
+			newCustomer.set('password', registerData.password);
+			newCustomer.set('type', registerData.type);
+
+			newCustomer.save()
+				.then(function(){
+					alert('New Customer is created!');
+				});
+		}
+
 	}
 }
 
