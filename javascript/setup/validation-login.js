@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#login-button').click(loginForm);
+    $('#loginButton').click(loginForm);
 });
 
 
@@ -8,17 +8,17 @@ function loginForm(){
         username: $('#login-username').val(),
         password: $('#login-pass').val()
     };
-
     if(validateLoginForm(loginData)){
-        var Geek = Parse.Object.extend('Geek');
-        var Customer = Parse.Object.extend('Customer');
-        var queryGeek = new Parse.Query('Geek');
-
-
+        Parse.User.logIn(loginData.username, loginData.password, {
+            success: function(user){
+                alert(user + " is log in ");
+            },
+            error: function(user, error){
+                alert(user + " error : " + error);
+                console.log(error);
+            }
+        })
     }
-
-
-
 }
 
 
@@ -26,7 +26,6 @@ function loginForm(){
 function validateLoginForm(loginData){
     var usernameForm = $('#lg-username-form');
     var passwordForm = $('#lg-password-form');
-
     if(loginData.username.length < 6){
         if(usernameForm.hasClass('has-success')){
             usernameForm.removeClass('has-success');

@@ -37,34 +37,26 @@ function registerForm(){
 	};
 
 	if(validateRegisterForm(registerData)){
+		var User = new Parse.User();
 
-		if(registerData.type === 'geek'){
-			var Geek = Parse.Object.extend('Geek');
+		User.set("username", registerData.username);
+		User.set("email", registerData.email);
+		User.set("password", registerData.password);
+		User.set("type", registerData.type);
 
-			var newGeek = new Geek();
-			newGeek.set('username', registerData.username);
-			newGeek.set('email', registerData.email);
-			newGeek.set('password', registerData.password);
-			newGeek.set('type', registerData.type);
+		User.signUp(null, {
+			success: function(user){
+				//TODO redirect to basic page
+				alert(user + " is registered successfully");
+				console.log(user);
+			},
+			error: function(user, error){
 
-			newGeek.save()
-				.then(function(){
-					alert('New Geek is created!');
-				});
-		}else{
-			var Customer = Parse.Object.extend('Customer');
-
-			var newCustomer = new Customer();
-			newCustomer.set('username', registerData.username);
-			newCustomer.set('email', registerData.email);
-			newCustomer.set('password', registerData.password);
-			newCustomer.set('type', registerData.type);
-
-			newCustomer.save()
-				.then(function(){
-					alert('New Customer is created!');
-				});
-		}
+				//TODO div with error
+				alert(user + " ERROR: " + error);
+				console.log(error);
+			}
+		})
 
 	}
 }
