@@ -11,6 +11,10 @@ $(document).ready(function () {
 
     $("#register-conf-pass").keyup(validateRegisterPasswords);
 
+    $('#modal-register').on('shown.bs.modal',function(){
+        $('#register-email').focus();
+    });
+
 });
 
 function loginInRegister() {
