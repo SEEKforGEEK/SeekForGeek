@@ -1,34 +1,32 @@
-.image-logo{
-	width:540;
-	height:181;
-}
-.image-logo input {
-	float:left;
-}
+
+
 /*START*/
 body,div,header,section,ul,li,input,h1{
 	margin:0 auto;
 	padding:0;
 }
+/*NAVIGATION*/
+.navbar-default{
+    background-color: transparent !important;
+}
 #main-header .container-fluid{
 	background-color: rgba(138,202,101,0.7);
+    padding:0 ;
 }
 
 #logoBrand{
     position: absolute;
     float: left;
-    height: 44px;
-    padding-top: 0.4%;
+    height: 45px;
 }
 .button {
     background-color: #005C50; /* Green */
     border: none;
     color: #AEE5B0;
-    padding: 10px 30px;
+    padding: 5px 20px;
     text-align: center;
     text-decoration: none;
-    /*display: inline-block;*/
-    font-size: 22.5px;
+    font-size: 30px;
 	font-weight: normal;
     float: right;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -39,5 +37,71 @@ body,div,header,section,ul,li,input,h1{
     background-color: #44B821; /* Green */
     color: #005C50;
 }
-.navbar-toggle{
+.navbar-toggle, .navbar-toggle:hover,.navbar-toggle:focus{
+    background-color: rgba(138,202,101,0.7) !important;
+}
+
+@media (max-width:768px){
+    .navbar-nav{
+        margin:0px -15px !important;
+    }
+    .button{
+        float:left;
+        width:100%;
+        background-color: transparent;
+        color:#005C50;
+        font-weight: bold;
+        border-bottom:1px solid #005C50;
+        padding:0px;
+    }
+}
+/*MAIN CONTENT*/
+#main-content{
+    clear: both;
+    text-align: center;
+    align-content: center;
+}
+
+#main-h{
+    font-size: 300%;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.image-logo{
+    width:100%;
+    vertical-align: center;
+    position:relative;
+}
+.image-logo .img-responsive{
+    display:inline;
+}
+
+#register-customer{
+   position: absolute;
+    width: 40%;
+    height: 80%;
+    top: 15px;
+    left: 40px;
+    background-color: transparent;
+    border:none;
+    outline:none;
+}
+#register-geek{
+   position: absolute;
+    width: 40%;
+    height: 80%;
+    top: 15px;
+    right: 40px;
+   background-color: transparent;
+    border:none;
+    outline: none;
+}
+#statistics{
+    margin-top:30px;
+    font-size: 2em;
+    text-align: center;
+}
+.glyphicon{
+    color: black;
 }

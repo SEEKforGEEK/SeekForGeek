@@ -31,28 +31,38 @@
 </nav>
 </header>
 
-<section>
+<section id="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
   <header>
-    <h1>What do you want to do?</h1>
+    <h1 id="main-h">What do you want to do?</h1>
   </header>
   <div class="image-logo">
-			<input id="register-customer" type="image" src="../images/glassesbuttons/images/SEEKFORGEEK.png" width="269" height="181" alt="Register as customer">
-		
-			<input id="register-geek" type="image" src="../images/glassesbuttons/images/SEEKFORJOB.png" width="271" height="181" alt="Register as a geek" >
+       <img  class="img-responsive" src="../images/GLASSESlogo.png"  alt="Register as customer">
+       <br/>
+            <button id="register-customer"></button>
+        <button id="register-geek"></button>
+           
 	</div>
+    
   </div>
   
-  <div class="col-sm-3"></div>
 
   </div>
-  <div class="row">
-    <div class="col-sm-4">wefsadsasdsadadadasdadasdsaddf</div>
-    <div class="col-sm-4">sadasdadasdsadfsfds</div>
-    <div class="col-sm-4">dfsdfssdadsadasdsadas</div>
+    <div id="statistics" class="row">
+        <div id="geek-stat" class="col-sm-4">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <span>{{geeks}} geeks</span>
+        </div>
+        <div id="project-stat" class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+            <span>{{projects}} completed projects</span>
+        </div>
+        <div id="customer-stat" class="col-sm-4">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+            <span>{{customers}} satisfied customers</span>
+        </div>
     </div>
   </div>
 </section>
@@ -154,7 +164,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="login-button" type="submit" class="btn">Log In</button>
+                            <button id="loginButton" type="submit" class="btn">Log In</button>
                         </div>
                     </div>
                 </form>
