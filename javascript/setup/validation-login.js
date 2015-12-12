@@ -1,10 +1,10 @@
 $(document).ready(function () {
     $('#loginButton').click(loginForm);
-    $('#modal-login').on('shown.bs.modal',function(){
-       $('#login-username').focus();
+    $('#modal-login').on('shown.bs.modal', function () {
+        $('#login-username').focus();
     });
-    $('#modal-forgot-pass').on('shown.bs.modal',function(){
-       $('#forgot-pass-email').focus();
+    $('#modal-forgot-pass').on('shown.bs.modal', function () {
+        $('#forgot-pass-email').focus();
     });
     //var projects,
     //    geeks,

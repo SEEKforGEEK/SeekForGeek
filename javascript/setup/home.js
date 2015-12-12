@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#navbarTemplate").css("display", "none");
+    $(".navbarTemplate").css("display", "none");
 
     $('#loginInRegister').click(loginInRegister);
     $('#registerInLogin').click(registerInLogin);

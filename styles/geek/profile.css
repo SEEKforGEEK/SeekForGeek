@@ -1,0 +1,13 @@
+
+#geekProfile{
+    border: 1px solid black;
+}
+#mainProfile{
+    border: 1px solid black;
+}
+.change{
+    display:none;
+}
+#emailInput, #saveEmail{
+    display:none;
+}
