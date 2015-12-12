@@ -1,24 +1,31 @@
-
-
 /*START*/
+<<<<<<< HEAD
 body,div,header,section,ul,li,input,h1{
 	margin:0;
 	padding:0;
-}
-/*NAVIGATION*/
-.navbar-default{
-    background-color: transparent !important;
-}
-#main-header .container-fluid{
-	background-color: rgba(138,202,101,0.7);
-    padding:0 ;
+=======
+body, div, header, section, ul, li, input, h1 {
+    margin: 0 auto;
+    padding: 0;
+>>>>>>> 0816ccbd23894f29da27182c7c4e103d3f5b2e51
 }
 
-#logoBrand{
+/*NAVIGATION*/
+.navbar-default {
+    background-color: transparent !important;
+}
+
+#main-header .container-fluid {
+    background-color: rgba(138, 202, 101, 0.7);
+    padding: 0;
+}
+
+#logoBrand {
     position: absolute;
     float: left;
     height: 45px;
 }
+
 .button {
     background-color: #005C50; /* Green */
     border: none;
@@ -27,7 +34,7 @@ body,div,header,section,ul,li,input,h1{
     text-align: center;
     text-decoration: none;
     font-size: 30px;
-	font-weight: normal;
+    font-weight: normal;
     float: right;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -37,71 +44,79 @@ body,div,header,section,ul,li,input,h1{
     background-color: #44B821; /* Green */
     color: #005C50;
 }
-.navbar-toggle, .navbar-toggle:hover,.navbar-toggle:focus{
-    background-color: rgba(138,202,101,0.7) !important;
+
+.navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: rgba(138, 202, 101, 0.7) !important;
+
 }
 
-@media (max-width:768px){
-    .navbar-nav{
-        margin:0px -15px !important;
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin: 0 -15px !important;
     }
-    .button{
-        float:left;
-        width:100%;
+
+    .button {
+        float: left;
+        width: 100%;
         background-color: transparent;
-        color:#005C50;
+        color: #005C50;
         font-weight: bold;
-        border-bottom:1px solid #005C50;
-        padding:0px;
+        border-bottom: 1px solid #005C50;
+        padding: 0;
     }
 }
+
 /*MAIN CONTENT*/
-#main-content{
+#main-content {
     clear: both;
     text-align: center;
     align-content: center;
 }
 
-#main-h{
+#main-h {
     font-size: 300%;
     font-weight: bolder;
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.image-logo{
-    width:100%;
-    vertical-align: center;
-    position:relative;
-}
-.image-logo .img-responsive{
-    display:inline;
+
+.image-logo {
+    width: 100%;
+    position: relative;
 }
 
-#register-customer{
-   position: absolute;
+.image-logo .img-responsive {
+    display: inline;
+}
+
+#register-customer {
+    position: absolute;
     width: 40%;
     height: 80%;
     top: 15px;
     left: 40px;
     background-color: transparent;
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
 }
-#register-geek{
-   position: absolute;
+
+#register-geek {
+    position: absolute;
     width: 40%;
     height: 80%;
     top: 15px;
     right: 40px;
-   background-color: transparent;
-    border:none;
+    background-color: transparent;
+    border: none;
     outline: none;
 }
-#statistics{
-    margin-top:30px;
+
+#statistics {
+    margin-top: 30px;
     font-size: 2em;
     text-align: center;
 }
-.glyphicon{
+
+.glyphicon {
     color: black;
 }
