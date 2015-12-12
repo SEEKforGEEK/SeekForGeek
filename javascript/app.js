@@ -1,4 +1,4 @@
-Parse.initialize("2GC1FHhSOkCGggQX8qvsO4jCyrHg28BoPEz5XOq4", "bd9nZ2eez7cZDsjDu0wOMk4orFAVJPkAMRrYMVKz");
+Parse.initialize("WYlKRrdVfAxC5qEDv8XNnTvYNYTaU2uoQnr6VFKe", "QCK577sPYWNBXdk6wkWSa0YMoFkslkP2JkpmMt0m");
 (function(){
     var sammyApp = Sammy('#content', function(){
         this.get('#/', function(){
