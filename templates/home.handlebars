@@ -87,28 +87,28 @@
                         <label for="register-email" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="register-email" placeholder="Email">
+                            <input type="email" class="form-control" id="register-email" placeholder="example@abv.bg">
                         </div>
                     </div>
                     <div id="username-form" class="form-group">
                         <label for="register-username" class="col-sm-2 control-label">Username</label>
 
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="register-username" placeholder="Pesho">
+                            <input type="text" class="form-control" id="register-username" placeholder="Example (More than 5 letters)">
                         </div>
                     </div>
                     <div id="password-form" class="form-group">
                         <label for="register-pass" class="col-sm-2 control-label">Password</label>
 
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="register-pass" placeholder="Password">
+                            <input type="password" class="form-control" id="register-pass" placeholder="****** (More than 5 symbols)">
                         </div>
                     </div>
                     <div id="conf-pass-form" class="form-group">
                         <label for="register-conf-pass" class="col-sm-2 control-label">Confirm</label>
 
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="register-conf-pass" placeholder="Password">
+                            <input type="password" class="form-control" id="register-conf-pass" placeholder="Confirm password">
                         </div>
                     </div>
                     <div id="type-form" class="form-group">
@@ -124,18 +124,16 @@
                         </form>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                        <div id="div-submit" class="col-sm-offset-2 col-sm-10">
                             <button type="submit" id="registerButton" class="btn">Create Account</button>
                         </div>
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <span>By registering you confirm that you accept the Terms and Conditions and Privacy Policy</span>
-                        </div>
+                       
 
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="loginInRegister" data-toggle="modal" data-target="#modal-login">Are you have
+                <button type="button" id="loginInRegister" data-toggle="modal" data-target="#modal-login">Do you have an
                     account?
                 </button>
             </div>
@@ -168,7 +166,7 @@
                             <input type="password" class="form-control" id="login-pass" placeholder="Password">
                         </div>
                         <button type="button" id="btnForgotPass" data-toggle="modal" data-target="#modal-forgot-pass">
-                            Forgot Password
+                            Forgot Password?
                         </button>
                     </div>
                     <div class="form-group">
@@ -179,8 +177,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="registerInLogin" data-toggle="modal" data-target="#modal-register">If you
-                    don't have account yet
+                <button type="button" id="registerInLogin" data-toggle="modal" data-target="#modal-register">
+                    Don't have an account yet?
                 </button>
             </div>
         </div>
@@ -209,7 +207,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button">Send Password</button>
+                <button id="passButton" type="button">Send Password</button>
             </div>
         </div>
     </div>

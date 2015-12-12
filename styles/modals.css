@@ -1,0 +1,77 @@
+
+#modal-register, #modal-login{
+    background-color:rgba(138, 202, 101, 0.2) !important;
+}
+.modal-header{
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-right:15px; 
+    padding-left:0;
+    border-bottom:1px solid #95C497;
+}
+.modal-content {
+    background-color: rgba(174, 229, 176,1) !important;    
+}
+.form-control{
+    background-color: #95C497;
+    border: 1px inset rgba(157, 157, 157, 0.22);
+}
+::-webkit-input-placeholder {
+   color: #005C50 !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #005C50 !important;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #005C50 !important; 
+}
+
+:-ms-input-placeholder {  
+   color: #005C50 !important;
+}
+label{
+    text-align: left;
+    font-size: 1.5em;
+}
+#registerButton,#loginButton,#passButton{
+    background-color: #005C50; /* Green */
+    border: none;
+    color: #95C497 !important;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: normal;
+    float: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#modal-register .modal-footer{
+    border-top:1px solid #95C497;
+}
+ #div-submit{
+    padding-right:0;
+}
+#loginInRegister,#btnForgotPass,#registerInLogin{
+    border:none;
+    background-color:transapent;
+    background: none;
+}
+#btnForgotPass{
+    padding-left:15px;
+}
+#modal-login .modal-footer{
+    border:none;
+    padding: 0px 10px 10px 0px;
+}
+#modal-login .modal-body{
+    padding-bottom:0; 
+}
+#modal-login .form-group{
+    margin-bottom:0;
+}
+#modal-forgot-pass .modal-footer{
+    border:none;
+}
