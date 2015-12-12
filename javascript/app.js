@@ -1,7 +1,7 @@
 Parse.initialize("WYlKRrdVfAxC5qEDv8XNnTvYNYTaU2uoQnr6VFKe", "QCK577sPYWNBXdk6wkWSa0YMoFkslkP2JkpmMt0m");
-(function(){
-    var sammyApp = Sammy('#content', function(){
-        this.get('#/', function(){
+(function () {
+    var sammyApp = Sammy('#content', function () {
+        this.get('#/', function () {
             this.redirect('#/home');
         });
         this.get('#/home', homeController.all);
@@ -10,7 +10,7 @@ Parse.initialize("WYlKRrdVfAxC5qEDv8XNnTvYNYTaU2uoQnr6VFKe", "QCK577sPYWNBXdk6wk
 
     });
 
-    $(function(){
+    $(function () {
         sammyApp.run('#/');
     })
 }());
