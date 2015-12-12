@@ -5,3 +5,37 @@
 .image-logo input {
 	float:left;
 }
+/*START*/
+body,div,header,section,ul,li,input,h1{
+	margin:0 auto;
+	padding:0;
+}
+#main-header .container-fluid{
+	height:52px;
+	/*background-color: #8ACA65;*/
+	background-color: rgba(138,202,101,0.7);
+}
+
+#main-header .navbar-brand{
+	height: 50px;
+	padding:0px;
+}
+.button {
+    background-color: #005C50; /* Green */
+    border: none;
+    color: #AEE5B0;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22.5px;
+	font-weight: normal;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #44B821; /* Green */
+    color: #005C50;
+}

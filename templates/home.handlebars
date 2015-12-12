@@ -1,5 +1,5 @@
-<header>
- <nav class="navbar navbar-default">
+<header id="main-header">
+ <nav class="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,10 +14,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul id="form-nav" class="nav navbar-nav navbar-right">
 
-    <li><button id="register-button" type="button" data-toggle="modal" data-target="#modal-register">Register</button></li>
-    <li><button id="login-button" type="button" data-toggle="modal" data-target="#modal-login">Log in</button></li>
+    <li><button id="register-button" class="button" type="button" data-toggle="modal" data-target="#modal-register">Register</button></li>
+    <li><button id="login-button" class="button" type="button" data-toggle="modal" data-target="#modal-login">Log in</button></li>
 
       </ul>
 
@@ -71,31 +71,31 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
-                    <div class="form-group">
+                    <div id="email-form" class="form-group">
                         <label for="register-email" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="register-email" placeholder="Email">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="username-form" class="form-group">
                         <label for="register-username" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="register-username" placeholder="Pesho">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="password-form" class="form-group">
                         <label for="register-pass" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="register-pass" placeholder="Password">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="conf-pass-form" class="form-group">
                         <label for="register-conf-pass" class="col-sm-2 control-label">Confirm Password</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="register-conf-pass" placeholder="Password">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="type-form" class="form-group">
                         <form>
                             <div class="col-sm-offset-4 col-sm-8">
                                 <label class="checkbox-inline">
@@ -135,13 +135,13 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
-                    <div class="form-group">
+                    <div id="lg-username-form" class="form-group">
                         <label for="login-username" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="login-username" placeholder="Username">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="lg-password-form" class="form-group">
                         <label for="login-pass" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="login-pass" placeholder="Password">
