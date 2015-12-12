@@ -1,14 +1,17 @@
 /*START*/
-<<<<<<< HEAD
-body,div,header,section,ul,li,input,h1{
+
+body,div,header,section,ul,li,input,h1,hr,p{
 	margin:0;
 	padding:0;
-=======
-body, div, header, section, ul, li, input, h1 {
-    margin: 0 auto;
-    padding: 0;
->>>>>>> 0816ccbd23894f29da27182c7c4e103d3f5b2e51
 }
+html{
+    height: 100%;
+}
+body {
+    height:100%;
+    position: relative !important;
+}
+
 
 /*NAVIGATION*/
 .navbar-default {
@@ -71,13 +74,15 @@ body, div, header, section, ul, li, input, h1 {
     clear: both;
     text-align: center;
     align-content: center;
+    margin-top:5%;
+    margin-bottom:5%;
 }
 
 #main-h {
     font-size: 300%;
     font-weight: bolder;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 1%;
+    margin-bottom: 3%;
 }
 
 .image-logo {
@@ -112,11 +117,34 @@ body, div, header, section, ul, li, input, h1 {
 }
 
 #statistics {
-    margin-top: 30px;
+    margin-top: 5%;
     font-size: 2em;
     text-align: center;
 }
 
 .glyphicon {
     color: black;
+    font-size:150%;
+}
+
+@media (max-width: 768px) {
+    #statistics {
+        font-size:1.5em;
+    }
+}
+
+/*FOOTER*/
+#main-footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+}
+
+
+#main-footer #copyright{
+    margin-top:0.5%;
+    text-align: right !important;
+    background-color: rgba(138, 202, 101, 0.7) ;
 }
