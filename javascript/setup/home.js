@@ -50,9 +50,9 @@ function registerForm() {
 
         User.signUp(null, {
             success: function (user) {
-                //TODO redirect to basic page
                 alert(user + " is registered successfully");
-                console.log(user);
+                $(location).attr('href','/#/geek/profile');
+                location.reload();
             },
             error: function (user, error) {
 

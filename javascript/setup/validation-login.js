@@ -59,7 +59,9 @@ function loginForm() {
     if (validateLoginForm(loginData)) {
         Parse.User.logIn(loginData.username, loginData.password, {
             success: function (user) {
-                alert(user + " is log in ");
+                //alert(user + " is log in ");
+                $(location).attr('href','/#/geek/profile');
+                location.reload();
             },
             error: function (user, error) {
                 alert(user + " error : " + error);
