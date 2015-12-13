@@ -3,4 +3,4 @@ $(document).ready(function(){
 		Parse.User.logOut();
 		$(location).attr("href","/#/home");
 	})
-})
+});
