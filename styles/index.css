@@ -4,3 +4,28 @@ body {
     color: #005C50 !important;
     font-family: 'Josefin Slab', serif !important;
 }
+/*HEADER*/
+#template-header .container-fluid {
+    background-color: rgba(138, 202, 101, 0.7);
+    padding: 0;
+}
+
+#template-header .logoBrand {
+    height: 45px;
+}
+.dropdown>a{
+    background-color: transparent !important;
+    border: none;
+    color: #005C50 !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: normal;
+    float: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#template-header .dropdown-menu{
+    background:rgba(138, 202, 101,0.9);
+    border:0;
+}
