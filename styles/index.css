@@ -1,8 +1,7 @@
 body {
     background-image: url("../images/glasses.png");
-    font-weight: bold;
     color: #005C50 !important;
-    font-family: 'Josefin Slab', serif !important;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 /*HEADER*/
 #template-header .container-fluid {
@@ -11,6 +10,7 @@ body {
 }
 
 #template-header .logoBrand {
+    float:left;
     height: 45px;
 }
 .dropdown>a{
@@ -19,13 +19,23 @@ body {
     color: #005C50 !important;
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 1.5em;
     font-weight: normal;
     float: right;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 #template-header .dropdown-menu{
-    background:rgba(138, 202, 101,0.9);
+    background:rgba(138, 202, 101,0.95);
     border:0;
+}
+#template-header .dropdown ul a{
+   font-size: 1.25em;
+   color: #005C50 ;
+}
+@media(max-height:760px){
+    .dropdown{
+        display:none !important;
+    }
+    /*the manu options will be available in the footer*/
 }
