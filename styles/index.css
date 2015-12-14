@@ -33,7 +33,7 @@ body {
    font-size: 1.25em;
    color: #005C50 ;
 }
-@media(max-height:760px){
+@media(max-width:768px){
     .dropdown{
         display:none !important;
     }
