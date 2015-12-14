@@ -1,12 +1,9 @@
-(function(){
+$(document).ready(function(){
     var currentUser = Parse.User.current();
 
     $('#username').append(currentUser.get('username'));
     $('#emailToChange').append(currentUser.get('email'));
     $('#emailInput').val(currentUser.get('email'));
-}());
-
-$(document).ready(function(){
 
 
 
@@ -21,7 +18,20 @@ $(document).ready(function(){
         $('#saveEmail').show();
     });
 
+    $('#saveEmail').click(function(){
+        var email = $('#emailInput').val();
 
+        currentUser.set('email', email);
+        currentUser.save()
+            .then(function(){
+                $('#emailToChange').show().empty().append(currentUser.get('email'));
+                $('#changeEmail').show();
+                $('#emailInput').hide();
+                $('#saveEmail').hide();
+
+            });
+
+    });
 
 
 });
