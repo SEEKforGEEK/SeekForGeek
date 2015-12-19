@@ -5,11 +5,9 @@ $(document).ready(function(){
         .addClass("navbarTemplateOn");
 
     var currentUser = Parse.User.current();
-
     $('#username').append(currentUser.get('username'));
     $('#emailToChange').append(currentUser.get('email'));
     $('#emailInput').val(currentUser.get('email'));
-
 
 
     $('#changePassword').click(function(){
@@ -27,16 +25,30 @@ $(document).ready(function(){
         var email = $('#emailInput').val();
 
         currentUser.set('email', email);
-        currentUser.save()
-            .then(function(){
-                $('#emailToChange').show().empty().append(currentUser.get('email'));
-                $('#changeEmail').show();
-                $('#emailInput').hide();
-                $('#saveEmail').hide();
+        currentUser.save(null, {
+            success: function(user){
+                currentUser.fetch({
+                    success: function(currentUser){
+                         $('#emailToChange').show()
+                            .empty()
+                            .append(currentUser.get('email'));
+                        $('#changeEmail').show();
+                        $('#emailInput').hide();
+                        $('#saveEmail').hide();
+                    },
+                    error: function(currentUser, error){
+                        console.log("error");
+                    }
+                });
+               
+            },
+            error: function(user, error){
+                alert('Failed to update ' + user + " with error: " + error);
+            }
 
-            });
-
+        });
     });
 
 
 });
+

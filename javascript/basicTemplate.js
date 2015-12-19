@@ -5,5 +5,9 @@ $(document).ready(function(){
 		$(".navbarTemplate")
         .removeClass("navbarTemplateOn")
         .addClass("navbarTemplateNone");
+	});
+
+	$("#profile-button").click(function(){
+		$(location).attr('href',"/#/geek/profile");
 	})
 });
