@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    $(".navbarTemplate")
+        .removeClass("navbarTemplateNone")
+        .addClass("navbarTemplateOn");
+
     var currentUser = Parse.User.current();
 
     $('#username').append(currentUser.get('username'));

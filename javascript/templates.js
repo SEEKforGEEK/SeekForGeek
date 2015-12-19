@@ -1,7 +1,9 @@
 //'use strict';
 
 (function(){
-     $(".navbarTemplate").css("display", "none");
+    $(".navbarTemplate")
+        .removeClass("navbarTemplateOn")
+        .addClass("navbarTemplateNone");
 }());
 
 var templates = (function () {
