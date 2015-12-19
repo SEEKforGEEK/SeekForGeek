@@ -1,5 +1,9 @@
 //'use strict';
 
+(function(){
+     $(".navbarTemplate").css("display", "none");
+}());
+
 var templates = (function () {
     var handlebars = window.handlebars || window.Handlebars;
 
