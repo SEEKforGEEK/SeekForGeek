@@ -1,6 +1,3 @@
-(function(){
-     $(".navbarTemplate").css("display", "none");
-}());
 $(document).ready(function () {
 
     $('#loginInRegister').click(loginInRegister);
