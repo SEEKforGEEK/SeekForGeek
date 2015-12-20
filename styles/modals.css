@@ -1,6 +1,5 @@
 
 #modal-register, #modal-login,#modal-forgot-pass{
-    background-color:rgba(138, 202, 101, 0.2) !important;
     max-height: 95%;
     max-width:95%;
     vertical-align: center;

@@ -18,7 +18,7 @@ body {
     height:30%;
     width:100%;
 }
-#main-footer,.push{
+#main-footer{
     height:auto;
     position: absolute;
     left: 0;
@@ -43,11 +43,11 @@ body {
     float: left;
     height: 45px;
 }
-.navbar-header{
+#main-header .navbar-header{
     width:100%;
     margin:0 !important;
 }
-.navbar-header img{
+#main-header .navbar-header img{
     margin-left:-15px;
 }
 
@@ -73,7 +73,7 @@ body {
 
 .navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus {
     background-color: rgba(138, 202, 101, 0.7) !important;
-    margin-right: 0;
+    /*margin-right: 0;*/
 }
 
 @media (max-width: 768px) {

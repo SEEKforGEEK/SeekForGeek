@@ -17,18 +17,18 @@ body {
 
 }
 @media (max-width:768px){
-    #content {
-    height:70%;
+        #content {
+        height:70%;
+    
+    }
+    .navbarTemplate{
+        height:25%;
+    }
+    #footerTemplate{
+        height:25%;
+    }
 
 }
-.navbarTemplate{
-    height:25%;
-}
-#footerTemplate{
-    height:25%;
-}
-
-
 /*HEADER*/
 #template-header .container-fluid {
     background-color: rgba(138, 202, 101, 0.7);
