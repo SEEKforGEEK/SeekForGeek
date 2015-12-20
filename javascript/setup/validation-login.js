@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     $('#customersCounter').append(0 + "  satisfied customers");
     $('#projectsCounter').append(0 + " completed projects");
-    $('#geeksCounter').append(0 + " geeks");
+    $('#geeksCounter').append(0 + " registered geeks");
 
 
 });
