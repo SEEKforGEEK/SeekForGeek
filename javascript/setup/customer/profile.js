@@ -1,40 +1,40 @@
 $(document).ready(function(){
-
     $(".navbarTemplate")
         .removeClass("navbarTemplateNone")
         .addClass("navbarTemplateOn");
 
-    var currentUser = Parse.User.current();
-    $('#username').append(currentUser.get('username'));
-    $('#emailToChange').append(currentUser.get('email'));
-    $('#emailInput').val(currentUser.get('email'));
+
+	var currentUser = Parse.User.current();
+    $('#customer-username').append(currentUser.get('username'));
+    $('#customer-emailToChange').append(currentUser.get('email'));
+    $('#customer-emailInput').val(currentUser.get('email'));
 
 
-    $('#changePassword').click(function(){
+    $('#customer-changePassword').click(function(){
         $('.change').fadeToggle(700);
     });
 
-    $('#changeEmail').click(function(){
-        $('#emailToChange').hide();
-        $('#changeEmail').hide();
-        $('#emailInput').show();
-        $('#saveEmail').show();
+    $('#customer-changeEmail').click(function(){
+        $('#customer-emailToChange').hide();
+        $('#customer-changeEmail').hide();
+        $('#customer-emailInput').show();
+        $('#customer-saveEmail').show();
     });
 
-    $('#saveEmail').click(function(){
-        var email = $('#emailInput').val();
+    $('#customer-saveEmail').click(function(){
+        var email = $('#customer-emailInput').val();
 
         currentUser.set('email', email);
         currentUser.save(null, {
             success: function(user){
                 currentUser.fetch({
                     success: function(currentUser){
-                         $('#emailToChange').show()
+                         $('#customer-emailToChange').show()
                             .empty()
                             .append(currentUser.get('email'));
-                        $('#changeEmail').show();
-                        $('#emailInput').hide();
-                        $('#saveEmail').hide();
+                        $('#customer-changeEmail').show();
+                        $('#customer-emailInput').hide();
+                        $('#customer-saveEmail').hide();
                     },
                     error: function(currentUser, error){
                         console.log("error");
@@ -48,7 +48,4 @@ $(document).ready(function(){
 
         });
     });
-
-    
 });
-

@@ -1,5 +1,5 @@
 
-#geekProfile{
+#geekProfile, #customerProfile{
     border: 1px solid black;
 }
 #mainProfile{
@@ -9,5 +9,8 @@
     display:none;
 }
 #emailInput, #saveEmail{
+    display:none;
+}
+#customer-emailInput, #customer-saveEmail{
     display:none;
 }
