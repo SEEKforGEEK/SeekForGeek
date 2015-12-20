@@ -2,9 +2,16 @@ $(document).ready(function(){
  	$(".navbarTemplate")
         .removeClass("navbarTemplateNone")
         .addClass("navbarTemplateOn");
+    
+    $( "#datepicker" ).datepicker();
 
 
 	$('#details-next').click(function(){
+
+
+		var radioButton = $('input[name=radioButtons]:checked', '#radioDetails').val()
+		console.log(radioButton);
+
 		$('#description-link').attr('href', '#description')
 		.attr('data-toggle', 'tab')
 		.attr('aria-expanded', true)
@@ -14,7 +21,7 @@ $(document).ready(function(){
     	$('#details-link').removeAttr('href')
     		.removeAttr('aria-expanded')
     		.removeAttr('data-toggle');
-    });
+    });	
 	$('#description-next').click(function(){  		
 		
   		$('#payment-link').attr('href', '#payment')
