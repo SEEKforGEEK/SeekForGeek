@@ -8,6 +8,11 @@ $(document).ready(function(){
 	});
 
 	$("#profile-button").click(function(){
-		$(location).attr('href',"/#/geek/profile");
+		var user = Parse.User.current();
+		if (user.get('type') == 'customer') {
+			$(location).attr('href',"/#/customer/profile");
+		}else{
+			$(location).attr('href',"/#/geek/profile");
+		}
 	})
 });

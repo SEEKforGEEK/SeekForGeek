@@ -50,7 +50,11 @@ function registerForm() {
         User.signUp(null, {
             success: function (user) {
                 alert(user + " is registered successfully");
-                $(location).attr('href','/#/geek/profile');
+                if (registerData.type == 'customer') {
+                    $(location).attr('href','/#/customer/profile');
+                }else{
+                    $(location).attr('href','/#/geek/profile');
+                }
                 location.reload();
             },
             error: function (user, error) {
