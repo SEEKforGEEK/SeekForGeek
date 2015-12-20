@@ -3,14 +3,28 @@ $(document).ready(function(){
         .removeClass("navbarTemplateNone")
         .addClass("navbarTemplateOn");
     
-    $( "#datepicker" ).datepicker();
+    
+    var dateToday = new Date();
+	var dates = $("#datepicker").datepicker({
+	    defaultDate: "+1w",
+	    changeMonth: true,
+	    numberOfMonths: 1,
+	    minDate: dateToday,
+	    onSelect: function(selectedDate) {
+	        var option = this.id == "from" ? "minDate" : "maxDate",
+	            instance = $(this).data("datepicker"),
+	            date = $.datepicker.parseDate(instance.settings.dateFormat 
+	            	|| $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+	        dates.not(this).datepicker("option", option, date);
+	    }
+	});
 
 
 	$('#details-next').click(function(){
 
 
 		var radioButton = $('input[name=radioButtons]:checked', '#radioDetails').val()
-		console.log(radioButton);
+		
 
 		$('#description-link').attr('href', '#description')
 		.attr('data-toggle', 'tab')
