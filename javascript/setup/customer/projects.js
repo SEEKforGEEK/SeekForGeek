@@ -19,13 +19,16 @@ $(document).ready(function(){
 				);
 			};
 			for (var i = 0; i < projects.length; i++) {
+				console.log(projects[i].id);
 				$('#append-body').append(
 					'<tr>' +
                        '<td class="project-title">'+ projects[i].get('title') + '</td>' +
                        '<td class="project-category">' + projects[i].get('type') + '</td>' +
                        '<td class="project-date">' + projects[i].get('endDate') + '</td>' +
                        '<td class="project-price">' + projects[i].get('price') + '</td>' +
-                       '<td class="project-details">+</td>' +
+                       '<td class="project-details">'+
+                       '<a href="/#/project-details?id=' + projects[i].id + '">+</a>' +
+                       '</td>' +
                     '</tr>'
 				);
 			}
