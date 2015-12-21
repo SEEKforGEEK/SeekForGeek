@@ -34,7 +34,7 @@ body {
 }
 
 #main-header .container-fluid {
-    background-color: rgba(138, 202, 101, 0.7);
+    background-color: rgba(35,210,255,0.5);
     padding: 0;
 }
 
@@ -53,9 +53,9 @@ body {
 
 
 .button {
-    background-color: #005C50; /* Green */
+    background-color: #004A50; /* Green */
     border: none;
-    color: #AEE5B0 !important;
+    color: #23D2FF !important;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -67,12 +67,12 @@ body {
 }
 
 .button:hover,.dropdown>a:hover {
-    background-color: #44B821 !important; /* Green */
-    color: #005C50 !important;
+    background-color: #004A50 !important; /* Green */
+    color: #23D2FF !important;
 }
 
 .navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus {
-    background-color: rgba(138, 202, 101, 0.7) !important;
+    background-color: rgba(35,210,255,0.5) !important;
     margin-right: 0;
 }
 
@@ -85,9 +85,9 @@ body {
         float: left;
         width: 100%;
         background-color: transparent;
-        color: #005C50;
+        color: #004A50;
         font-weight: bold;
-        border-bottom: 1px solid #005C50;
+        border-bottom: 1px solid #004A50;
         padding: 0;
     }
 }
@@ -180,8 +180,8 @@ body {
 #main-footer .copyright{
     margin-top:0.5%;
     text-align: right !important;
-    background-color: rgba(138, 202, 101, 0.7) ;
+    background-color: rgba(35,210,255,0.5) ;
 }
 .divider{
-    border-color: #44B821 !important;
+    border-color: #23D2FF !important;
 }

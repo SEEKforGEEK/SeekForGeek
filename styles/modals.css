@@ -9,38 +9,38 @@
     padding-bottom:15px;
     padding-right:15px; 
     padding-left:0;
-    border-bottom:1px solid #95C497;
+    border-bottom:1px solid #8FC4C1;
 }
 .modal-content {
-    background-color: rgba(174, 229, 176,1) !important;    
+    background-color: rgba(143,196,193,1) !important;    
 }
 .form-control{
-    background-color: #95C497;
+    background-color: #80B0AD;
     border: 1px inset rgba(157, 157, 157, 0.22);
 }
 ::-webkit-input-placeholder {
-    color: #005C50 !important;
+    color: #004A50 !important;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-    color: #005C50 !important;  
+    color: #004A50 !important;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-    color: #005C50 !important; 
+    color: #004A50 !important; 
 }
 
 :-ms-input-placeholder {  
-    color: #005C50 !important;
+    color: #004A50 !important;
 }
 label{
     text-align: left;
     font-size: 1.5em;
 }
 #registerButton,#loginButton,#passButton{
-    background-color: #005C50; /* Green */
+    background-color: #004A50; /* Green */
     border: none;
-    color: #95C497 !important;
+    color: #8FC4C1 !important;
     padding: 5px 20px;
     text-align: center;
     text-decoration: none;
@@ -51,7 +51,7 @@ label{
     transition-duration: 0.4s;
 }
 #modal-register .modal-footer{
-    border-top:1px solid #95C497;
+    border-top:1px solid #8FC4C1;
 }
 #div-submit{
     padding-right:0;
