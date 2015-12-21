@@ -1,9 +1,8 @@
 
 #geekProfile, #customerProfile{
-    border: 1px solid black;
-}
-#mainProfile{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    background: #23D2FF;
+    border-radius: 2%;
 }
 .change{
     display:none;
@@ -13,4 +12,47 @@
 }
 #customer-emailInput, #customer-saveEmail{
     display:none;
+}
+
+/*MENU*/
+
+#menuBox {
+    padding:2;
+    background: url("../../images/footer.png") !important;
+    height: 100%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+
+.navMenu ul li{
+    list-style-type: none;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    text-align: center;
+    border-bottom:1px solid #004A50;
+}
+.navMenu a,.navMenu a:hover{
+    text-decoration: none;
+    color:#23D2FF;
+    text-shadow: 1px 1px #000;
+    font-size: 1.5em;
+    width:100%;
+    box-sizing: border-box;
+}
+.navMenu a:hover{
+    font-weight: bold;
+}
+.navMenu li:last-of-type{
+    padding:2% 2% 2% 2%;
+}
+.navMenu li:nth-of-type(3),.navMenu li:nth-of-type(4){
+    border:0;
+}
+.navMenu .button{
+    width: 100%;
+    margin-bottom: 5%;
+    border-radius:5px;
+}
+.navMenu .button:after{
+    clear:both;
 }

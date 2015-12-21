@@ -67,8 +67,8 @@ body {
 }
 
 .button:hover,.dropdown>a:hover {
-    background-color: #004A50 !important; /* Green */
-    color: #23D2FF !important;
+    background-color:#23D2FF !important; /* Green */
+    color: #004A50 !important;
 }
 
 .navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus {
