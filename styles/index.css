@@ -1,6 +1,7 @@
 body {
     
-    background-image: url("../images/glasses.png");
+    /*background-image: url("../images/glasses.png");*/
+    background-color: rgba(149,196,155,0.3) !important;
     color: #005C50 !important;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
@@ -13,8 +14,7 @@ body {
 
 }
 #footerTemplate{
-    height:30%;
-
+    min-height: 30%;
 }
 @media (max-width:768px){
         #content {
@@ -25,11 +25,14 @@ body {
         height:25%;
     }
     #footerTemplate{
-        height:25%;
+        height: 25%;
     }
 
 }
 /*HEADER*/
+.navbarTemplate .navbar-header{
+    margin:0 !important;
+}
 #template-header .container-fluid {
     background-color: rgba(138, 202, 101, 0.7);
     padding: 0;
@@ -38,6 +41,10 @@ body {
 #template-header .logoBrand {
     float:left;
     height: 45px;
+    margin-left:-15px !important;
+}
+@media(max-width:768px){
+    width:100%;
 }
 .dropdown>a{
     background-color: transparent !important;
@@ -66,3 +73,85 @@ body {
     /*the menu options will be available in the footer*/
 }
 /*FOOTER*/
+#footerTemplate{
+    background-image: url("../images/footer.png");
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#footerTemplate a{
+    font-style: none;
+    color:#005C50;
+}
+#footerTemplate nav{
+    display:flex;
+}
+#footerTemplate span{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 1px 1px #000;
+    line-height: 2em;
+}
+#footerTemplate ul li{
+    font-size: 1em;
+    list-style-type: none;
+    font-weight: bold;
+    text-shadow: 1px 1px #000;
+    line-height: 2em;
+    border-top: 1px solid #005C50;
+    border-top-style: outset;
+}
+#footerTemplate ul li:first-of-type{
+    border-top:none;
+}
+.navFooterTemplate {
+    color:#005C50;
+    display:inline-block;
+    order:1;
+}
+.navFooterTemplate div {
+    margin-left: 2%;
+    margin-right:2%;
+}
+#footerTemplate .row{
+        margin-right: 0 !important;
+}
+.footerLinks{
+    display:inline-block;
+    order:2;
+    color:#005C50;
+    border-left:1px solid #005C50;
+    border-left-style: outset;
+    margin-top:1%;
+    
+}
+@media(max-width:768px){
+    #footerTemplate nav{
+    display:block;
+    }
+    .navFooterTemplate {
+        color:#005C50;
+        display:block;
+    }
+    .footerLinks{
+        display:block;
+        border-left:none;
+    }
+    #footerTemplate span{
+    font-size: 1.2em;
+}
+#footerTemplate ul li{
+    font-size: 1em;
+}
+}
+
+
+#template-footer .copyright{
+    margin-top:0.5%;
+    text-align: right !important;
+    background:transparent url(../images/transFooter.png);
+}
+.divider{
+    border-color: #44B821 !important;
+}
