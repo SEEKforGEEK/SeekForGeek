@@ -13,6 +13,11 @@ $(document).ready(function(){
 	query.exists('title');
 	query.find({
 		success: function(projects){
+			if (projects.length === 0) {
+				$('#mainProfile').append(
+					'<h3>No projects</h3>'
+				);
+			};
 			for (var i = 0; i < projects.length; i++) {
 				$('#append-body').append(
 					'<tr>' +
