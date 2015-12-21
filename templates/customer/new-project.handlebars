@@ -114,7 +114,7 @@
 										<div class="form-group">
 											<label for="payment-phone" class="col-lg-2 control-label">Phone</label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="payment-phone" placeholder="Phone">
+												<input type="text" class="form-control" id="payment-phone" placeholder="0881234567">
 											</div>
 										</div>
 									</fieldset>
@@ -125,7 +125,7 @@
 										<div class="form-group">
 											<label for="payment-price" class="col-lg-2 control-label">Price</label>
 											<div class="col-lg-10">
-											<input type="text" class="form-control" id="payment-price" placeholder="Price">
+											<input type="number" class="form-control" id="payment-price" min="0" placeholder="Price">
 										</div>
 									</fieldset>
 								</form>
@@ -140,7 +140,7 @@
 	            </div>
 
 	            <div class="tab-pane fade" id="description">
-	                <div class="container-fluid">
+	            <div class="container-fluid">
 	                    <div class="row">
 	                        <div class="col-md-12 col-xs-18 col-lg-12 col-sm-12">
                                 <h3>Description</h3>
@@ -170,15 +170,13 @@
 								    <div class="form-group">
 								      <label for="picture" class="col-lg-2 control-label">Picture</label>
 								      <div class="col-lg-10">
-								        <input type="text" class="form-control" id="picture" placeholder="Picture">
-								        <button>Add</button>
+								        <input type="file" class="form-control" id="picture" accept="image/png, image/jpg, image/gif, image/jpeg">
 								      </div>
 								    </div>
 								    <div class="form-group">
 								      <label for="files" class="col-lg-2 control-label">Files</label>
 							      				<div class="col-lg-10">
-								        			<input type="text" class="form-control" id="files" placeholder="Files">
-								        			<button>Add</button>
+								        			<input type="file" class="form-control" id="files" accept=".zip, .rar">
 								      			</div>
 								    		</div>
 								 		</fieldset>

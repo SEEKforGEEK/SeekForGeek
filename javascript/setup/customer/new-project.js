@@ -22,36 +22,91 @@ $(document).ready(function(){
 	    }
 	});
 
+	var currentUser = Parse.User.current();
+	var email = currentUser.get('email');
+	$('#payment-email').val(email);
+
+
 
 	$('#details-next').click(function(){
-
-
-		var radioButton = $('input[name=radioButtons]:checked', '#radioDetails').val()
-		
-
+	
 		$('#description-link').attr('href', '#description')
-		.attr('data-toggle', 'tab')
-		.attr('aria-expanded', true)
-		.addClass('tabs');
-    	
+			.attr('data-toggle', 'tab')
+			.attr('aria-expanded', true)
+			.addClass('tabs');
+	    	
     	$('#description-link').trigger('click');
     	$('#details-link').removeAttr('href')
     		.removeAttr('aria-expanded')
-    		.removeAttr('data-toggle');
+    		.removeAttr('data-toggle');	
+		
     });	
 	$('#description-next').click(function(){  		
-		
-  		$('#payment-link').attr('href', '#payment')
-  			.attr('data-toggle', 'tab')
-  			.attr('aria-expanded', true)
-  			.addClass('tabs');
+		console.log($("#picture")[0]);
 
-		$('#payment-link').trigger('click');
+		if (validateDetails()) {
+	  		$('#payment-link').attr('href', '#payment')
+	  			.attr('data-toggle', 'tab')
+	  			.attr('aria-expanded', true)
+	  			.addClass('tabs');
+
+			$('#payment-link').trigger('click');
 
 
-		$('#description-link').removeAttr('href')
-		.removeAttr('aria-expanded')
-		.removeAttr('data-toggle')
-		.removeClass('tabs');
+			$('#description-link').removeAttr('href')
+			.removeAttr('aria-expanded')
+			.removeAttr('data-toggle')
+			.removeClass('tabs');
+		};			
+
     });
 })
+
+function validateDetails(){
+	var details = {
+		title: $('#title').val(),
+		task: $('#task').val(),
+		date: $('#datepicker').val(),
+		type: $('input[name=radioButtons]:checked', '#radioDetails').val()
+
+	}
+	var fileUploadControl = $("#picture")[0];
+	if (fileUploadControl.files.length > 0) {
+	  	var file = fileUploadControl.files[0];
+	 	var name = $("#picture").val();
+
+	 	var parseFile = new Parse.File(name, file);
+	 	parseFile.save()
+	 		.then(function() {
+	 			var fileUploadControlFiles = $('#files')[0];
+	 			if (fileUploadControlFiles.files.length > 0) {
+	 				console.log('teasdasd');
+	 				var files = fileUploadControlFiles.files[0];
+	 				var nameFiles = "project-files.zip";
+	 				var parseFiles = new Parse.File(nameFiles, files);
+	 				parseFiles.save()
+	 					.then(function(){
+	 						var Projects = new Parse.Object("Projects");
+							Projects.set("title", details.title);
+							Projects.set('task', details.task);
+							Projects.set('endDate', details.date);
+							Projects.set('type', details.type);
+							Projects.set("picture", parseFile);
+							Projects.set('files', parseFiles);
+							Projects.save();
+							return true;
+	 					},
+	 					function(error){
+	 						console.log('error files' + error);
+	 						return false;
+	 					});
+	 			};
+
+		}, function(error) {
+			console.log('error picture ' + error );
+			return false;
+		});
+	}
+	return false;
+	
+}
