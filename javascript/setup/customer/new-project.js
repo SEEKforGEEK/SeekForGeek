@@ -42,7 +42,7 @@ $(document).ready(function(){
 		
     });	
 	$('#description-next').click(function(){  		
-		console.log($("#picture")[0]);
+		console.log(validateDetails());
 
 		if (validateDetails()) {
 	  		$('#payment-link').attr('href', '#payment')
@@ -60,27 +60,55 @@ $(document).ready(function(){
 		};			
 
     });
+
+    $('#done').click(function(){
+    	if (validatePayment()) {
+    		sendData();
+    	};
+    	
+    });
 })
 
 function validateDetails(){
+	var title = $('#title').val();
+	var task = $('#task').val();
+	var	date = $('#datepicker').val();
+	if (title == '' || task == '' || date == '') {
+		return false;
+	};
+	return true;
+}
+
+function validatePayment(){
+	var price = $('#payment-price').val();
+	var email = $('#payment-email').val();
+	var phone = $('#payment-phone').val();
+	if (price == '' || email == '' || phone == '') {
+		return false;
+	};
+	return true;
+}
+
+function sendData(){
 	var details = {
 		title: $('#title').val(),
 		task: $('#task').val(),
 		date: $('#datepicker').val(),
-		type: $('input[name=radioButtons]:checked', '#radioDetails').val()
+		type: $('input[name=radioButtons]:checked', '#radioDetails').val(),
+		price: $('#payment-price').val()
 
 	}
 	var fileUploadControl = $("#picture")[0];
 	if (fileUploadControl.files.length > 0) {
 	  	var file = fileUploadControl.files[0];
-	 	var name = $("#picture").val();
+	 	var name = 'picture.png';
 
 	 	var parseFile = new Parse.File(name, file);
 	 	parseFile.save()
 	 		.then(function() {
 	 			var fileUploadControlFiles = $('#files')[0];
 	 			if (fileUploadControlFiles.files.length > 0) {
-	 				console.log('teasdasd');
+	 				
 	 				var files = fileUploadControlFiles.files[0];
 	 				var nameFiles = "project-files.zip";
 	 				var parseFiles = new Parse.File(nameFiles, files);
@@ -91,6 +119,7 @@ function validateDetails(){
 							Projects.set('task', details.task);
 							Projects.set('endDate', details.date);
 							Projects.set('type', details.type);
+							Projects.set('price', details.price);
 							Projects.set("picture", parseFile);
 							Projects.set('files', parseFiles);
 							Projects.save();
@@ -107,6 +136,7 @@ function validateDetails(){
 			return false;
 		});
 	}
-	return false;
+	return true;
+	
 	
 }

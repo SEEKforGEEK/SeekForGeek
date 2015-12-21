@@ -19,7 +19,7 @@ $(document).ready(function(){
                        '<td class="project-title">'+ projects[i].get('title') + '</td>' +
                        '<td class="project-category">' + projects[i].get('type') + '</td>' +
                        '<td class="project-date">' + projects[i].get('endDate') + '</td>' +
-                       '<td class="project-price">111</td>' +
+                       '<td class="project-price">' + projects[i].get('price') + '</td>' +
                        '<td class="project-details">+</td>' +
                     '</tr>'
 				);
