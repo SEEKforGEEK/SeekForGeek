@@ -64,7 +64,7 @@ $(document).ready(function(){
     $('#done').click(function(){
     	if (validatePayment()) {
     		sendData();
-    		$(location).attr('href','/#/customer/projects');
+
     	};
     	
     });
@@ -124,20 +124,15 @@ function sendData(){
 							Projects.set("picture", parseFile);
 							Projects.set('files', parseFiles);
 							Projects.save();
-							return true;
+							$(location).attr('href','/#/customer/projects');
 	 					},
 	 					function(error){
 	 						console.log('error files' + error);
-	 						return false;
 	 					});
 	 			};
 
 		}, function(error) {
 			console.log('error picture ' + error );
-			return false;
 		});
-	}
-	return true;
-	
-	
+	}	
 }
