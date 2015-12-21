@@ -64,6 +64,7 @@ $(document).ready(function(){
     $('#done').click(function(){
     	if (validatePayment()) {
     		sendData();
+    		$(location).attr('href','/#/customer/projects');
     	};
     	
     });
