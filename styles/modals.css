@@ -19,19 +19,19 @@
     border: 1px inset rgba(157, 157, 157, 0.22);
 }
 ::-webkit-input-placeholder {
-   color: #005C50 !important;
+    color: #005C50 !important;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #005C50 !important;  
+    color: #005C50 !important;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #005C50 !important; 
+    color: #005C50 !important; 
 }
 
 :-ms-input-placeholder {  
-   color: #005C50 !important;
+    color: #005C50 !important;
 }
 label{
     text-align: left;
@@ -53,7 +53,7 @@ label{
 #modal-register .modal-footer{
     border-top:1px solid #95C497;
 }
- #div-submit{
+#div-submit{
     padding-right:0;
 }
 #loginInRegister,#btnForgotPass,#registerInLogin{

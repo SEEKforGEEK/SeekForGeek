@@ -91,10 +91,10 @@ body {
         padding: 0;
     }
 }
-.navbarTemplateNone{
+.templateNone{
     display: none;
 }
-.navbarTemplateOn{
+.templateOn{
     display: block;
 }
 

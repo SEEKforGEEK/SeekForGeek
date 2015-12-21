@@ -1,7 +1,10 @@
 $(document).ready(function(){
  	$(".navbarTemplate")
-        .removeClass("navbarTemplateNone")
-        .addClass("navbarTemplateOn");
+        .removeClass("templateNone")
+        .addClass("templateOn");
+    $("#footerTemplate")
+        .removeClass("templateNone")
+        .addClass("templateOn");
     
     
     var dateToday = new Date();

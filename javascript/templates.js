@@ -2,8 +2,12 @@
 
 (function(){
     $(".navbarTemplate")
-        .removeClass("navbarTemplateOn")
-        .addClass("navbarTemplateNone");
+        .addClass("templateNone")
+        .removeClass("templateOn");
+    $("#footerTemplate")
+        .addClass("templateNone")
+        .removeClass("templateOn");
+
 }());
 
 var templates = (function () {

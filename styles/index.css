@@ -1,5 +1,5 @@
 body {
-    
+
     /*background-image: url("../images/glasses.png");*/
     background-color: rgba(149,196,155,0.3) !important;
     color: #005C50 !important;
@@ -17,9 +17,8 @@ body {
     min-height: 30%;
 }
 @media (max-width:768px){
-        #content {
+    #content {
         height:70%;
-    
     }
     .navbarTemplate{
         height:25%;
@@ -63,8 +62,8 @@ body {
     border:0;
 }
 #template-header .dropdown ul a{
-   font-size: 1.25em;
-   color: #005C50 ;
+ font-size: 1.25em;
+ color: #005C50 ;
 }
 @media(max-width:768px){
     .dropdown{
@@ -115,7 +114,7 @@ body {
     margin-right:2%;
 }
 #footerTemplate .row{
-        margin-right: 0 !important;
+    margin-right: 0 !important;
 }
 .footerLinks{
     display:inline-block;
@@ -128,7 +127,7 @@ body {
 }
 @media(max-width:768px){
     #footerTemplate nav{
-    display:block;
+        display:block;
     }
     .navFooterTemplate {
         color:#005C50;
@@ -139,11 +138,11 @@ body {
         border-left:none;
     }
     #footerTemplate span{
-    font-size: 1.2em;
-}
-#footerTemplate ul li{
-    font-size: 1em;
-}
+        font-size: 1.2em;
+    }
+    #footerTemplate ul li{
+        font-size: 1em;
+    }
 }
 
 

@@ -3,8 +3,11 @@ $(document).ready(function(){
 		Parse.User.logOut();
 		$(location).attr("href","/#/home");
 		$(".navbarTemplate")
-        .removeClass("navbarTemplateOn")
-        .addClass("navbarTemplateNone");
+			.removeClass("templateOn")
+			.addClass("templateNone");
+		$("#footerTemplate")
+			.removeClass("templateOn")
+			.addClass("templateNone");
 	});
 
 	$("#profile-button").click(function(){
