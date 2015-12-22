@@ -29,7 +29,8 @@ $(document).ready(function(){
 
 					$('#append-body').append(
 						'<tr>' +
-			               '<td class="project-title">'+ res.get('title') + '</td>' +
+			               '<td class="project-title"><a href="/#/project-details?id='+ 
+			               res.id + '">' + res.get('title') + '</a></td>' +
 			               '<td class="project-category">' + res.get('type') + '</td>' +
 			               '<td class="project-date">' + res.get('endDate') + '</td>' +
 			               '<td class="project-price">' + res.get('price') + '</td>' +
