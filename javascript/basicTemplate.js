@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#logout-button").click(function(){
+	$("#logout-button").on('click', function(){
 		Parse.User.logOut();
 		$(location).attr("href","/#/home");
 		$(".navbarTemplate")
@@ -10,7 +10,7 @@ $(document).ready(function(){
 			.addClass("templateNone");
 	});
 
-	$("#profile-button").click(function(){
+	$("#profile-button").on('click', function(){
 		var user = Parse.User.current();
 		if (user.get('type') == 'customer') {
 			$(location).attr('href',"/#/customer/profile");

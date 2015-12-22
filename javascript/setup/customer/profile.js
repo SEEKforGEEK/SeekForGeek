@@ -14,22 +14,20 @@ $(document).ready(function(){
     $('#customer-emailInput').val(currentUser.get('email'));
     $('#hello-customer').html('Hello, ' + currentUser.get('username') + '!');
 
-    $('#customer-changePassword').click(function(){
+    $('#customer-changePassword').on('click', function(){
         $('.change').fadeToggle(700);
     });
 
-    $('#back-button').click(function(){
-        $(location).attr('href', '/#/' + currentUser.get('type') + '/projects');
-    })
+   
 
-    $('#customer-changeEmail').click(function(){
+    $('#customer-changeEmail').on('click', function(){
         $('#customer-emailToChange').hide();
         $('#customer-changeEmail').hide();
         $('#customer-emailInput').show();
         $('#customer-saveEmail').show();
     });
 
-    $('#customer-saveEmail').click(function(){
+    $('#customer-saveEmail').on('click', function(){
         var email = $('#customer-emailInput').val();
 
         currentUser.set('email', email);

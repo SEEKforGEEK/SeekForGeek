@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#loginButton').click(loginForm);
+    $('#loginButton').on('click', loginForm);
     $('#modal-login').on('shown.bs.modal', function () {
         $('#login-username').focus();
     });

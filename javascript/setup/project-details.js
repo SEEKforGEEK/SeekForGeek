@@ -9,7 +9,7 @@ $(document).ready(function(){
     var currentUser = Parse.User.current();
 
     var type = currentUser.get('type');
- 	$('#back-button').click(function(){
+ 	$('#back-button').on('click', function(){
         $(location).attr('href', '/#/' + type + '/projects');
     })
     if (type == 'customer') {
@@ -63,7 +63,7 @@ $(document).ready(function(){
 	})
 
 
-	$('#add-watchlist').click(function(){
+	$('#add-watchlist').on('click', function(){
 		watchlistArray.push(id);
 		currentUser.set('watchlist', watchlistArray);
 		currentUser.save()

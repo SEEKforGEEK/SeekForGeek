@@ -18,18 +18,18 @@ $(document).ready(function(){
     $('#emailInput').val(currentUser.get('email'));
     $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
 
-    $('#changePassword').click(function(){
+    $('#changePassword').on('click', function(){
         $('.change').fadeToggle(700);
     });
 
-    $('#changeEmail').click(function(){
+    $('#changeEmail').on('click', function(){
         $('#emailToChange').hide();
         $('#changeEmail').hide();
         $('#emailInput').show();
         $('#saveEmail').show();
     });
 
-    $('#saveEmail').click(function(){
+    $('#saveEmail').on('click', function(){
         var email = $('#emailInput').val();
 
         currentUser.set('email', email);

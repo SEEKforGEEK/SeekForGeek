@@ -2,13 +2,13 @@ $(document).ready(function () {
     $('#content').css('padding-bottom', '0%').css('padding-left', '0%')
         .css('padding-right', '0%');
         
-    $('#loginInRegister').click(loginInRegister);
-    $('#registerInLogin').click(registerInLogin);
-    $('#btnForgotPass').click(registerInLogin);
+    $('#loginInRegister').on('click', loginInRegister);
+    $('#registerInLogin').on('click', registerInLogin);
+    $('#btnForgotPass').on('click', registerInLogin);
 
-    $('#registerButton').click(registerForm);
-    $('#register-customer').click(registerFormCustomer);
-    $('#register-geek').click(registerFormGeek);
+    $('#registerButton').on('click', registerForm);
+    $('#register-customer').on('click', registerFormCustomer);
+    $('#register-geek').on('click', registerFormGeek);
 
     $("#register-conf-pass").keyup(validateRegisterPasswords);
 

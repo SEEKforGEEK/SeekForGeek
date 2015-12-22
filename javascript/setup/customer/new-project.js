@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 
 
-	$('#details-next').click(function(){
+	$('#details-next').on('click', function(){
 	
 		$('#description-link').attr('href', '#description')
 			.attr('data-toggle', 'tab')
@@ -41,7 +41,7 @@ $(document).ready(function(){
     		.removeAttr('data-toggle');	
 		
     });	
-	$('#description-next').click(function(){  		
+	$('#description-next').on('click', function(){  		
 		console.log(validateDetails());
 
 		if (validateDetails()) {
@@ -61,7 +61,7 @@ $(document).ready(function(){
 
     });
 
-    $('#done').click(function(){
+    $('#done').on('click', function(){
     	if (validatePayment()) {
     		sendData();
 
