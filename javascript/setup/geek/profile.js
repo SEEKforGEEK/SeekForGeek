@@ -16,7 +16,7 @@ $(document).ready(function(){
     $('#username').append(currentUser.get('username'));
     $('#emailToChange').append(currentUser.get('email'));
     $('#emailInput').val(currentUser.get('email'));
-
+    $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
 
     $('#changePassword').click(function(){
         $('.change').fadeToggle(700);
