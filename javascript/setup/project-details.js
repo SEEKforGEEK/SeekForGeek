@@ -22,6 +22,7 @@ $(document).ready(function(){
     	$('#geek-watchlist').show();
     	$('#customer-submisions').hide();
     	var watchlistArray = currentUser.get('watchlist');
+
     	if (watchlistArray == undefined) {
     		watchlistArray = [];
     	};
@@ -55,8 +56,8 @@ $(document).ready(function(){
 			$('#project-picture').attr('src', res.get('picture').url());
 			$('#project-price').html(res.get('price'));
 			$('#project-date').html(res.get('endDate'));
-			$('#customer-email').html(res.get('user').get('email'));
-			$('#customer-name').html(res.get('user').get('username'));
+			$('#customer-email').html(res.get('ownerEmail'));
+			$('#customer-name').html(res.get('owner'));
 			$('#customer-phone').html(res.get('phone'));
 
 		}
