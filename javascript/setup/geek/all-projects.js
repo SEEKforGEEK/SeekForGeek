@@ -6,9 +6,10 @@ $(document).ready(function(){
         .removeClass("templateNone")
         .addClass("templateOn");
 
-
 	$('.browse-job').on('click',function(){
 		$(location).attr('href', '/#/search');
 	});
+
+
 
 });

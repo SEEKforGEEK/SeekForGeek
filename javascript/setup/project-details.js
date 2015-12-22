@@ -43,8 +43,9 @@ $(document).ready(function(){
 			$('#project-picture').attr('src', res.get('picture').url());
 			$('#project-price').html(res.get('price'));
 			$('#project-date').html(res.get('endDate'));
-			// $('#customer-email')
-
+			$('#customer-email').html(res.get('user').get('email'));
+			$('#customer-name').html(res.get('user').get('username'));
+			$('#customer-phone').html(res.get('phone'));
 
 		}
 	})

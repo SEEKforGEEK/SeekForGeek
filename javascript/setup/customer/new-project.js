@@ -96,10 +96,11 @@ function sendData(){
 		task: $('#task').val(),
 		date: $('#datepicker').val(),
 		type: $('input[name=radioButtons]:checked', '#radioDetails').val(),
-		price: $('#payment-price').val()
-
+		price: $('#payment-price').val(),
+		phone: $('#payment-phone').val()
 	}
 	var fileUploadControl = $("#picture")[0];
+	var currentUser = Parse.User.current();
 	if (fileUploadControl.files.length > 0) {
 	  	var file = fileUploadControl.files[0];
 	 	var name = 'picture.png';
@@ -121,8 +122,10 @@ function sendData(){
 							Projects.set('endDate', details.date);
 							Projects.set('type', details.type);
 							Projects.set('price', details.price);
+							Projects.set('phone', details.phone);
 							Projects.set("picture", parseFile);
 							Projects.set('files', parseFiles);
+							Projects.set('user', currentUser);
 							Projects.save();
 							$(location).attr('href','/#/customer/projects');
 	 					},

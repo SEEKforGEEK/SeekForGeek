@@ -17,5 +17,6 @@ $(document).ready(function(){
 		}else{
 			$(location).attr('href',"/#/geek/profile");
 		}
-	})
+	});
+	
 });

@@ -6,6 +6,11 @@ $(document).ready(function(){
     $("#footerTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
+        
+    $('.browse-job').on('click',function(){
+        $(location).attr('href', '/#/search');
+    });
+
 
     var currentUser = Parse.User.current();
     $('#username').append(currentUser.get('username'));
