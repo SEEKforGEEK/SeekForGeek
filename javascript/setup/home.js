@@ -1,5 +1,7 @@
 $(document).ready(function () {
-
+    $('#content').css('padding-bottom', '0%').css('padding-left', '0%')
+        .css('padding-right', '0%');
+        
     $('#loginInRegister').click(loginInRegister);
     $('#registerInLogin').click(registerInLogin);
     $('#btnForgotPass').click(registerInLogin);
