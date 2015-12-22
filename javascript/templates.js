@@ -7,7 +7,9 @@
     $("#footerTemplate")
         .addClass("templateNone")
         .removeClass("templateOn");
-
+    $("li.dropdown").click(function() {
+        $("nav.navbar").toggleClass("open");
+    });
 }());
 
 var templates = (function () {

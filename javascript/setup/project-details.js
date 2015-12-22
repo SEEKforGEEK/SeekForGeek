@@ -19,6 +19,10 @@ $(document).ready(function(){
     	$('#geek-add-submit').show();
     	$('#geek-watchlist').show();
     	$('#customer-submisions').hide();
+    	var watchlistArray = currentUser.get('watchlist');
+    	if (watchlistArray == undefined) {
+    		watchlistArray = [];
+    	};
     };
     $.urlParam = function(name){
 	    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -49,4 +53,14 @@ $(document).ready(function(){
 
 		}
 	})
+
+
+	$('#add-watchlist').click(function(){
+		watchlistArray.push(id);
+		currentUser.set('watchlist', watchlistArray);
+		currentUser.save()
+			.then(function(){
+				$('#add-watchlist').hide();
+			})
+	});
 });
