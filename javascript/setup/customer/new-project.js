@@ -117,7 +117,9 @@ function sendData(){
 	 				var nameFiles = "project-files.zip";
 	 				var parseFiles = new Parse.File(nameFiles, files);
 	 				parseFiles.save()
-	 					.then(function(){
+	 					.then(function(){   
+
+	 						
 	 						var Projects = new Parse.Object("Projects");
 							Projects.set("title", details.title);
 							Projects.set('task', details.task);
