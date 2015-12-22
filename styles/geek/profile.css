@@ -3,6 +3,7 @@
     /*border: 1px solid black;*/
     background: #23D2FF;
     border-radius: 2%;
+    /*height:100% !important;*/
 }
 .change{
     display:none;
@@ -15,11 +16,13 @@
 }
 
 /*MENU*/
+.contentALL, #geekProfile,#menuBox{
+    min-height:350px !important;
+}
 
 #menuBox {
     padding:2;
     background: url("../../images/footer.png") !important;
-    height: 100%;
     border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
 }
