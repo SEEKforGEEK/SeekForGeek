@@ -1,9 +1,9 @@
 
 #geekProfile, #customerProfile{
     /*border: 1px solid black;*/
-    background: #23D2FF;
-    border-radius: 2%;
-    /*height:100% !important;*/
+    background:rgba(255,255,255,0.2);
+    /*border-radius: 2%;*/
+    height:100% !important;
 }
 .change{
     display:none;
@@ -16,15 +16,18 @@
 }
 
 /*MENU*/
-.contentALL, #geekProfile,#menuBox{
-    min-height:350px !important;
+.contentALL, #geekProfile,#menuBox,#mainProfile{
+    min-height:380px !important;
+}
+#geekProfile{
+    display:flex;
+    align-items: stretch;
 }
 
 #menuBox {
-    padding:2;
-    background: url("../../images/footer.png") !important;
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
+    padding:2%;
+    /*background-color:rgba(255,255,255,0.5);*/
+    
 }
 
 .navMenu ul li{
@@ -36,8 +39,8 @@
 }
 .navMenu a,.navMenu a:hover{
     text-decoration: none;
-    color:#23D2FF;
-    text-shadow: 1px 1px #000;
+    color:#004A50;
+    /*text-shadow: 1px 1px #000;*/
     font-size: 1.5em;
     width:100%;
     box-sizing: border-box;
@@ -51,11 +54,52 @@
 .navMenu li:nth-of-type(3),.navMenu li:nth-of-type(4){
     border:0;
 }
-.navMenu .button{
+#menuBox .button{
     width: 100%;
     margin-bottom: 5%;
+    font-size:1.5em;
+    margin-top:20%;
+    
     border-radius:5px;
 }
-.navMenu .button:after{
+.menuBox .button:after{
     clear:both;
+}
+.contentAbout{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+#mainProfile{
+    background-color: rgba(255,255,255,0.5);
+    height:100%;
+    padding: 2%;
+    text-align: left;
+    font-size:1.5em;
+    line-height: 2em;
+}
+#mainProfile h1{
+   text-align: right;
+   width:100%;
+   border-bottom: 1px solid #004A50;
+   padding-top:0.25%;
+}
+.infoType{
+    font-weight: bold;
+    /*font-size: 1.5em;*/
+}
+#mainProfile .button{
+    font-size: 1em;
+    line-height: 1.5em;
+    float:  none;
+    padding:1.5%;
+    border-radius:5px;
+    
+}
+.change{
+    margin-top:1%;
+    margin-bottom:1%;
+    border-radius: 5px;
+}
+input.change{
+    background-color: #B1EEFF;
 }
