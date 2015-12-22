@@ -1,5 +1,5 @@
 
-#geekProfile, #customerProfile{
+.geekProfile, #customerProfile{
     /*border: 1px solid black;*/
     background:rgba(255,255,255,0.2);
     /*border-radius: 2%;*/
@@ -16,15 +16,15 @@
 }
 
 /*MENU*/
-.contentALL, #geekProfile,#menuBox,#mainProfile{
+.contentALL, .geekProfile,.menuBox,.mainProfile{
     min-height:380px !important;
 }
-#geekProfile{
+.geekProfile{
     display:flex;
     align-items: stretch;
 }
 
-#menuBox {
+.menuBox {
     padding:2%;
     /*background-color:rgba(255,255,255,0.5);*/
     
@@ -54,7 +54,7 @@
 .navMenu li:nth-of-type(3),.navMenu li:nth-of-type(4){
     border:0;
 }
-#menuBox .button{
+.menuBox .button{
     width: 100%;
     margin-bottom: 5%;
     font-size:1.5em;
@@ -69,7 +69,7 @@
     font-weight: bold;
     font-size: 1.25em;
 }
-#mainProfile{
+.mainProfile{
     background-color: rgba(255,255,255,0.5);
     height:100%;
     padding: 2%;
@@ -77,7 +77,7 @@
     font-size:1.5em;
     line-height: 2em;
 }
-#mainProfile h1{
+.mainProfile h1{
    text-align: right;
    width:100%;
    border-bottom: 1px solid #004A50;
@@ -87,7 +87,7 @@
     font-weight: bold;
     /*font-size: 1.5em;*/
 }
-#mainProfile .button{
+.mainProfile .button{
     font-size: 1em;
     line-height: 1.5em;
     float:  none;
