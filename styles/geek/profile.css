@@ -1,8 +1,6 @@
 
 .geekProfile, #customerProfile{
-    /*border: 1px solid black;*/
     background:rgba(255,255,255,0.2);
-    /*border-radius: 2%;*/
     height:100% !important;
 }
 .change{
@@ -23,13 +21,9 @@
     display:flex;
     align-items: stretch;
 }
-
 .menuBox {
     padding:2%;
-    /*background-color:rgba(255,255,255,0.5);*/
-    
 }
-
 .navMenu ul li{
     list-style-type: none;
     padding-bottom: 5%;
@@ -65,6 +59,7 @@
 .menuBox .button:after{
     clear:both;
 }
+/*CONTENT*/
 .contentAbout{
     font-weight: bold;
     font-size: 1.25em;
@@ -85,7 +80,6 @@
 }
 .infoType{
     font-weight: bold;
-    /*font-size: 1.5em;*/
 }
 .mainProfile .button{
     font-size: 1em;
@@ -93,7 +87,6 @@
     float:  none;
     padding:1.5%;
     border-radius:5px;
-    
 }
 .change{
     margin-top:1%;

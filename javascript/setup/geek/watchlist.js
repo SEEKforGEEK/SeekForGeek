@@ -34,7 +34,7 @@ $(document).ready(function(){
 			               '<td class="project-category">' + res.get('type') + '</td>' +
 			               '<td class="project-date">' + res.get('endDate') + '</td>' +
 			               '<td class="project-price">' + res.get('price') + '</td>' +
-			               '<td><button id="remove-' + res.id + '">Remove</button></td>' +
+			               '<td><button id="remove-' + res.id + '" class="button">Remove</button></td>' +
 			            '</tr>'
 					);
 				},
