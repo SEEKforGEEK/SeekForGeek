@@ -9,7 +9,9 @@ $(document).ready(function(){
     var currentUser = Parse.User.current();
 
     var type = currentUser.get('type');
-
+ 	$('#back-button').click(function(){
+        $(location).attr('href', '/#/' + type + '/projects');
+    })
     if (type == 'customer') {
     	$('#geek-add-submit').hide();
     	$('#geek-watchlist').hide();
@@ -35,6 +37,12 @@ $(document).ready(function(){
 	}
 		
 	var id = $.urlParam('id')
+
+	for(var i in watchlistArray){
+		if(watchlistArray[i] == id){
+			$('#add-watchlist').hide();
+		}
+	}
 
 	var query = new Parse.Query("Projects");
 

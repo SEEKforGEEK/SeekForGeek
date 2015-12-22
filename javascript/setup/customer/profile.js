@@ -12,11 +12,15 @@ $(document).ready(function(){
     $('#customer-username').append(currentUser.get('username'));
     $('#customer-emailToChange').append(currentUser.get('email'));
     $('#customer-emailInput').val(currentUser.get('email'));
-
+    $('#hello-customer').html('Hello, ' + currentUser.get('username') + '!');
 
     $('#customer-changePassword').click(function(){
         $('.change').fadeToggle(700);
     });
+
+    $('#back-button').click(function(){
+        $(location).attr('href', '/#/' + currentUser.get('type') + '/projects');
+    })
 
     $('#customer-changeEmail').click(function(){
         $('#customer-emailToChange').hide();
