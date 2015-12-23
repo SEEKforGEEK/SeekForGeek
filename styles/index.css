@@ -27,9 +27,9 @@ body {
     min-height: 30%;
 }
 @media (max-width:768px){
-    #content {
+    /*#content {
         min-height:50%;
-    }
+    }*/
     /*.navbarTemplate{
         min-height:25%;
     }*/
