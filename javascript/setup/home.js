@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#content').css('padding-bottom', '0%').css('padding-left', '0%')
-        .css('padding-right', '0%');
+        .css('padding-right', '0%').css('height','100%');
+    $('body').css('margin-bottom' ,'-20px');
         
     $('#loginInRegister').on('click', loginInRegister);
     $('#registerInLogin').on('click', registerInLogin);

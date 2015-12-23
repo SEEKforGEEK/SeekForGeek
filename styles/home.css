@@ -12,19 +12,13 @@ body {
     position: relative !important;
 }
 #main-content {
-    height:70%;
+    min-height:65%;
 }
 .main-header{
     height:30%;
     width:100%;
 }
-#main-footer{
-    height:auto;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
+
 
 
 
@@ -166,19 +160,26 @@ body {
     #statistics {
         font-size:1.5em;
     }
+    #main-footer{
+        height: 20px;
+    }
+    body{
+        height: auto !important;
+        min-height: 100%;
+    }
 }
 
 /*FOOTER*/
 #main-footer{
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
-  
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 20px;
 }
 
 #main-footer .copyright{
-    margin-top:0.5%;
+    /*margin-top:0.5%;*/
     text-align: right !important;
     background-color: rgba(35,210,255,0.5) ;
 }
