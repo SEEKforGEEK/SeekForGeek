@@ -21,7 +21,6 @@ $(document).ready(function(){
 	}
 	else{
 		var query = new Parse.Query("Projects");
-		console.log(watchlistArray);
 		for (var i = 0; i < watchlistArray.length; i++) {
 
 			query.equalTo('objectId', watchlistArray[i]);
@@ -45,7 +44,6 @@ $(document).ready(function(){
 			});
 		}	
 	}
-		console.log(watchlistArray);
 
 
 
