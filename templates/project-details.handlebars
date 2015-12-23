@@ -32,6 +32,7 @@
     <div id="geek-add-submit" class="row">
         <div class="col-md-2 col-md-offset-10 col-xs-4 col-lg-2 col-sm-2">
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-submit">Add Submit</button>
+            <span id="successful-submit"></span>
         </div>
     </div>
 </div>
@@ -49,17 +50,17 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="forgot-pass-email" class="col-sm-2 col-lg-2 col-md-2 col-xs-3  control-label">File</label>
+                        <label for="submission" class="col-sm-2 col-lg-2 col-md-2 col-xs-3  control-label">File</label>
 
                         <div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
-                            <input type="file" class="form-control" id="forgot-pass-email">
+                            <input type="file" class="form-control" id="submission">
                             <span id="restriction">Max 10MB</span>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button id="passButton" type="button">Upload</button>
+                <button id="upload-submission" type="button">Upload</button>
             </div>
         </div>
     </div>

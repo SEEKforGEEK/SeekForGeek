@@ -45,20 +45,35 @@ $(document).ready(function(){
 		}
 	}
 
+
+	var project = {};
+
 	var query = new Parse.Query("Projects");
 
 	query.equalTo('objectId', id);
 	query.first({
 		success: function(res){
-			$('#project-name').html(res.get('title'));
-			$('#project-details').append('<p>' + res.get('task') + '</p>');
-			$('#project-category').html(res.get('type'));
-			$('#project-picture').attr('src', res.get('picture').url());
-			$('#project-price').html(res.get('price'));
-			$('#project-date').html(res.get('endDate'));
-			$('#customer-email').html(res.get('ownerEmail'));
-			$('#customer-name').html(res.get('owner'));
-			$('#customer-phone').html(res.get('phone'));
+			project.title = res.get('title');
+			project.details = res.get('task');
+			project.category = res.get('type');
+			project.picture = res.get('picture').url();
+			project.price = res.get('price');
+			project.date = res.get('endDate');
+			project.email = res.get('ownerEmail');
+			project.owner = res.get('owner');
+			project.phone = res.get('phone');
+
+
+
+			$('#project-name').html(project.title);
+			$('#project-details').append('<p>' + project.details + '</p>');
+			$('#project-category').html(project.category);
+			$('#project-picture').attr('src', project.picture);
+			$('#project-price').html(project.price);
+			$('#project-date').html(project.date);
+			$('#customer-email').html(project.email);
+			$('#customer-name').html(project.owner);
+			$('#customer-phone').html(project.phone);
 
 		}
 	})
@@ -72,4 +87,38 @@ $(document).ready(function(){
 				$('#add-watchlist').hide();
 			})
 	});
+
+	
+	$('#upload-submission').on('click', function(){
+		var fileUploadControl = $("#submission")[0];
+		if (fileUploadControl.files.length > 0) {
+		  	var file = fileUploadControl.files[0];
+		 	var name = 'submission.zip';
+		 	var user = currentUser.get('username');
+
+		 	var parseFile = new Parse.File(name, file);
+		 	parseFile.save()
+		 		.then(function() {
+					var Submissions = new Parse.Object("Submissions");
+					Submissions.set("title", project.title);
+					Submissions.set('endDate', project.date);
+					Submissions.set('price', project.price);
+					Submissions.set('submissionOwner', user);
+					Submissions.set('projectOwner', project.owner);
+					Submissions.set('files', parseFile);
+					Submissions.save();
+
+					$('.close').trigger('click');
+					$('#successful-submit').html(
+						'You successfully added submission!' +
+						'<a href="/#/geek/projects">Do you want to see all projects that you send submit</a>'
+					);
+
+
+			}, function(error) {
+				console.log('error picture ' + error );
+			});
+		}	
+	})
+
 });

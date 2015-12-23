@@ -119,7 +119,6 @@ function sendData(){
 	 				parseFiles.save()
 	 					.then(function(){   
 
-	 						
 	 						var Projects = new Parse.Object("Projects");
 							Projects.set("title", details.title);
 							Projects.set('task', details.task);
