@@ -131,14 +131,13 @@ $(document).ready(function(){
 	submissions.equalTo('projectOwner',user);
 	submissions.find({
 		success: function(res){
-			if (res.length == 0) {
-				$('#submissions').append('<span>No submit</span>');
-			};
+			
+
 			for (var i = 0; i < res.length; i++) {
 				if (res[i].get('title') == project.title) {
 					$('#submissions').append(
 						'<tr>' +
-			               '<td>' + project.title + '</td>' +
+			               '<td>' + res[i].get('title') + '</td>' +
 			               '<td>' + res[i].get('submissionOwner') + '</td>' +
 			               '<td>' + res[i].get('endDate') + '</td>' +
 			               '<td>' + res[i].get('price') + '</td>' +

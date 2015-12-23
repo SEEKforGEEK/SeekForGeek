@@ -19,7 +19,6 @@ $(document).ready(function(){
 				);
 			};
 			for (var i = 0; i < projects.length; i++) {
-				console.log(projects[i].id);
 				$('#append-body').append(
 					'<tr>' +
                        '<td class="project-title">'+ projects[i].get('title') + '</td>' +
