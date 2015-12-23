@@ -16,11 +16,15 @@ $(document).ready(function(){
     	$('#geek-add-submit').hide();
     	$('#geek-watchlist').hide();
     	$('#customer-submisions').show();
+    	$('#customer-see-submissions').show();	
+
     };
     if (type == 'geek') {
     	$('#geek-add-submit').show();
     	$('#geek-watchlist').show();
     	$('#customer-submisions').hide();
+    	$('#customer-see-submissions').hide();
+
     	var watchlistArray = currentUser.get('watchlist');
 
     	if (watchlistArray == undefined) {
@@ -88,13 +92,13 @@ $(document).ready(function(){
 			})
 	});
 
-	
+	var user = currentUser.get('username');
 	$('#upload-submission').on('click', function(){
 		var fileUploadControl = $("#submission")[0];
 		if (fileUploadControl.files.length > 0) {
 		  	var file = fileUploadControl.files[0];
 		 	var name = 'submission.zip';
-		 	var user = currentUser.get('username');
+		 	
 
 		 	var parseFile = new Parse.File(name, file);
 		 	parseFile.save()
@@ -119,6 +123,32 @@ $(document).ready(function(){
 				console.log('error picture ' + error );
 			});
 		}	
+	});
+
+
+	var submissions = new Parse.Query('Submissions');
+
+	submissions.equalTo('projectOwner',user);
+	submissions.find({
+		success: function(res){
+			if (res.length == 0) {
+				$('#submissions').append('<span>No submit</span>');
+			};
+			for (var i = 0; i < res.length; i++) {
+				if (res[i].get('title') == project.title) {
+					$('#submissions').append(
+						'<tr>' +
+			               '<td>' + project.title + '</td>' +
+			               '<td>' + res[i].get('submissionOwner') + '</td>' +
+			               '<td>' + res[i].get('endDate') + '</td>' +
+			               '<td>' + res[i].get('price') + '</td>' +
+			               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+			            '</tr>'
+					);
+				};
+			};
+		}
 	})
+
 
 });
