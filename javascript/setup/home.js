@@ -71,7 +71,7 @@ function registerForm() {
 }
 
 function validateRegisterForm(registerData) {
-    var patternForEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    var patternForEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     var confirmPassword = $("#register-conf-pass");
     var emailForm = $('#email-form');
     var usernameForm = $('#username-form');
