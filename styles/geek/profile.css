@@ -42,8 +42,10 @@
 .navMenu a:hover{
     font-weight: bold;
 }
-.navMenu li:last-of-type{
-    padding:2% 2% 2% 2%;
+@media(min-width:768px){
+    .navMenu li:last-of-type{
+        /*padding:2% 2% 2% 2%;*/
+    }
 }
 .navMenu li:nth-of-type(3),.navMenu li:nth-of-type(4){
     border:0;
@@ -95,4 +97,40 @@
 }
 input {
     background-color: #B1EEFF;
+}
+/*RESPONSIVE*/
+@media(max-width:768px){
+    .geekProfile div{
+        display:block !important;
+    }
+    .geekProfile {
+        flex-wrap: wrap;
+    }
+    .navMenu ul {
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin:1%;
+    }
+    .navMenu ul li {
+        padding:0%;
+    }
+    .menuBox{
+        min-height: auto !important;
+        font-size: 1em;
+    }
+    .navMenu{
+        /*width:100%;*/
+    }
+    .navMenu .button {
+        margin:0;
+        width:100%;
+        /*height: 100%;*/
+        background-color: #004A50 !important;
+        padding:1%;
+    }
+    .navMenu li:last-of-type{
+        padding:0 !important;
+    }
+    
 }
