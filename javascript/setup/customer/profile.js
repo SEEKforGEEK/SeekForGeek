@@ -9,13 +9,22 @@ $(document).ready(function(){
 
 
 	var currentUser = Parse.User.current();
-    $('#customer-username').append(currentUser.get('username'));
-    $('#customer-emailToChange').append(currentUser.get('email'));
-    $('#customer-emailInput').val(currentUser.get('email'));
-    $('#hello-customer').html('Hello, ' + currentUser.get('username') + '!');
+    var customerEmail = currentUser.get('email');
+    var customerName = currentUser.get('username');
+    $('#customer-username').append(customerName);
+    $('#customer-emailToChange').append(customerEmail);
+    $('#customer-emailInput').val(customerEmail);
+    $('#hello-customer').html('Hello, ' + customerName + '!');
 
     $('#customer-changePassword').on('click', function(){
-        $('.change').fadeToggle(700);
+        Parse.User.requestPasswordReset(customerEmail, {
+            success: function() {
+                $('#customer-alert-password').html('Successfully send email');
+            },
+            error: function(error) {
+                $('#customer-alert-password').html("Error: " + error.code + " " + error.message);
+            }
+        });
     });
 
    

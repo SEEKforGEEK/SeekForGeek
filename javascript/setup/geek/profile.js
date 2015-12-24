@@ -13,13 +13,22 @@ $(document).ready(function(){
 
 
     var currentUser = Parse.User.current();
+    var currentEmail = currentUser.get('email');
+
     $('#username').append(currentUser.get('username'));
-    $('#emailToChange').append(currentUser.get('email'));
-    $('#emailInput').val(currentUser.get('email'));
+    $('#emailToChange').append(currentEmail);
+    $('#emailInput').val(currentEmail);
     $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
 
     $('#changePassword').on('click', function(){
-        $('.change').fadeToggle(700);
+        Parse.User.requestPasswordReset(currentEmail, {
+            success: function() {
+                $('#alert-password').html('Successfully send email');
+            },
+            error: function(error) {
+                $('#alert-password').html("Error: " + error.code + " " + error.message);
+            }
+        });
     });
 
     $('#changeEmail').on('click', function(){
