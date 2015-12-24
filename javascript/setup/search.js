@@ -51,7 +51,7 @@ $(document).ready(function(){
 			case 'logo': customerSearch('logo design'); break;
 			case 'banner': customerSearch('banner design'); break;
 			case 'brochure': customerSearch('brochure design'); break;
-			default: customerAllQuery(); break;
+			// default: customerAllQuery(); break;
 		}
 	}else{
 		switch(index){
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			case 'logo': geekSearch('logo design'); break;
 			case 'banner': geekSearch('banner design'); break;
 			case 'brochure': geekSearch('brochure design'); break;
-			default: allQuery(); break;
+			// default: allQuery(); break;
 		}
 	}
 

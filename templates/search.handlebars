@@ -6,10 +6,9 @@
     </div>
     <div class="row">
         <div class="col-md-3 col-xs-6 col-lg-3 col-sm-3">
-            <label for="search-input">
-                <input type="text" id="search-input" placeholder="What?"/>
-            </label>
-            <button id="search-button">Search</button>
+            <label for="search-input"></label>
+
+            <input type="text" id="search-input" placeholder="Type title of project"/>
         </div>
         <div class="col-md-5 col-xs-8 col-lg-5 col-sm-5">
 			<span>Categories: </span>
@@ -18,7 +17,10 @@
 			<button class="button" id="design-projects">Design</button>
         </div>
         <div class="col-md-4 col-xs-6 col-lg-4 col-sm-4">
-			Backlog
+			<span>Budget</span>
+			<br/>
+			<input id="slider2" type ="range" min ="0" max="500" step ="50" value ="100"/>
+
         </div>
     </div>
     <div class="row">
@@ -42,3 +44,4 @@
              
 
 <script src="../javascript/setup/search.js"></script>
+<script src="../javascript/setup/search-input.js"></script>
