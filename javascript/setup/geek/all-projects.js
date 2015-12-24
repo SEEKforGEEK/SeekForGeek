@@ -7,7 +7,7 @@ $(document).ready(function(){
         .addClass("templateOn");
 
 	$('.browse-job').on('click',function(){
-		$(location).attr('href', '/#/search');
+		$(location).attr('href', '/#/search?index=all');
 	});
 
 	var currentUser = Parse.User.current();
