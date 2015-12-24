@@ -41,7 +41,7 @@ $(document).ready(function(){
 	    }
 	}
 		
-	var id = $.urlParam('id')
+	var id = $.urlParam('id');
 
 	for(var i in watchlistArray){
 		if(watchlistArray[i] == id){
