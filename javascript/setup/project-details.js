@@ -110,6 +110,7 @@ $(document).ready(function(){
 					Submissions.set('submissionOwner', user);
 					Submissions.set('projectOwner', project.owner);
 					Submissions.set('files', parseFile);
+					Submissions.set('grade', 'in progress');
 					Submissions.save();
 
 					$('.close').trigger('click');
@@ -131,23 +132,58 @@ $(document).ready(function(){
 	submissions.equalTo('projectOwner',user);
 	submissions.find({
 		success: function(res){
-			
-
 			for (var i = 0; i < res.length; i++) {
 				if (res[i].get('title') == project.title) {
 					$('#submissions').append(
 						'<tr>' +
-			               '<td>' + res[i].get('title') + '</td>' +
-			               '<td>' + res[i].get('submissionOwner') + '</td>' +
-			               '<td>' + res[i].get('endDate') + '</td>' +
-			               '<td>' + res[i].get('price') + '</td>' +
-			               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
+			              	'<td>' + res[i].get('title') + '</td>' +
+			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
+			               	'<td>' + res[i].get('endDate') + '</td>' +
+			               	'<td>' + res[i].get('price') + '</td>' +
+			               	'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
 			            '</tr>'
 					);
 				};
 			};
 		}
+	});
+
+	$('.choose-winner').on('click',function(event){
+		event.preventDefault();
+		var projectId = $('input[name=submissions]:checked', '#submission-form').val(); 
+		var projectTitle = $('input').attr('data-title');
+	
+
+		var query = new Parse.Query("Submissions");
+		query.equalTo('objectId', projectId);
+		query.first({
+			success: function(res){
+				res.set('grade', 'winner');
+				res.save();
+		
+				var queryNotWinner = new Parse.Query('Submissions');
+				queryNotWinner.equalTo('title', projectTitle);
+				queryNotWinner.find({
+					success: function(res){
+						for (var i = 0; i < res.length; i++) {
+							if (res[i].get('grade') == 'in progress') {
+								res[i].set('grade', 'not winner');
+								res[i].save();
+							};
+						};
+					}
+				})
+
+
+			}
+		});
+
+
+
 	})
+
+
 
 
 });
