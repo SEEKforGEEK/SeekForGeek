@@ -133,8 +133,22 @@ $(document).ready(function(){
 	submissions.find({
 		success: function(res){
 			for (var i = 0; i < res.length; i++) {
-				if (res[i].get('title') == project.title) {
+				if (res[i].get('title') == project.title && res[i].get('grade') == 'in progress') {
+
 					$('#submissions').append(
+						'<tr>' +
+							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
+			              	'<td>' + res[i].get('title') + '</td>' +
+			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
+			               	'<td>' + res[i].get('endDate') + '</td>' +
+			               	'<td>' + res[i].get('price') + '</td>' +
+			               	'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+			            '</tr>'
+					);
+				}
+				else if(res[i].get('grade') == 'winner') {
+					$('#submissions').append(
+						'<tr><h1>We Have A Fuckin Winner</h1></tr>' +
 						'<tr>' +
 							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
 			              	'<td>' + res[i].get('title') + '</td>' +

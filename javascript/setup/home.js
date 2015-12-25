@@ -7,7 +7,10 @@ $(document).ready(function () {
     $('#registerInLogin').on('click', registerInLogin);
     $('#btnForgotPass').on('click', registerInLogin);
 
-    $('#registerButton').on('click', registerForm);
+    $('#registerButton').on('click', function(event){
+        event.preventDefault();
+        registerForm()
+    });
     $('#register-customer').on('click', registerFormCustomer);
     $('#register-geek').on('click', registerFormGeek);
 

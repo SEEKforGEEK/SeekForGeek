@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $('#loginButton').on('click', loginForm);
+    $('#loginButton').on('click', function(event){
+        event.preventDefault();
+        loginForm();
+    });
     $('#modal-login').on('shown.bs.modal', function () {
         $('#login-username').focus();
     });
@@ -41,7 +44,7 @@ $(document).ready(function () {
 });
 
 
-function loginForm() {
+function loginForm(event) {
     var loginData = {
         username: $('#login-username').val(),
         password: $('#login-pass').val()
