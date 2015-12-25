@@ -105,7 +105,7 @@ function geekSearch(type){
 	query.find({
 		success: function(res){
 			for (var i = 0; i < res.length; i++) {
-				if (checkWatchlist(watchlistArray, res[i].id)) {
+				if (!checkWatchlist(watchlistArray, res[i].id)) {
 					$('#append-projects').append(
 						'<tr>' +
 			               '<td class="search-project-title"><a href="/#/project-details?id='+ 
@@ -141,7 +141,7 @@ function allQuery(){
 	query.find({
 		success: function(res){
 			for (var i = 0; i < res.length; i++) {
-				if (checkWatchlist(watchlistArray, res[i].id)) {
+				if (!checkWatchlist(watchlistArray, res[i].id)) {
 					$('#append-projects').append(
 						'<tr>' +
 			               '<td class="search-project-title"><a href="/#/project-details?id='+ 
@@ -177,7 +177,7 @@ function devProjects(){
 		success: function(res){
 			for (var i = 0; i < res.length; i++) {
 				if (checkTypeDev(res[i].get('type'))) {
-					if (checkWatchlist(watchlistArray, res[i].id)) {
+					if (!checkWatchlist(watchlistArray, res[i].id)) {
 						$('#append-projects').append(
 							'<tr>' +
 				               '<td class="search-project-title"><a href="/#/project-details?id='+ 
@@ -215,7 +215,7 @@ function designProjects(){
 		success: function(res){
 			for (var i = 0; i < res.length; i++) {
 				if (!checkTypeDev(res[i].get('type'))) {
-					if (checkWatchlist(watchlistArray, res[i].id)) {
+					if (!checkWatchlist(watchlistArray, res[i].id)) {
 						$('#append-projects').append(
 							'<tr>' +
 				               '<td class="search-project-title"><a href="/#/project-details?id='+ 
