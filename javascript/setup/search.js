@@ -6,10 +6,6 @@ $(document).ready(function(){
         .removeClass("templateNone")
         .addClass("templateOn");
 
-
-    
-
-
 	var currentUser = Parse.User.current();    
 	
     $('#all-projects').on('click', function(){

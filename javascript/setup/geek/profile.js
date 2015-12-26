@@ -15,43 +15,43 @@ $(document).ready(function(){
     var currentUser = Parse.User.current();
     var currentEmail = currentUser.get('email');
 
-    $('#username').append(currentUser.get('username'));
-    $('#emailToChange').append(currentEmail);
-    $('#emailInput').val(currentEmail);
+    $('#geek-username').append(currentUser.get('username'));
+    $('#geek-emailToChange').append(currentEmail);
+    $('#geek-emailInput').val(currentEmail);
     $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
 
     $('#changePassword').on('click', function(){
         Parse.User.requestPasswordReset(currentEmail, {
             success: function() {
-                $('#alert-password').html('Successfully send email');
+                $('#geek-alert-password').html('Successfully send email');
             },
             error: function(error) {
-                $('#alert-password').html("Error: " + error.code + " " + error.message);
+                $('#geek-alert-password').html("Error: " + error.code + " " + error.message);
             }
         });
     });
 
-    $('#changeEmail').on('click', function(){
-        $('#emailToChange').hide();
-        $('#changeEmail').hide();
-        $('#emailInput').show();
-        $('#saveEmail').show();
+    $('#geek-changeEmail').on('click', function(){
+        $('#geek-emailToChange').hide();
+        $('#geek-changeEmail').hide();
+        $('#geek-emailInput').show();
+        $('#geek-saveEmail').show();
     });
 
-    $('#saveEmail').on('click', function(){
-        var email = $('#emailInput').val();
+    $('#geek-saveEmail').on('click', function(){
+        var email = $('#geek-emailInput').val();
 
         currentUser.set('email', email);
         currentUser.save(null, {
             success: function(user){
                 currentUser.fetch({
                     success: function(currentUser){
-                         $('#emailToChange').show()
+                         $('#geek-emailToChange').show()
                             .empty()
                             .append(currentUser.get('email'));
-                        $('#changeEmail').show();
-                        $('#emailInput').hide();
-                        $('#saveEmail').hide();
+                        $('#geek-changeEmail').show();
+                        $('#geek-emailInput').hide();
+                        $('#geek-saveEmail').hide();
                     },
                     error: function(currentUser, error){
                         console.log("error");

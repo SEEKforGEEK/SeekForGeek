@@ -6,7 +6,10 @@ $(document).ready(function(){
         .removeClass("templateNone")
         .addClass("templateOn");
 
-
+    $('.new-project').on('click',function(event){
+        event.preventDefault();
+        $(location).attr('href','/#/customer/new-project');
+    })
 
 	var currentUser = Parse.User.current();
     var customerEmail = currentUser.get('email');

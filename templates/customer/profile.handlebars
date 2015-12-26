@@ -1,29 +1,22 @@
 <div class="container-fluid">
-    <div id="customerProfile" class="row">
-        <div class="col-md-2 col-xs-4 col-lg-2 col-sm-2">
-            <div class="row">
-                <div class="col-md-12 col-xs-18 col-lg-12 col-sm-12">
-                    <a href="/#/customer/profile">My Profile</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-xs-18 col-lg-12 col-sm-12">
-                    <a href="/#/customer/projects">Projects</a>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-md-12 col-xs-18 col-lg-12 col-sm-12">
-                    <a href="#/customer/new-project">New Project</a>
-                </div>
-            </div>
-
+    <div class="customerProfile row">
+            <div class="menuBox col-sm-2 col-md-2 col-lg-2 col-xs-12">
+            <nav class="navMenu">
+                <ul>
+                    <li><a href="/#/customer/profile">My profile</a></li>
+                    <li><a href="/#/customer/projects">Projects</a></li>
+                    <li><button class="button new-project">New Project</button></li>
+                </ul>
+            </nav>
         </div>
-        <div id="mainProfile" class="col-md-10 col-xs-14 col-lg-10 col-sm-10">
+        </div>
+        <div class="mainProfile col-md-10 col-xs-14 col-lg-10 col-sm-10">
         	<h1 id="hello-customer"></h1>
-            <h1>My profile info</h1>
+            <p class="contentAbout">Your profile information:</p>
+            <span class="infoType">Username:</span>
             <span id="customer-username"></span>
             <br/>
+            <span class="infoType">E-mail:</span>
             <span id="customer-emailToChange"></span>
             <input id="customer-emailInput" type="email" placeholder="Change email"/>
             <button id="customer-changeEmail">Edit</button>
