@@ -9,6 +9,7 @@ $(document).ready(function(){
     var currentUser = Parse.User.current();
 
     var type = currentUser.get('type');
+
  	$('#back-button').on('click', function(){
         $(location).attr('href', '/#/' + type + '/projects');
     })
@@ -147,10 +148,27 @@ $(document).ready(function(){
 					);
 				}
 				else if(res[i].get('grade') == 'winner') {
+					$('.choose-winner').hide();
+					var paymentInfo = res[i].get('payment');
+					$('#show-winner').html(
+						'<h1>We have a winner</h1>' + 
+						'<table class="table table-striped table-hover ">' +
+							'<thead><tr><th>Card Holder</th>' +
+								'<th>Card Number</th>' +
+								'<th>Security Code</th>' +
+								'<th>Expiry Date</th></tr></thead>' +
+		                    '<tbody>' +
+		                        '<tr>' +
+					              	'<td>' + paymentInfo.cardHolder + '</td>' +
+					               	'<td>' + paymentInfo.cardNumber + '</td>' +
+					               	'<td>' + paymentInfo.securityCode + '</td>' +
+					               	'<td>' + paymentInfo.expiryDate + '</td>' +
+					            '</tr>' +
+		                    '</tbody>' + 
+		                '</table> '
+					);
 					$('#submissions').append(
-						'<tr><h1>We Have A Fuckin Winner</h1></tr>' +
 						'<tr>' +
-							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
 			              	'<td>' + res[i].get('title') + '</td>' +
 			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
 			               	'<td>' + res[i].get('endDate') + '</td>' +
