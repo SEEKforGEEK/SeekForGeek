@@ -1,12 +1,12 @@
 
-.geekProfile, #customerProfile{
+.geekProfile, .customerProfile{
     background:rgba(255,255,255,0.2);
     height:100% !important;
 }
 .change{
     display:none;
 }
-#emailInput, #saveEmail{
+#geek-emailInput, #geek-saveEmail{
     display:none;
 }
 #customer-emailInput, #customer-saveEmail{
@@ -14,10 +14,10 @@
 }
 
 /*MENU*/
-.contentALL, .geekProfile,.menuBox,.mainProfile{
+.contentALL, .geekProfile,.customerProfile,.menuBox,.mainProfile{
     min-height:380px !important;
 }
-.geekProfile{
+.geekProfile,.customerProfile{
     display:flex;
     align-items: stretch;
 }
@@ -100,10 +100,10 @@ input {
 }
 /*RESPONSIVE*/
 @media(max-width:768px){
-    .geekProfile div{
+    .geekProfile div,.customerProfile div{
         display:block !important;
     }
-    .geekProfile {
+    .geekProfile ,.customerProfile{
         flex-wrap: wrap;
         min-height: auto !important;
     }
@@ -139,7 +139,7 @@ input {
     background-color:#23D2FF !important; /* Green */
     color: #004A50 !important;
     }
-    #hello-geek{
+    #hello-geek,#hello-customer{
         font-size: 1.5em;
     }
     

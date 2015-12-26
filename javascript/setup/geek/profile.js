@@ -20,7 +20,7 @@ $(document).ready(function(){
     $('#geek-emailInput').val(currentEmail);
     $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
 
-    $('#changePassword').on('click', function(){
+    $('#geek-changePassword').on('click', function(){
         Parse.User.requestPasswordReset(currentEmail, {
             success: function() {
                 $('#geek-alert-password').html('Successfully send email');
