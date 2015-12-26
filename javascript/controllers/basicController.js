@@ -1,6 +1,5 @@
 
 var basicController = function () {
-    console.log('hg');
     function aboutUs(context) {
         templates.get('about-us')
             .then(function (template) {

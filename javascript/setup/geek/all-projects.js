@@ -38,7 +38,7 @@ $(document).ready(function(){
 		               '<td>' + res[i].get('endDate') + '</td>' +
 		               '<td>' + res[i].get('price') + '</td>' +
 		               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
-		               '<td><button data-id="' + res[i].id + '" data-toggle="modal" data-target="#' + grade + '" class="button">+</button></td>' +	
+		               '<td><button data-title="' + res[i].get('title') + '" data-id="' + res[i].id + '" data-toggle="modal" data-target="#' + grade + '" class="button check-project-winner">+</button></td>' +	
 		            '</tr>'
 				);
 			}
@@ -48,5 +48,43 @@ $(document).ready(function(){
 		}
 	});
 	
+	var title;
+	var id;
+	$('#append-body-projects').on('click', '.check-project-winner', function(event){
+		event.preventDefault();
+		title = $('.check-project-winner').attr('data-title');
+		id = $('.check-project-winner').attr('data-id');
+
+		winner(id);
+	});
 	
+
+
+
 });
+
+
+function winner(id){
+	var query = new Parse.Query("Submissions");
+	query.equalTo('objectId', id);
+	query.first({
+		success: function(res){
+			if (res.get('grade') == 'winner') {
+				$('#payment-info-btn').on('click',function(event){
+					event.preventDefault();
+					var paymentData = {};
+					paymentData.cardHolder = $('#card-holder').val();
+					paymentData.cardNumber = $('#card-number').val();
+					paymentData.securityCode = $('#security-code').val();
+					paymentData.expiryDate = $('#expiry-date').val();
+
+					res.set('payment', paymentData);
+					res.save()
+						.then(function(){
+							$('.close').trigger('click');
+						})
+				})
+			};
+		}
+	})
+}
