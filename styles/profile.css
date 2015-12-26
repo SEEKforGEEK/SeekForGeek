@@ -3,9 +3,6 @@
     background:rgba(255,255,255,0.2);
     height:100% !important;
 }
-.change{
-    display:none;
-}
 #geek-emailInput, #geek-saveEmail{
     display:none;
 }
@@ -50,6 +47,9 @@
 .navMenu li:nth-of-type(3),.navMenu li:nth-of-type(4){
     border:0;
 }
+.customerProfile .navMenu li:nth-of-type(2){
+    border:0;
+}
 .menuBox .button{
     width: 100%;
     margin-bottom: 5%;
@@ -87,13 +87,9 @@
     font-size: 1em;
     line-height: 1.5em;
     float:  none;
-    padding:1.5%;
-    border-radius:5px;
-}
-.change{
     margin-top:1%;
-    margin-bottom:1%;
-    border-radius: 5px;
+    padding:1%;
+    border-radius:5px;
 }
 input {
     background-color: #B1EEFF;
