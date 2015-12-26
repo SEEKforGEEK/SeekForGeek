@@ -1,3 +1,6 @@
+
+// var Promise = require('es6-promise').Promise;
+
 var homeController = function () {
 
     function all(context) {

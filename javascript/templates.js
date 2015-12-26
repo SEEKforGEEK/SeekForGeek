@@ -1,3 +1,4 @@
+
 //'use strict';
 
 (function(){
@@ -16,7 +17,7 @@ var templates = (function () {
     var handlebars = window.handlebars || window.Handlebars;
 
     function get(name) {
-        var promise = new Promise(function (resolve, reject) {
+        return new Promise(function (resolve, reject) {
             var url = 'templates/' + name + '.handlebars';
 
             $.get(url, function (html) {
@@ -27,7 +28,6 @@ var templates = (function () {
             });
         });
 
-        return promise;
     }
 
     return {

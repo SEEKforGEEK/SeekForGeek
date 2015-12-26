@@ -1,3 +1,4 @@
+
 var projectController = function () {
 
     function projectDetails(context) {

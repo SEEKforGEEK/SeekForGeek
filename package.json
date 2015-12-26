@@ -5,7 +5,7 @@
   "main": "server.js",
   "author": "Valentin Georgiev and Elena Stoyanova",
   "scripts": {
-    "start":"node ./node_modules/http-server/bin/http-server -p 7777"
+    "start": "node ./node_modules/http-server/bin/http-server -p 7777"
   },
   "license": "MIT",
   "dependencies": {

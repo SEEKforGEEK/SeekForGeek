@@ -71,41 +71,39 @@
 
 <!-- Winner -->
 <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img class="img-responsive" src="../../images/logo.png" alt="logo"/>
-      </div>
-      <div class="modal-body">
-        <h1>Congratulations you are the WINNER</h1>
-        <form>
-          <div class="form-group">
-            <label for="card-holder">Cardholder's Name: </label>
-            <input type="text" class="form-control" id="card-holder" placeholder="Valentin Georgiev">
-          </div>
-          <div class="form-group">
-            <label for="card-number">Credit Card Number: </label>
-            <input type="text" class="form-control" id="card-number" placeholder="****************">
-          </div>
-          <div class="form-group">
-            <label for="security-code">CCV Code: </label>
-            <input type="text" id="security-code">
-            <p class="help-block">These are the last 3 digits of the code printed on the reverse side of yout card</p>
-          </div>
-          <div class="form-group">
-            <label for="expiry-date">Expiry Date: </label>
-            <input type="month" id="expiry-date">
-          </div>
-          
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <img class="img-responsive" src="../../images/logo.png" alt="logo"/>
+            </div>
+            <div class="modal-body">
+                <h1>Congratulations you are the WINNER</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="card-holder">Cardholder's Name: </label>
+                        <input type="text" class="form-control" id="card-holder" placeholder="Valentin Georgiev">
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Credit Card Number: </label>
+                        <input type="text" class="form-control" id="card-number" placeholder="****************">
+                    </div>
+                    <div class="form-group">
+                        <label for="security-code">CCV Code: </label>
+                        <input type="text" class="form-control" id="security-code" placeholder="***">
+                        <p class="help-block">These are the last 3 digits of the code printed on the reverse side of yout card</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date: </label>
+                        <input class="form-control" type="month" id="expiry-date">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="payment-info-btn" class="button">Send Payment Info</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
