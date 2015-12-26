@@ -22,8 +22,15 @@ $(document).ready(function(){
 					'<h1>No submissions</h1>'
 				);
 			};
+			var grade;
 			for (var i = 0; i < res.length; i++) {
-
+				if (res[i].get('grade') == 'in progress') {
+					grade = 'progress';
+				}else if(res[i].get('grade') == 'winner'){
+					grade = 'winner';
+				}else{
+					grade = 'notWinner';
+				}
 				$('#append-body-projects').append(
 					'<tr>' +
 		               '<td>' + res[i].get('title') + '</td>' +
@@ -31,6 +38,7 @@ $(document).ready(function(){
 		               '<td>' + res[i].get('endDate') + '</td>' +
 		               '<td>' + res[i].get('price') + '</td>' +
 		               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+		               '<td><button data-id="' + res[i].id + '" data-toggle="modal" data-target="#' + grade + '" class="button">+</button></td>' +	
 		            '</tr>'
 				);
 			}
