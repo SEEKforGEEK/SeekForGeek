@@ -73,7 +73,6 @@ $(document).ready(function(){
 
 function customerSearch(type){
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
 	var query = new Parse.Query('Projects');
 	query.equalTo('type', type);
 	query.find({
@@ -95,7 +94,7 @@ function customerSearch(type){
 }
 function geekSearch(type){
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');
 	query.equalTo('type', type);
 	query.find({
@@ -131,7 +130,7 @@ function geekSearch(type){
 
 function allQuery(){
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');
 	query.exists('title');
 	query.find({
@@ -166,7 +165,7 @@ function allQuery(){
 
 function devProjects(){
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');
 	query.exists('type');
 	query.find({
@@ -204,7 +203,7 @@ function devProjects(){
 
 function designProjects(){
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');
 	query.exists('type');
 	query.find({

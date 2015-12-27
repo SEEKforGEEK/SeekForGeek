@@ -45,7 +45,7 @@ function registerForm() {
         type: type
     };
 
-    if (validateRegisterForm(registerData)) {
+    if (validateRegisterForm(registerData) && validateRegisterPasswords()) {
         var User = new Parse.User();
 
         User.set("username", registerData.username);

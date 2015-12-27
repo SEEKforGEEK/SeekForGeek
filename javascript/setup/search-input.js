@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	var currentUser = Parse.User.current();  	
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');	
 	$('#search-input').keypress(function() {
 	    var input = this.value;

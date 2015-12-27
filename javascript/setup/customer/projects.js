@@ -7,14 +7,15 @@ $(document).ready(function(){
         .removeClass("templateNone")
         .addClass("templateOn");
 
+	var currentUser = Parse.User.current();
 
 	var query = new Parse.Query("Projects");
 
-	query.exists('title');
+	query.equalTo('owner', currentUser.get('username'));
 	query.find({
 		success: function(projects){
 			if (projects.length === 0) {
-				$('#mainProfile').append(
+				$('.mainProfile').append(
 					'<h3>No projects</h3>'
 				);
 			};
