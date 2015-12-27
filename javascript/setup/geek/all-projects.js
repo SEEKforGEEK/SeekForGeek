@@ -104,7 +104,6 @@ function validateWinnerForm(data){
             cardHolder.removeClass('has-error');
         }
         cardHolder.addClass('has-success');
-        console.log(cardHolder.hasClass('has-success'));
 	}else{
 		if (cardHolder.hasClass('has-success')) {
             cardHolder.removeClass('has-success');

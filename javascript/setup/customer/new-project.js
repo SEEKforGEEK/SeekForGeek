@@ -42,7 +42,6 @@ $(document).ready(function(){
 		
     });	
 	$('#description-next').on('click', function(){  		
-		console.log(validateDetails());
 
 		if (validateDetails()) {
 	  		$('#payment-link').attr('href', '#payment')
@@ -74,8 +73,44 @@ function validateDetails(){
 	var title = $('#title').val();
 	var task = $('#task').val();
 	var	date = $('#datepicker').val();
-	if (title == '' || task == '' || date == '') {
+	var titleForm = $('#describe-title-form');
+	var taskForm = $('#describe-task-form');
+	var dateForm = $('#describe-date-form');
+	if (title == '') {
+		if (titleForm.hasClass('has-success')) {
+            titleForm.removeClass('has-success');
+        }
+        titleForm.addClass('has-error');
 		return false;
+	}else{
+		if (titleForm.hasClass('has-error')) {
+            titleForm.removeClass('has-error');
+        }
+        titleForm.addClass('has-success');
+	}
+	if (task == '') {
+		if (taskForm.hasClass('has-success')) {
+            taskForm.removeClass('has-success');
+        }
+        taskForm.addClass('has-error');
+		return false;
+	}else{
+		if (taskForm.hasClass('has-error')) {
+            taskForm.removeClass('has-error');
+        }
+   		taskForm.addClass('has-success');
+	};
+	if (date == '') {
+		if (dateForm.hasClass('has-success')) {
+            dateForm.removeClass('has-success');
+        }
+        dateForm.addClass('has-error');
+		return false;
+	}else{
+		if (dateForm.hasClass('has-error')) {
+            dateForm.removeClass('has-error');
+        }
+   		dateForm.addClass('has-success');
 	};
 	return true;
 }
@@ -84,8 +119,46 @@ function validatePayment(){
 	var price = $('#payment-price').val();
 	var email = $('#payment-email').val();
 	var phone = $('#payment-phone').val();
-	if (price == '' || email == '' || phone == '') {
+	var priceForm = $('#contact-price-form');
+	var emailForm = $('#contact-email-form');
+	var phoneForm = $('#contact-phone-form');
+	 var patternForEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+	if (price == '' && parseInt(price) < 0) {
+		if (priceForm.hasClass('has-success')) {
+            priceForm.removeClass('has-success');
+        }
+        priceForm.addClass('has-error');
 		return false;
+	}else{
+		if (priceForm.hasClass('has-error')) {
+            priceForm.removeClass('has-error');
+        }
+        priceForm.addClass('has-success');
+	}
+	if (!email.match(patternForEmail)) {
+		if (emailForm.hasClass('has-success')) {
+            emailForm.removeClass('has-success');
+        }
+        emailForm.addClass('has-error');
+		return false;
+	}else{
+		if (emailForm.hasClass('has-error')) {
+            emailForm.removeClass('has-error');
+        }
+   		emailForm.addClass('has-success');
+	};
+	if (phone == '') {
+		if (phoneForm.hasClass('has-success')) {
+            phoneForm.removeClass('has-success');
+        }
+        phoneForm.addClass('has-error');
+		return false;
+	}else{
+		if (phoneForm.hasClass('has-error')) {
+            phoneForm.removeClass('has-error');
+        }
+   		phoneForm.addClass('has-success');
 	};
 	return true;
 }
