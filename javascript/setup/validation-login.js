@@ -76,7 +76,7 @@ function validateLoginForm(loginData) {
             usernameForm.removeClass('has-success');
         }
         usernameForm.addClass('has-error');
-        return false
+        return false;
     } else {
         if (usernameForm.hasClass('has-error')) {
             usernameForm.removeClass('has-error');

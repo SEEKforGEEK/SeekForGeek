@@ -77,14 +77,85 @@ function winner(id){
 					paymentData.cardNumber = $('#card-number').val();
 					paymentData.securityCode = $('#security-code').val();
 					paymentData.expiryDate = $('#expiry-date').val();
-
-					res.set('payment', paymentData);
-					res.save()
-						.then(function(){
-							$('.close').trigger('click');
-						})
+					if(validateWinnerForm(paymentData)){
+						res.set('payment', paymentData);
+						res.save()
+							.then(function(){
+								$('.close').trigger('click');
+							})	
+					}
+					
 				})
 			};
 		}
 	})
+}
+
+function validateWinnerForm(data){
+	var cardHolder = $('#payment-cardholer-form');
+	var cardNumber = $('#payment-cardnumber-form');
+	var securityCode = $('#payment-security-form');
+	var expiryDate = $('#payment-date-form');
+	var date = new Date();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+	if(data.cardHolder.split(' ').length == 2) {
+		if (cardHolder.hasClass('has-error')) {
+            cardHolder.removeClass('has-error');
+        }
+        cardHolder.addClass('has-success');
+        console.log(cardHolder.hasClass('has-success'));
+	}else{
+		if (cardHolder.hasClass('has-success')) {
+            cardHolder.removeClass('has-success');
+        }
+        cardHolder.addClass('has-error');
+        return false;
+	}
+
+	if (data.cardNumber.length == 16) {
+		if (cardNumber.hasClass('has-error')) {
+            cardNumber.removeClass('has-error');
+        }
+        cardNumber.addClass('has-success');
+	}else{
+		if (cardNumber.hasClass('has-success')) {
+            cardNumber.removeClass('has-success');
+        }
+        cardNumber.addClass('has-error');
+        return false;
+	}
+
+	if (data.securityCode.length == 3) {
+		if (securityCode.hasClass('has-error')) {
+            securityCode.removeClass('has-error');
+        }
+        securityCode.addClass('has-success');
+	}else{
+		if (securityCode.hasClass('has-success')) {
+            securityCode.removeClass('has-success');
+        }
+        securityCode.addClass('has-error');
+        return false;
+	}
+
+	if (year < parseInt(data.expiryDate.substring(0,4))) {
+		if (expiryDate.hasClass('has-error')) {
+            expiryDate.removeClass('has-error');
+        }
+        expiryDate.addClass('has-success');
+	}else if(year == parseInt(data.expiryDate.substring(0,4))
+		&& month > parseInt(expiryDate.val().substring(5,7))){
+		if (expiryDate.hasClass('has-error')) {
+            expiryDate.removeClass('has-error');
+        }
+        expiryDate.addClass('has-success');
+	}else{
+		if (expiryDate.hasClass('has-success')) {
+            expiryDate.removeClass('has-success');
+        }
+        expiryDate.addClass('has-error');
+        return false;
+	}
+	return true;
 }
