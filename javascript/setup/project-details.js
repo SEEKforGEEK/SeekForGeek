@@ -26,11 +26,7 @@ $(document).ready(function(){
     	$('#customer-submisions').hide();
     	$('#customer-see-submissions').hide();
 
-    	var watchlistArray = currentUser.get('watchlist');
-
-    	if (watchlistArray == undefined) {
-    		watchlistArray = [];
-    	};
+    	var watchlistArray = currentUser.get('watchlist') || [];
     };
     $.urlParam = function(name){
 	    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -147,7 +143,7 @@ $(document).ready(function(){
 			            '</tr>'
 					);
 				}
-				else if(res[i].get('grade') == 'winner') {
+				else if(res[i].get('title') == project.title && res[i].get('grade') == 'winner') {
 					$('.choose-winner').hide();
 					var paymentInfo = res[i].get('payment');
 					$('#show-winner').html(

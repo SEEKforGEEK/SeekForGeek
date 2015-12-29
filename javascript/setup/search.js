@@ -144,7 +144,7 @@ function allQuery(){
 			               '<td class="search-project-category">' + res[i].get('type') + '</td>' +
 			               '<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 			               '<td class="search-project-price">' + res[i].get('price') + '</td>' +
-			               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist">Add to watchlist</button></td>' +
+			               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 			            '</tr>'
 					);
 				}else{
@@ -180,7 +180,7 @@ function devProjects(){
 				               '<td class="search-project-category">' + res[i].get('type') + '</td>' +
 				               '<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 				               '<td class="search-project-price">' + res[i].get('price') + '</td>' +
-				               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist">Add to watchlist</button></td>' +
+				               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 				            '</tr>'
 						);
 					}else{
@@ -218,7 +218,7 @@ function designProjects(){
 				               '<td class="search-project-category">' + res[i].get('type') + '</td>' +
 				               '<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 				               '<td class="search-project-price">' + res[i].get('price') + '</td>' +
-				               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist">Add to watchlist</button></td>' +
+				               '<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 				            '</tr>'
 						);
 					}else{
