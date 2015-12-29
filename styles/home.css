@@ -75,10 +75,12 @@ body {
         margin: 0 -15px !important;
     }
 
-    .button {
+    #main-content .button {
+        background-color: transparent;
+    }
+    .button{
         float: left;
         width: 100%;
-        background-color: transparent;
         color: #004A50;
         font-weight: bold;
         border-bottom: 1px solid #004A50;
