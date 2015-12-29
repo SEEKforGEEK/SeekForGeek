@@ -78,19 +78,58 @@ var SearchModule = function(settings){
 	},
 
 	successGeekSearch = function(result){
-		for (var i = 0; i < result.length; i++) {
-			if (!checkWatchlist(options.currentUser.watchlist, result[i].id)) {
-				jQuery(options.selectors.appendProjects).append(tableRowWatchlist(result[i]));
-			}else{
-				jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
+		var pages;
+		if (result.length % 5 == 0) {
+			pages = result.length / 5;
+		}else{
+			pages = ((result.length / 5) | 0) + 1;
+		}
+
+		jQuery('#pagination-demo').twbsPagination({
+			totalPages: pages,
+			visiblePages: 5,
+			onPageClick: function (event, page) {
+				jQuery(options.selectors.appendProjects).empty();
+				var index = page * 5;
+
+				for (var i = index - 5; i < index; i++) {
+					if (result.length <= i ) {
+						break;
+					}
+					if (!checkWatchlist(options.currentUser.watchlist, result[i].id)) {
+						jQuery(options.selectors.appendProjects).append(tableRowWatchlist(result[i]));
+					}else{
+						jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
+					}			
+				}
 			}
-		};
+		});	
 	},
 
 	successCustomerSearch = function(result){
-		for (var i = 0; i < result.length; i++) {
-			jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
-		};
+		var pages;
+		if (result.length % 5 == 0) {
+			pages = result.length / 5;
+		}else{
+			pages = ((result.length / 5) | 0) + 1;
+		}
+
+		jQuery('#pagination-demo').twbsPagination({
+			totalPages: pages,
+			visiblePages: 5,
+			onPageClick: function (event, page) {
+				jQuery(options.selectors.appendProjects).empty();
+				var index = page * 5;
+
+				for (var i = index - 5; i < index; i++) {
+					if (result.length <= i ) {
+						break;
+					}
+					jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
+			
+				}
+			}
+		});	
 	},
 
 	errorParse = function(error){
