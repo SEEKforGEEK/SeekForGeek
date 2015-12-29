@@ -3,3 +3,17 @@
 		font-size: 0.75em;
 	}
 }
+.pagination-projects{
+	float:right;
+}
+.pagination-projects a {
+	background-color:#B1EEFF !important;
+	color: #004A50 !important;
+}
+.pagination-projects a:hover {
+	background-color:#23D2FF !important;
+	color: #004A50 !important;
+}
+.pagination-projects:after{
+	clear:both;
+}
