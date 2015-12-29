@@ -221,6 +221,7 @@ var SearchModule = function(settings){
 			'<td class="search-project-category">' + result.get('type') + '</td>' + 
 			'<td class="search-project-date">' + result.get('endDate') + '</td>' + 
 			'<td class="search-project-price">' + result.get('price') + '</td>' +
+			'<td class="empty-cell"></td>' +
 		'</tr>';
 
         return rowWithoutWatchlist;
@@ -232,7 +233,7 @@ var SearchModule = function(settings){
 			'<td class="search-project-category">' + result.get('type') + '</td>' + 
 			'<td class="search-project-date">' + result.get('endDate') + '</td>' + 
 			'<td class="search-project-price">' + result.get('price') + '</td>' + 
-            '<td class="watchlist-func"><button data-id="'+ result.id + '" class="button add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
+            '<td class="watchlist-func"><button data-id="'+ result.id + '" class=" add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 		'</tr>';
         return rowWatchlist;
 	},

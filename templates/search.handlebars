@@ -1,22 +1,22 @@
-<div class="container-fluid">
+<div class="container-fluid searchContent contentALL">
     <div class="row">
         <div class="heading col-md-2 col-offset-md-5 col-md-offset-5 col-xs-18 col-lg-2 col-sm-2">
         	<h1>Open Jobs</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-xs-6 col-lg-3 col-sm-3">
-            <label for="search-input"></label>
+        <div class="col-md-3 col-xs-18 col-lg-3 col-sm-3">
+            <label for="search-input">Search:</label>
             <input type="text" id="search-input" placeholder="Type title of project"/>
         </div>
-        <div class="col-md-5 col-xs-8 col-lg-5 col-sm-5">
-			<span>Categories: </span>
+        <div class="col-md-5 col-xs-18 col-lg-5 col-sm-5">
+			<span class="search-about">Categories: </span>
 			<button class="button" id="all-projects">All</button>
 			<button class="button" id="dev-projects">Development</button>
 			<button class="button" id="design-projects">Design</button>
         </div>
-        <div class="col-md-4 col-xs-6 col-lg-4 col-sm-4">
-			<span>Budget</span>
+        <div class="sliderDiv col-md-4 col-xs-18 col-lg-4 col-sm-4">
+			<span class="search-about">Budget:</span>
 			<br/>
 			<input id="slider2" type ="range" min ="0" max="500" step ="50" value ="100"/>
 
@@ -31,6 +31,7 @@
 	                    <th>Category</th>
 	                    <th>Due date</th>
 	                    <th>Price</th>
+                        <th>Watch</th>
 	                </tr>
 	            </thead>
 	            <tbody id="append-projects">  
