@@ -153,6 +153,6 @@ input[type=range]:focus::-ms-fill-upper {
         width:60% !important;
     }
 }
-th{
+.searchContent th{
     text-align: center;
 }
