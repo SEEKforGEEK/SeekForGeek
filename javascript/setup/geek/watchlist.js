@@ -20,29 +20,48 @@ $(document).ready(function(){
 		);
 	}
 	else{
-		var query = new Parse.Query("Projects");
-		for (var i = 0; i < watchlistArray.length; i++) {
+		var pages;
+		if (watchlistArray.length % 5 == 0) {
+			pages = watchlistArray.length / 5;
+		}else{
+			pages = ((watchlistArray.length / 5) | 0) + 1;
+		}
+		$('#pagination-demo').twbsPagination({
+			totalPages: pages,
+			visiblePages: 5,
+			onPageClick: function (event, page) {
+				$('#append-body').empty();
+				var index = page * 5;
 
-			query.equalTo('objectId', watchlistArray[i]);
-			query.first({
-				success: function(res){
+				for (var i = index - 5; i < index; i++) {
+					if (watchlistArray.length <= i ) {
+						break;
+					};
+					var query = new Parse.Query("Projects");
 
-					$('#append-body').append(
-						'<tr>' +
-			               '<td class="project-title"><a href="/#/project-details?id='+ 
-			               res.id + '">' + res.get('title') + '</a></td>' +
-			               '<td class="project-category">' + res.get('type') + '</td>' +
-			               '<td class="project-date">' + res.get('endDate') + '</td>' +
-			               '<td class="project-price">' + res.get('price') + '</td>' +
-			               '<td><button data-id="'+ res.id + '" class="button remove-buttons">Remove</button></td>' +
-			            '</tr>'
-					);
-				},
-				error: function(err){
-					console.log(err);
+						query.equalTo('objectId', watchlistArray[i]);
+						query.first({
+							success: function(res){
+								$('#append-body').append(
+									'<tr>' +
+						               '<td class="project-title"><a href="/#/project-details?id='+ 
+						               res.id + '">' + res.get('title') + '</a></td>' +
+						               '<td class="project-category">' + res.get('type') + '</td>' +
+						               '<td class="project-date">' + res.get('endDate') + '</td>' +
+						               '<td class="project-price">' + res.get('price') + '</td>' +
+						               '<td><button data-id="'+ res.id + '" class="button remove-buttons">Remove</button></td>' +
+						            '</tr>'
+								);
+							},
+			
+							error: function(err){
+								console.log(err);
+							}
+						});
+					
 				}
-			});
-		}	
+			}
+		});
 	}
 
 
