@@ -150,15 +150,12 @@ $(document).ready(function(){
 						'<h1>We have a winner</h1>' + 
 						'<table class="table table-striped table-hover ">' +
 							'<thead><tr><th>Card Holder</th>' +
-								'<th>Card Number</th>' +
-								'<th>Security Code</th>' +
-								'<th>Expiry Date</th></tr></thead>' +
+								'<th>IBAN</th>' +
+								'</thead>' +
 		                    '<tbody>' +
 		                        '<tr>' +
 					              	'<td>' + paymentInfo.cardHolder + '</td>' +
-					               	'<td>' + paymentInfo.cardNumber + '</td>' +
-					               	'<td>' + paymentInfo.securityCode + '</td>' +
-					               	'<td>' + paymentInfo.expiryDate + '</td>' +
+					               	'<td>' + paymentInfo.IBAN + '</td>' +
 					            '</tr>' +
 		                    '</tbody>' + 
 		                '</table> '

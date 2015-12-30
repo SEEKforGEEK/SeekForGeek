@@ -94,9 +94,7 @@ function winner(id){
 					event.preventDefault();
 					var paymentData = {};
 					paymentData.cardHolder = $('#card-holder').val();
-					paymentData.cardNumber = $('#card-number').val();
-					paymentData.securityCode = $('#security-code').val();
-					paymentData.expiryDate = $('#expiry-date').val();
+					paymentData.IBAN = $('#IBAN').val();
 					if(validateWinnerForm(paymentData)){
 						res.set('payment', paymentData);
 						res.save()
@@ -113,12 +111,8 @@ function winner(id){
 
 function validateWinnerForm(data){
 	var cardHolder = $('#payment-cardholer-form');
-	var cardNumber = $('#payment-cardnumber-form');
-	var securityCode = $('#payment-security-form');
-	var expiryDate = $('#payment-date-form');
-	var date = new Date();
-	var month = date.getMonth() + 1;
-	var year = date.getFullYear();
+	var IBAN = $('#payment-IBAN-form');
+
 	if(data.cardHolder.split(' ').length == 2) {
 		if (cardHolder.hasClass('has-error')) {
             cardHolder.removeClass('has-error');
@@ -132,48 +126,16 @@ function validateWinnerForm(data){
         return false;
 	}
 
-	if (data.cardNumber.length == 16) {
-		if (cardNumber.hasClass('has-error')) {
-            cardNumber.removeClass('has-error');
+	if (data.IBAN.length == 16) {
+		if (IBAN.hasClass('has-error')) {
+            IBAN.removeClass('has-error');
         }
-        cardNumber.addClass('has-success');
+        IBAN.addClass('has-success');
 	}else{
-		if (cardNumber.hasClass('has-success')) {
-            cardNumber.removeClass('has-success');
+		if (IBAN.hasClass('has-success')) {
+            IBAN.removeClass('has-success');
         }
-        cardNumber.addClass('has-error');
-        return false;
-	}
-
-	if (data.securityCode.length == 3) {
-		if (securityCode.hasClass('has-error')) {
-            securityCode.removeClass('has-error');
-        }
-        securityCode.addClass('has-success');
-	}else{
-		if (securityCode.hasClass('has-success')) {
-            securityCode.removeClass('has-success');
-        }
-        securityCode.addClass('has-error');
-        return false;
-	}
-
-	if (year < parseInt(data.expiryDate.substring(0,4))) {
-		if (expiryDate.hasClass('has-error')) {
-            expiryDate.removeClass('has-error');
-        }
-        expiryDate.addClass('has-success');
-	}else if(year == parseInt(data.expiryDate.substring(0,4))
-		&& month > parseInt(expiryDate.val().substring(5,7))){
-		if (expiryDate.hasClass('has-error')) {
-            expiryDate.removeClass('has-error');
-        }
-        expiryDate.addClass('has-success');
-	}else{
-		if (expiryDate.hasClass('has-success')) {
-            expiryDate.removeClass('has-success');
-        }
-        expiryDate.addClass('has-error');
+        IBAN.addClass('has-error');
         return false;
 	}
 	return true;
