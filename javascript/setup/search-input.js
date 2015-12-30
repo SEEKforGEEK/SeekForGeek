@@ -8,7 +8,7 @@ $(document).ready(function(){
 	    query.startsWith('title', input);
 	    query.find({
 	    	success: function(res){
-	    		$('#append-projects').html("")
+	    		$('#append-projects').empty();
 	    		for (var i = 0; i < res.length; i++) {
 
 	    			if (currentUser.get('type') == 'customer') {
@@ -19,6 +19,7 @@ $(document).ready(function(){
 				               '<td class="search-project-category">' + res[i].get('type') + '</td>' +
 				               '<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 				               '<td class="search-project-price">' + res[i].get('price') + '</td>' +
+		               		   '<td class="empty-cell"></td>' +
 				            '</tr>'
 						);
 	    			}else{
@@ -30,7 +31,7 @@ $(document).ready(function(){
 					               '<td class="search-project-category">' + res[i].get('type') + '</td>' +
 					               '<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 					               '<td class="search-project-price">' + res[i].get('price') + '</td>' +
-					               
+		               			   '<td class="empty-cell"></td>' +					               
 					            '</tr>'
 							);
 		    			}
@@ -42,7 +43,7 @@ $(document).ready(function(){
 					               	'<td class="search-project-category">' + res[i].get('type') + '</td>' +
 					               	'<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 					               	'<td class="search-project-price">' + res[i].get('price') + '</td>' +
-					            	'<td class="watchlist-func"><button data-id="'+ res[i].id + '" class="button add-to-watchlist">Add to watchlist</button></td>' +
+				            		'<td class="watchlist-func"><button data-id="'+ res[i].id + '" class=" add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 					            '</tr>'
 				            );
 		    			}
