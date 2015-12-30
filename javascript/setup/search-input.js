@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var currentUser = Parse.User.current();  	
 	var watchlistArray = currentUser.get('watchlist') || [];
 	var query = new Parse.Query('Projects');	
-	$('#search-input').keypress(function() {
+	$('#search-input').bind("change paste keyup", function() {
 	    var input = this.value;
 	    query.startsWith('title', input);
 	    query.find({

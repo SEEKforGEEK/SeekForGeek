@@ -1,0 +1,42 @@
+
+.contentALL {
+    min-height:380px !important;
+}
+
+/*CONTENT*/
+.contentAbout{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+.projectDetails{
+    background-color: rgba(255,255,255,0.5) !important;
+    height:100%;
+    padding: 2%;
+    text-align: left;
+    font-size:1.5em;
+    line-height: 2em;
+}
+.infoType{
+    font-weight: bold;
+}
+/*RESPONSIVE*/
+@media(max-width:768px){
+    .projectDetails{
+        flex-wrap: wrap;
+        min-height: auto !important;
+    }
+    .projectDetails span{
+        font-size:0.75em;
+    }
+    .projectDetails,.contentALL {
+        min-height: auto !important;
+    }
+    .projectDetails .button{
+        background-color: #004A50 !important;
+        padding: 0;
+    }
+    .button:hover {
+    background-color:#23D2FF !important; /* Green */
+    color: #004A50 !important;
+    }   
+}

@@ -1,29 +1,26 @@
-<div class="container-fluid">
+<div class="container-fluid contentALL projectDetails">
     <div class="row">
-        <div class="col-md-2 col-xs-4 col-lg-2 col-sm-2">
+        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
             <h1 id="project-name"></h1>
-            <h3 id="project-category"></h3>
-        </div>
-        <div id="geek-watchlist" class="col-md-1 col-xs-2 col-lg-1 col-sm-1">
             <button id="add-watchlist">Add to watchlist</button>
-        </div>
-        <div class="col-md-2 col-md-offset-7 col-xs-4 col-lg-2 col-sm-2">
-            <img id="project-picture" width="300px" height="300px" src="#" alt="photo"/>
+            <h3 id="project-category"></h3>
         </div>
     </div>
     <div class="row">
         <div id="project-details" class="col-md-5 col-xs-7 col-lg-5 col-sm-5">
-            <h1>Details</h1>
-            <p>Price: <span id="project-price"></span></p>
-            <p>Due date: <span id="project-date"></span></p>
-            <button id="back-button">Back to projects</button>
-            
+            <h2>Details</h1>
+            <p class="infoType">Price: <span id="project-price"></span></p>
+            <p class="infoType">Due date: <span id="project-date"></span></p>
+            <button id="back-button" class="button">Back to projects</button>
         </div>
         <div class="col-md-7 col-xs-11 col-lg-7 col-sm-7">
-            <h1>Company Info</h1>
-            <p>Name: <span id="customer-name"></span></p>
-            <p>Email: <span id="customer-email"></span></p>
-            <p>Phone: <span id="customer-phone"></span></p>
+            <h2>Customer Info</h1>
+            <p class="infoType">Name: <span id="customer-name"></span></p>
+            <p class="infoType">Email: <span id="customer-email"></span></p>
+            <p class="infoType">Phone: <span id="customer-phone"></span></p>
+        </div>
+        <div class="col-md-2 col-md-offset-7 col-xs-4 col-lg-2 col-sm-2">
+            <img id="project-picture" class="img-responsive" width="300px" height="300px" src="#" alt="photo"/>
         </div>
     </div>
     <div class="row">
@@ -33,7 +30,7 @@
     </div>
     <div id="geek-add-submit" class="row">
         <div class="col-md-2 col-md-offset-10 col-xs-4 col-lg-2 col-sm-2">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-submit">Add Submit</button>
+            <button type="button" class="button btn btn-primary btn-lg" data-toggle="modal" data-target="#add-submit">Add Submit</button>
             <span id="successful-submit"></span>
         </div>
     </div>
@@ -67,7 +64,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                <button type="button" class="close button" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <img src="../images/logo.png" class="img-responsive" alt="logo"/>
             </div>
@@ -84,7 +81,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button id="upload-submission" type="button">Upload</button>
+                <button id="upload-submission" class="button" type="button">Upload</button>
             </div>
         </div>
     </div>
