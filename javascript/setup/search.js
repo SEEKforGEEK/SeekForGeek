@@ -35,7 +35,7 @@ var SearchModule = function(settings){
 
 		options.currentUser.type = options.parse.currentUser.get('type');
 		options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || []
-		
+		moneySlider();
 
 	    jQuery(options.selectors.btnAllProjects).on('click', function(){
 	    	jQuery(location).attr('href', options.selectors.urlAllProjects);
@@ -84,7 +84,6 @@ var SearchModule = function(settings){
 		}else{
 			pages = ((result.length / 5) | 0) + 1;
 		}
-
 		jQuery('#pagination-demo').twbsPagination({
 			totalPages: pages,
 			visiblePages: 5,
@@ -253,7 +252,48 @@ var SearchModule = function(settings){
 			});
 		}	
 	},
+	moneySlider = function(){
+	
+		var maxPrice = 0;
+		options.parse.queryProjects.exists('price');
+		options.parse.queryProjects.find({
+			success: function(result){
+				for (var i = 0; i < result.length; i++) {
+					if (result[i].get('price') > maxPrice) {
+						maxPrice = result[i].get('price');
+					};
+				};
+			},
+			error: function(err){
+				errorParse();
+			}
+		}).then(function(){
+			jQuery('#slider2').attr('max', maxPrice);
+		})
+		var budget;
+		jQuery("#slider2").change( function(e){
+	        budget = jQuery(this).val();
+	        jQuery("#budget").html(budget);
+	        searchWithSlider(budget);
+	    });
+	},
 
+	searchWithSlider = function(price){
+		options.parse.queryProjects.greaterThan('price', parseInt(price));
+		options.parse.queryProjects.find({
+			success: function(result){
+				if (result.length == 0) {
+					jQuery(options.selectors.appendProjects).html('<h1>No projects</h1>');
+				};
+				if (options.currentUser.type == 'geek') {
+					successGeekSearch(result);
+				}else{
+					successCustomerSearch(result);					
+				}
+			}
+		})
+	}
+	
 	tableRowWithoutWatchlist = function(result){
 		var rowWithoutWatchlist = '<tr>' +
 			'<td class="search-project-title"><a href="/#/project-details?id='+ result.id + '">' + result.get('title') + '</a></td>' +
