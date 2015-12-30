@@ -21,27 +21,48 @@ $(document).ready(function(){
 				$('#append-body-projects').append(
 					'<h1>No submissions</h1>'
 				);
-			};
-			var grade;
-			for (var i = 0; i < res.length; i++) {
-				if (res[i].get('grade') == 'in progress') {
-					grade = 'progress';
-				}else if(res[i].get('grade') == 'winner'){
-					grade = 'winner';
-				}else{
-					grade = 'notWinner';
-				}
-				$('#append-body-projects').append(
-					'<tr>' +
-		               '<td>' + res[i].get('title') + '</td>' +
-		               '<td>' + res[i].get('projectOwner') + '</td>' +
-		               '<td>' + res[i].get('endDate') + '</td>' +
-		               '<td>' + res[i].get('price') + '</td>' +
-		               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
-		               '<td><button data-title="' + res[i].get('title') + '" data-id="' + res[i].id + '" data-toggle="modal" data-target="#' + grade + '" class="button check-project-winner">+</button></td>' +	
-		            '</tr>'
-				);
 			}
+			else{
+				var pages;
+				if (res.length % 5 == 0) {
+					pages = res.length / 5;
+				}else{
+					pages = ((res.length / 5) | 0) + 1;
+				}
+
+				$('#pagination-demo').twbsPagination({
+					totalPages: pages,
+					visiblePages: 5,
+					onPageClick: function (event, page) {
+						$('#append-body-projects').empty();
+						var index = page * 5;
+						var grade;
+						for (var i = index - 5; i < index; i++) {
+							if (res.length <= i ) {
+								break;
+							};
+							if (res[i].get('grade') == 'in progress') {
+								grade = 'progress';
+							}else if(res[i].get('grade') == 'winner'){
+								grade = 'winner';
+							}else{
+								grade = 'notWinner';
+							}
+							$('#append-body-projects').append(
+								'<tr>' +
+					               '<td>' + res[i].get('title') + '</td>' +
+					               '<td>' + res[i].get('projectOwner') + '</td>' +
+					               '<td>' + res[i].get('endDate') + '</td>' +
+					               '<td>' + res[i].get('price') + '</td>' +
+					               '<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+					               '<td><button data-id="' + res[i].id + '" data-toggle="modal" data-target="#' + grade + '" class="button check-project-winner">+</button></td>' +	
+					            '</tr>'
+							);
+						}
+					}
+				});
+			}
+			
 		},
 		error: function(err){
 			console.log(err);
@@ -52,7 +73,6 @@ $(document).ready(function(){
 	var id;
 	$('#append-body-projects').on('click', '.check-project-winner', function(event){
 		event.preventDefault();
-		title = $('.check-project-winner').attr('data-title');
 		id = $('.check-project-winner').attr('data-id');
 
 		winner(id);
