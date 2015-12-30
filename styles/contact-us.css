@@ -1,0 +1,48 @@
+
+.contactUs{
+    min-height:380px !important;
+}
+.contactUs{
+    background-color: rgba(255,255,255,0.5);
+    height:100%;
+    padding: 2%;
+    text-align: left;
+    font-size:1.5em;
+    line-height: 2em;
+}
+.contactUs h1{
+   width:100%;
+   border-bottom: 1px solid #B1EEFF;
+   padding-top:0.25%;
+}
+.contactUs .heading{
+    margin-top:0 !important;
+}
+.contactUs .button{
+    font-size: 1em;
+    line-height: 1.5em;
+    float:  none !important;
+    margin-top:1%;
+    padding:1%;
+    border-radius:5px;
+}
+input,textarea {
+    background-color: #B1EEFF !important;
+}
+/*RESPONSIVE*/
+@media(max-width:768px){
+    .contactUs span,.contactUs input{
+        font-size:0.75em;
+    }
+    .contactUs,.contentALL {
+        min-height: auto !important;
+    }
+    .contactUs .button{
+        background-color: #004A50 !important;
+        padding: 0;
+    }
+    .button:hover {
+    background-color:#23D2FF !important; /* Green */
+    color: #004A50 !important;
+    }
+}
