@@ -6,7 +6,10 @@ $(document).ready(function(){
     $("#footerTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
-
+	$('.new-project').on('click',function(event){
+        event.preventDefault();
+        $(location).attr('href','/#/customer/new-project');
+    });
 
 	var currentUser = Parse.User.current();
 
@@ -15,6 +18,7 @@ $(document).ready(function(){
 	query.equalTo('owner', currentUser.get('username'));
 	query.find({
 		success: function(projects){
+			$('#customer-projects-badge').html(projects.length);
 			if (projects.length === 0) {
 				$('.mainProfile').append(
 					'<h3>No projects</h3>'

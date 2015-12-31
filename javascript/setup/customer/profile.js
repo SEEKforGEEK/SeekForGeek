@@ -14,6 +14,18 @@ $(document).ready(function(){
 	var currentUser = Parse.User.current();
     var customerEmail = currentUser.get('email');
     var customerName = currentUser.get('username');
+    var query = new Parse.Query('Projects');
+    query.equalTo('owner', customerName);
+    query.count({
+        success: function(count){
+            $('#customer-projects-badge').html(count);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+
+
     $('#customer-username').append(customerName);
     $('#customer-emailToChange').append(customerEmail);
     $('#customer-emailInput').val(customerEmail);
