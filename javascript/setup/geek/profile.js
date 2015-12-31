@@ -14,11 +14,24 @@ $(document).ready(function(){
 
     var currentUser = Parse.User.current();
     var currentEmail = currentUser.get('email');
+    var currentName = currentUser.get('username');
+    var watchlist = currentUser.get('watchlist') || [];
+    $('#watchlist-badge').html(watchlist.length);
+    var query = new Parse.Query('Submissions');
+    query.equalTo('submissionOwner', currentName);
+    query.count({
+        success: function(count){
+            $('#projects-badge').html(count);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
 
-    $('#geek-username').append(currentUser.get('username'));
+    $('#geek-username').append(currentName);
     $('#geek-emailToChange').append(currentEmail);
     $('#geek-emailInput').val(currentEmail);
-    $('#hello-geek').html('Hello, ' + currentUser.get('username') + '!');
+    $('#hello-geek').html('Hello, ' + currentName + '!');
 
     $('#geek-changePassword').on('click', function(){
         Parse.User.requestPasswordReset(currentEmail, {

@@ -11,12 +11,19 @@ $(document).ready(function(){
 	});
 
 	var currentUser = Parse.User.current();
+	var watchlistArray = currentUser.get('watchlist') || [];
+	var currentName = currentUser.get('username');
+    $('#watchlist-badge').html(watchlistArray.length);
+   
+    
 	
 	var query = new Parse.Query("Submissions");
 
-	query.equalTo('submissionOwner', currentUser.get('username'));
+	query.equalTo('submissionOwner', currentName);
 	query.find({
 		success: function(res){
+            $('#projects-badge').html(res.length);
+
 			if (res.length == 0) {
 				$('#append-body-projects').append(
 					'<h1>No submissions</h1>'

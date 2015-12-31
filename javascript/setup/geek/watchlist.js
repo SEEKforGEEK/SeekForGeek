@@ -13,7 +13,19 @@ $(document).ready(function(){
 
 	var currentUser = Parse.User.current();
 	var watchlistArray = currentUser.get('watchlist') || [];
-	
+	var currentName = currentUser.get('username');
+    $('#watchlist-badge').html(watchlistArray.length);
+    var query = new Parse.Query('Submissions');
+    query.equalTo('submissionOwner', currentName);
+    query.count({
+        success: function(count){
+            $('#projects-badge').html(count);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+
 	if (watchlistArray.length == 0) {
 		$('#append-body').append(
 			'<h1>No projects in watchlist</h1>'
