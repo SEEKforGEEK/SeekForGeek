@@ -63,7 +63,6 @@ $(document).ready(function(){
     $('#done').on('click', function(){
     	if (validatePayment()) {
     		sendData();
-
     	};
     	
     });
@@ -185,7 +184,7 @@ function sendData(){
 	 		.then(function() {
 	 			var fileUploadControlFiles = $('#files')[0];
 	 			if (fileUploadControlFiles.files.length > 0) {
-	 				
+	 				console.log('sadasdadsadas');
 	 				var files = fileUploadControlFiles.files[0];
 	 				var nameFiles = "project-files.zip";
 	 				var parseFiles = new Parse.File(nameFiles, files);
@@ -197,22 +196,23 @@ function sendData(){
 							Projects.set('task', details.task);
 							Projects.set('endDate', details.date);
 							Projects.set('type', details.type);
-							Projects.set('price', details.price);
+							Projects.set('price', parseInt(details.price));
 							Projects.set('phone', details.phone);
 							Projects.set("picture", parseFile);
 							Projects.set('files', parseFiles);
 							Projects.set('owner', currentUserName);
 							Projects.set('ownerEmail', details.email);
 							Projects.save();
+							toastr.success('You successfully create new project!');
 							$(location).attr('href','/#/customer/projects');
 	 					},
 	 					function(error){
-	 						console.log('error files' + error);
+	 						toastr.error('Something happen, please try later!');
 	 					});
 	 			};
 
 		}, function(error) {
-			console.log('error picture ' + error );
+			toastr.error('Something happen, please try later!');
 		});
 	}	
 }

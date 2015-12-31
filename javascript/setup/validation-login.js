@@ -34,10 +34,10 @@ $(document).ready(function () {
     $('#passButton').on('click', function(){
         Parse.User.requestPasswordReset($('#forgot-pass-email').val(), {
             success: function() {
-                console.log('successfully send email');
+                toastr.success('successfully send email');
             },
             error: function(error) {
-                $('#error-reset-pass').html("Error: " + error.code + " " + error.message);
+                toastr.error("Error: " + error.code + " " + error.message);
             }
         });
     })
@@ -58,10 +58,10 @@ function loginForm(event) {
                     $(location).attr('href','/#/geek/profile');
                 }   
                 location.reload();          
+                toastr.success("Successfully login!");
             },
             error: function (user, error) {
-                alert(user + " error : " + error);
-                console.log(error);
+                toastr.error(user + " error : " + error);
             }
         })
     }

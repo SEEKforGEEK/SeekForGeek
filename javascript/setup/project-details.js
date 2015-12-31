@@ -76,6 +76,10 @@ $(document).ready(function(){
 			$('#customer-name').html(project.owner);
 			$('#customer-phone').html(project.phone);
 
+		},
+		error: function(err){
+            toastr.error('Sorry something happen, please try later!');
+
 		}
 	})
 
@@ -103,7 +107,7 @@ $(document).ready(function(){
 					var Submissions = new Parse.Object("Submissions");
 					Submissions.set("title", project.title);
 					Submissions.set('endDate', project.date);
-					Submissions.set('price', project.price);
+					Submissions.set('price', parseInt(project.price));
 					Submissions.set('submissionOwner', user);
 					Submissions.set('projectOwner', project.owner);
 					Submissions.set('files', parseFile);
@@ -111,14 +115,11 @@ $(document).ready(function(){
 					Submissions.save();
 
 					$('.close').trigger('click');
-					$('#successful-submit').html(
-						'You successfully added submission!' +
-						'<a href="/#/geek/projects">Do you want to see all projects that you send submit</a>'
-					);
+					toastr.success('You successfully added submission!<a href="/#/geek/projects">Do you want to see all projects that you send submit</a>');
 
 
 			}, function(error) {
-				console.log('error picture ' + error );
+                toastr.error('Sorry something happen, please try later!');
 			});
 		}	
 	});
@@ -199,16 +200,7 @@ $(document).ready(function(){
 						};
 					}
 				})
-
-
 			}
 		});
-
-
-
 	})
-
-
-
-
 });

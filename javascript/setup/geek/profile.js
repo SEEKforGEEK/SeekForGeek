@@ -24,7 +24,6 @@ $(document).ready(function(){
             $('#projects-badge').html(count);
         },
         error: function(err){
-            console.log(err);
         }
     });
 
@@ -39,7 +38,7 @@ $(document).ready(function(){
                 $('#geek-alert-password').html('Successfully send email');
             },
             error: function(error) {
-                $('#geek-alert-password').html("Error: " + error.code + " " + error.message);
+                $('#geek-alert-password').html("Sorry, try again later!");
             }
         });
     });
@@ -67,13 +66,13 @@ $(document).ready(function(){
                         $('#geek-saveEmail').hide();
                     },
                     error: function(currentUser, error){
-                        console.log("error");
+                        toastr.error('Sorry something happen, please try later!');
                     }
                 });
                
             },
             error: function(user, error){
-                alert('Failed to update ' + user + " with error: " + error);
+                toastr.error('Failed to update ' + user + " with error: " + error);
             }
 
         });

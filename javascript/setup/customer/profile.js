@@ -14,6 +14,17 @@ $(document).ready(function(){
 	var currentUser = Parse.User.current();
     var customerEmail = currentUser.get('email');
     var customerName = currentUser.get('username');
+    var query = new Parse.Query('Projects');
+    query.equalTo('owner', customerName);
+    query.count({
+        success: function(count){
+            $('#customer-projects-badge').html(count);
+        },
+        error: function(err){
+        }
+    });
+
+
     $('#customer-username').append(customerName);
     $('#customer-emailToChange').append(customerEmail);
     $('#customer-emailInput').val(customerEmail);
@@ -25,7 +36,7 @@ $(document).ready(function(){
                 $('#customer-alert-password').html('Successfully send email');
             },
             error: function(error) {
-                $('#customer-alert-password').html("Error: " + error.code + " " + error.message);
+                $('#customer-alert-password').html("Sorry, try again later!");
             }
         });
     });
@@ -55,13 +66,13 @@ $(document).ready(function(){
                         $('#customer-saveEmail').hide();
                     },
                     error: function(currentUser, error){
-                        console.log("error");
+                        toastr.error('Sorry something happen, please try later!');
                     }
                 });
                
             },
             error: function(user, error){
-                alert('Failed to update ' + user + " with error: " + error);
+                toastr.error('Failed to update ' + user + " with error: " + error);
             }
 
         });

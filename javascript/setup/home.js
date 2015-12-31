@@ -57,19 +57,19 @@ function registerForm() {
 
         User.signUp(null, {
             success: function (user) {
-                alert(user + " is registered successfully");
                 if (registerData.type == 'customer') {
                     $(location).attr('href','/#/customer/profile');
                 }else{
                     $(location).attr('href','/#/geek/profile');
                 }
+
                 location.reload();
+                toastr.success('Hello ' + user + '! Have a nice day!');
+
             },
             error: function (user, error) {
+                toastr.error('Wrong data! Please try again!');
 
-                //TODO div with error
-                alert(user + " ERROR: " + error);
-                console.log(error);
             }
         })
 
