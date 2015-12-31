@@ -12,9 +12,9 @@ $(document).ready(function(){
 	});
 
 	var currentUser = Parse.User.current();
-	var watchlistArray = currentUser.get('watchlist');
+	var watchlistArray = currentUser.get('watchlist') || [];
 	
-	if (watchlistArray == undefined) {
+	if (watchlistArray.length == 0) {
 		$('#append-body').append(
 			'<h1>No projects in watchlist</h1>'
 		);
