@@ -59,7 +59,7 @@ $(document).ready(function(){
 			
 		},
 		error: function(err){
-			console.log(err);
+			toastr.error('Sorry something happen, please to log out and log in again!');
 		}
 	})
 });

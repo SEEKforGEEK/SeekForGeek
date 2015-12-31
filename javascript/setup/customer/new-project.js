@@ -63,7 +63,6 @@ $(document).ready(function(){
     $('#done').on('click', function(){
     	if (validatePayment()) {
     		sendData();
-
     	};
     	
     });
@@ -204,15 +203,16 @@ function sendData(){
 							Projects.set('owner', currentUserName);
 							Projects.set('ownerEmail', details.email);
 							Projects.save();
+							toastr.success('You successfully create new project!');
 							$(location).attr('href','/#/customer/projects');
 	 					},
 	 					function(error){
-	 						console.log('error files' + error);
+	 						toastr.error('Something happen, please try later!');
 	 					});
 	 			};
 
 		}, function(error) {
-			console.log('error picture ' + error );
+			toastr.error('Something happen, please try later!');
 		});
 	}	
 }

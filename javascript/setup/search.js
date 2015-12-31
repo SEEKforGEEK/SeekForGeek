@@ -140,7 +140,7 @@ var SearchModule = function(settings){
 	},
 
 	errorParse = function(error){
-		alert("Sorry something is wrong! Please log out and log in again");
+		toastr.error("Sorry something is wrong! Please log out and log in again");
 	},
 
 	typeSearch = function(userType, type){

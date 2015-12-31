@@ -20,6 +20,7 @@
     "jquery": "~2.1.4",
     "handlebars": "~4.0.5",
     "sammy": "~0.7.6",
-    "parse-1.6.7.min": "http://www.parsecdn.com/js/parse-1.6.7.min.js"
+    "parse-1.6.7.min": "http://www.parsecdn.com/js/parse-1.6.7.min.js",
+    "toastr": "~2.1.2"
   }
 }

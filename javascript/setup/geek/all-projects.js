@@ -72,11 +72,10 @@ $(document).ready(function(){
 			
 		},
 		error: function(err){
-			console.log(err);
+			toastr.error('Sorry something happen, please to log out and log in again!');
 		}
 	});
 	
-	var title;
 	var id;
 	$('#append-body-projects').on('click', '.check-project-winner', function(event){
 		event.preventDefault();
