@@ -1,13 +1,10 @@
 body {
-
-    /*background-image: url("../images/glasses.png");*/
     background-color: #B1EEFF !important;
     color: #004A50 !important;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 #content {
     min-height:60%;
-    /*padding-top:5%;*/
     padding-bottom: 1.5%;
     padding-left:8%;
     padding-right:8%;
@@ -18,21 +15,14 @@ body {
         padding-right:0;
     }
 }
-
-/*.navbarTemplate{
-    height:10%;
-
-}*/
+.badge{
+    background-color: #23D2FF !important;
+    color: #004A50 !important;    
+}
 #footerTemplate{
     min-height: 30%;
 }
 @media (max-width:768px){
-    /*#content {
-        min-height:50%;
-    }*/
-    /*.navbarTemplate{
-        min-height:25%;
-    }*/
     #footerTemplate,#footerTemplate section{
         min-height: 25%;
     }
@@ -88,10 +78,6 @@ body {
 /*FOOTER*/
 #footerTemplate{
     background-image: url("../images/footer.png");
-    /*position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;*/
 }
 #footerTemplate a{
     font-style: none;
