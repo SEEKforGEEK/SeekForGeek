@@ -15,7 +15,7 @@ var SearchModule = function(settings){
 			urlDesignProjects: '/#/search?index=design'
 		},
 		variables: {
-			
+			projects: []
 		},
 	},
 	
@@ -37,6 +37,19 @@ var SearchModule = function(settings){
 		options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || []
 		moneySlider();
 
+		options.parse.queryProjects.exists('title');
+		options.parse.queryProjects.find({
+			success: function(result){
+				for (var i = 0; i < result.length; i++) {
+					options.variables.projects[i] = result[i];
+				};
+			}
+		}).then(function(){
+			console.log(options.variables.projects);
+			for (var i = 0; i < options.variables.projects.length; i++) {
+				 console.log(options.variables.projects[i].get('title'));
+			};
+		})
 	    jQuery(options.selectors.btnAllProjects).on('click', function(){
 	    	jQuery(location).attr('href', options.selectors.urlAllProjects);
 	    });
@@ -92,7 +105,7 @@ var SearchModule = function(settings){
 		}else{
 			pages = ((result.length / 5) | 0) + 1;
 		}
-		jQuery('#pagination-demo').twbsPagination({
+		jQuery('.pagination-demo').twbsPagination({
 			totalPages: pages,
 			visiblePages: 5,
 			onPageClick: function (event, page) {
@@ -122,7 +135,7 @@ var SearchModule = function(settings){
 			pages = ((result.length / 5) | 0) + 1;
 		}
 
-		jQuery('#pagination-demo').twbsPagination({
+		jQuery('.pagination-demo').twbsPagination({
 			totalPages: pages,
 			visiblePages: 5,
 			onPageClick: function (event, page) {
@@ -192,19 +205,41 @@ var SearchModule = function(settings){
 	},
 
 	developmentProjects = function(){
+		console.log('sada');
+
+
 		options.parse.queryProjects.exists('type');
 		if (options.currentUser.type == 'geek') {
 			options.parse.queryProjects.find({
 				success: function(result){
-					for (var i = 0; i < result.length; i++) {
-						if (checkTypeDev(result[i].get('type'))) {
-							if (!checkWatchlist(options.currentUser.watchlist, result[i].id)) {
-								jQuery(options.selectors.appendProjects).append(tableRowWatchlist(result[i]));
-							}else{
-								jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
+					var pages;
+					if (result.length % 5 == 0) {
+						pages = result.length / 5;
+					}else{
+						pages = ((result.length / 5) | 0) + 1;
+					}
+
+					jQuery('.pagination-demo').twbsPagination({
+						totalPages: pages,
+						visiblePages: 5,
+						onPageClick: function (event, page) {
+							jQuery(options.selectors.appendProjects).empty();
+							var index = page * 5;
+
+							for (var i = index - 5; i < index; i++) {
+								if (result.length <= i ) {
+									break;
+								}
+								if (checkTypeDev(result[i].get('type'))) {
+									if (!checkWatchlist(options.currentUser.watchlist, result[i].id)) {
+										jQuery(options.selectors.appendProjects).append(tableRowWatchlist(result[i]));
+									}else{
+										jQuery(options.selectors.appendProjects).append(tableRowWithoutWatchlist(result[i]));
+									}
+								};
 							}
-						};
-					};
+						}
+					});
 				},
 				error: function(){
 					 errorParse();	
