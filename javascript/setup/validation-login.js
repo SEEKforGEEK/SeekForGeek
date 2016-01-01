@@ -53,6 +53,11 @@ function loginForm(event) {
     if (validateLoginForm(loginData)) {
         Parse.User.logIn(loginData.username, loginData.password, {
             success: function (user) {
+                if (passwordForm.hasClass('has-error')) {
+                    passwordForm.removeClass('has-error');
+                }
+                passwordForm.addClass('has-success');
+
                 if (user.get('type') == 'customer') {
                     $(location).attr('href','/#/customer/profile');
                 }else{
@@ -62,6 +67,10 @@ function loginForm(event) {
                 toastr.success("Successfully login!");
             },
             error: function (user, error) {
+                if (passwordForm.hasClass('has-success')) {
+                    passwordForm.removeClass('has-success');
+                }
+                passwordForm.addClass('has-error');
                 toastr.error(error.message);
             }
         })
