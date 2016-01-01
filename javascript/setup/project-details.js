@@ -81,6 +81,34 @@ $(document).ready(function(){
             toastr.error('Sorry something happen, please try later!');
 
 		}
+	}).then(function(){
+		if (type == 'geek') {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var day = date.getDay();
+			var projectDay = project.date.substring(project.date.indexOf("/")+1, project.date.lastIndexOf("/"));
+			var projectYear = project.date.substr(project.date.length - 4);
+			var projectMonth = project.date.substr(0, 2);
+			console.log('project year  ' + projectYear);
+				console.log(' year  ' + year);
+				console.log('project month  ' + projectMonth);
+				console.log('month ' + month);
+				console.log('project day  ' + projectDay);
+				console.log('day  ' + day);
+			if (projectYear < year) {
+				$('#geek-add-submit').hide();
+			}
+			else if(projectYear == year){
+				if (projectMonth <  month) {
+					$('#geek-add-submit').hide();	
+				}else if (projectMonth == month) {
+					if (projectDay < day) {
+						$('#geek-add-submit').hide();
+					};
+				};
+			}
+		}
 	})
 
 
