@@ -18,10 +18,8 @@
     margin-top:0 !important;
 }
 .aboutUs aside{
-    /*background-color: #23D2FF;*/
     border-radius: 2%;
     margin:1%;
-    /*margin-left:5%;*/
     font-style: italic;
     line-height: 1em;
     font-size: 0.75em;
@@ -69,5 +67,9 @@
         padding:2%;
         box-shadow: none;
     }
+    .aboutUs{
+        font-size: 1em;
+    }
+    
     
 }

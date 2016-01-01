@@ -77,3 +77,19 @@ label{
 #modal-forgot-pass .modal-footer{
     border:none;
 }
+
+/*MODALS FOR PROJECT STATUS*/
+.inProgress , .notWinner{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+h1.winner{
+    font-size: 2em;
+    font-weight: bold;
+}
+.winnerInfo{
+    font-size:1em;
+    font-style: italic;
+    padding-bottom:10%;
+}
