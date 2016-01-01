@@ -1,5 +1,5 @@
+
 $(document).ready(function () {
-    console.log(0 % 5);
     $('#content').css('padding-bottom', '0%').css('padding-left', '0%')
         .css('padding-right', '0%').css('height','100%');
     $('body').css('margin-bottom' ,'-20px');

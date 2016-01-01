@@ -49,6 +49,7 @@ function loginForm(event) {
         username: $('#login-username').val(),
         password: $('#login-pass').val()
     };
+
     if (validateLoginForm(loginData)) {
         Parse.User.logIn(loginData.username, loginData.password, {
             success: function (user) {
@@ -61,7 +62,7 @@ function loginForm(event) {
                 toastr.success("Successfully login!");
             },
             error: function (user, error) {
-                toastr.error(user + " error : " + error);
+                toastr.error(error.message);
             }
         })
     }
@@ -70,7 +71,6 @@ function loginForm(event) {
 
 function validateLoginForm(loginData) {
     var usernameForm = $('#lg-username-form');
-    var passwordForm = $('#lg-password-form');
     if (loginData.username.length < 6) {
         if (usernameForm.hasClass('has-success')) {
             usernameForm.removeClass('has-success');
@@ -82,18 +82,6 @@ function validateLoginForm(loginData) {
             usernameForm.removeClass('has-error');
         }
         usernameForm.addClass('has-success');
-    }
-    if (loginData.password.length < 6) {
-        if (passwordForm.hasClass('has-success')) {
-            passwordForm.removeClass('has-success');
-        }
-        passwordForm.addClass('has-error');
-        return false;
-    } else {
-        if (passwordForm.hasClass('has-error')) {
-            passwordForm.removeClass('has-error');
-        }
-        passwordForm.addClass('has-success');
     }
     return true;
 }
