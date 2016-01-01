@@ -54,6 +54,7 @@ $(document).ready(function(){
 	query.equalTo('objectId', id);
 	query.first({
 		success: function(res){
+			console.log(res);
 			project.title = res.get('title');
 			project.details = res.get('task');
 			project.category = res.get('type');
@@ -90,12 +91,7 @@ $(document).ready(function(){
 			var projectDay = project.date.substring(project.date.indexOf("/")+1, project.date.lastIndexOf("/"));
 			var projectYear = project.date.substr(project.date.length - 4);
 			var projectMonth = project.date.substr(0, 2);
-			console.log('project year  ' + projectYear);
-				console.log(' year  ' + year);
-				console.log('project month  ' + projectMonth);
-				console.log('month ' + month);
-				console.log('project day  ' + projectDay);
-				console.log('day  ' + day);
+			
 			if (projectYear < year) {
 				$('#geek-add-submit').hide();
 			}
