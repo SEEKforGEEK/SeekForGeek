@@ -49,7 +49,7 @@ function loginForm(event) {
         username: $('#login-username').val(),
         password: $('#login-pass').val()
     };
-
+    var passwordForm = $('#lg-password-form');
     if (validateLoginForm(loginData)) {
         Parse.User.logIn(loginData.username, loginData.password, {
             success: function (user) {
