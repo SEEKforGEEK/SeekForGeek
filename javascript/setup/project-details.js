@@ -162,14 +162,13 @@ $(document).ready(function(){
 							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
 			              	'<td>' + res[i].get('title') + '</td>' +
 			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
-			               	'<td>' + res[i].get('endDate') + '</td>' +
-			               	'<td>' + res[i].get('price') + '</td>' +
 			               	'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
 			            '</tr>'
 					);
 				}
 				else if(res[i].get('title') == project.title && res[i].get('grade') == 'winner') {
 					$('.choose-winner').hide();
+					$('#customer-see-submissions').hide();
 					var paymentInfo = res[i].get('payment');
 					$('#show-winner').html(
 						'<h3 id="winner-heading">We have a winner!</h3>' + 
@@ -184,15 +183,6 @@ $(document).ready(function(){
 					            '</tr>' +
 		                    '</tbody>' + 
 		                '</table> '
-					);
-					$('#submissions').append(
-						'<tr>' +
-			              	'<td>' + res[i].get('title') + '</td>' +
-			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
-			               	'<td>' + res[i].get('endDate') + '</td>' +
-			               	'<td>' + res[i].get('price') + '</td>' +
-			               	'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
-			            '</tr>'
 					);
 				};
 			};
