@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 
 			$('#project-name').html(project.title);
-			$('#project-details').append('<p>' + project.details + '</p>');
+			$('#project-details').append('<p id="detail-text">' + project.details + '</p>');
 			$('#project-category').html(project.category);
 			$('#project-picture').attr('src', project.picture);
 			$('#project-price').html(project.price);
@@ -172,7 +172,7 @@ $(document).ready(function(){
 					$('.choose-winner').hide();
 					var paymentInfo = res[i].get('payment');
 					$('#show-winner').html(
-						'<h1>We have a winner</h1>' + 
+						'<h3 id="winner-heading">We have a winner!</h3>' + 
 						'<table class="table table-striped table-hover ">' +
 							'<thead><tr><th>Card Holder</th>' +
 								'<th>IBAN</th>' +

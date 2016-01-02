@@ -19,11 +19,80 @@
 .infoType{
     font-weight: bold;
 }
+#project-name{
+    display: inline;
+}
+#add-watchlist  {
+    background-color: transparent !important;
+    border:none;
+}
+#project-category{
+    font-style: italic;
+    margin:0;
+}
+.glyphicon{
+    color: #004A50 !important;
+}
+.details-heading{
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+.main-details {
+    margin-top:2%;
+    display:flex;
+    border-radius:5%;
+    /*padding: 2%;*/
+}
+.main-details div{
+    background-color: rgba(35, 210, 255, 0.5);
+    height:inherit;
+}
+.main-details div:nth-of-type(2n+1){
+    background-color:rgba(35, 210, 255, 0.3);
+}
+
+.buttons{
+    margin-top:2%;
+}
+#back-button{
+    float:left;
+}
+.buttons .btn-lg{
+    border-radius:0 !important;
+}
+#project{
+    border-top-left-radius:5%;
+    border-bottom-left-radius: 5%;
+}
+#customer-info-details{
+    border-top-right-radius: 5%;
+    border-bottom-right-radius:5%;
+}
+#project-details{
+    display:flex;
+    flex-direction: column;
+}
+#download-files{
+    order:3;
+}
+#project-details h3{
+    order:1;
+}
+#detail-text{
+    order:2;
+}
+#winner-heading{
+    margin-top: 5%;
+    font-weight: bold;
+}
+
 /*RESPONSIVE*/
 @media(max-width:768px){
     .projectDetails{
         flex-wrap: wrap;
         min-height: auto !important;
+        font-size: 1em;
     }
     .projectDetails span{
         font-size:0.75em;
@@ -34,9 +103,28 @@
     .projectDetails .button{
         background-color: #004A50 !important;
         padding: 0;
+        width:100%;
+        float: none !important;
+    }
+    .projectDetails .glyphicon{
+        font-size:1.5em !important;
     }
     .button:hover {
     background-color:#23D2FF !important; /* Green */
     color: #004A50 !important;
     }   
+    .main-details,.main-details div{
+        flex-direction: column;
+        width:100%;
+        margin:0;
+        border-radius: 0 !important;
+    }
+    .buttons{
+        width:100%;
+        display: flex;
+        align-items: stretch;
+    }
+    .heading-details,#customer-submisions{
+        width:100%;
+    }
 }
