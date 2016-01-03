@@ -1,6 +1,5 @@
 
 //'use strict';
-
 (function(){
     $(".navbarTemplate")
         .addClass("templateNone")

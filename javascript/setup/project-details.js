@@ -12,14 +12,14 @@ $(document).ready(function(){
 
  	$('#back-button').on('click', function(){
         $(location).attr('href', '/#/' + type + '/projects');
-    })
+    });
     if (type == 'customer') {
     	$('#geek-add-submit').hide();
     	$('#geek-watchlist').hide();
     	$('#customer-submisions').show();
     	$('#customer-see-submissions').show();	
 
-    };
+    }
     if (type == 'geek') {
     	$('#geek-add-submit').show();
     	$('#geek-watchlist').show();
@@ -27,7 +27,7 @@ $(document).ready(function(){
     	$('#customer-see-submissions').hide();
 
     	var watchlistArray = currentUser.get('watchlist') || [];
-    };
+    }
     $.urlParam = function(name){
 	    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	    if (results==null){
@@ -36,7 +36,7 @@ $(document).ready(function(){
 	    else{
 	       return results[1] || 0;
 	    }
-	}
+	};
 		
 	var id = $.urlParam('id');
 
@@ -54,7 +54,6 @@ $(document).ready(function(){
 	query.equalTo('objectId', id);
 	query.first({
 		success: function(res){
-			console.log(res);
 			project.title = res.get('title');
 			project.details = res.get('task');
 			project.category = res.get('type');
@@ -64,7 +63,7 @@ $(document).ready(function(){
 			project.email = res.get('ownerEmail');
 			project.owner = res.get('owner');
 			project.phone = res.get('phone');
-
+			project.files = res.get('files').url();
 
 
 			$('#project-name').html(project.title);
@@ -76,6 +75,7 @@ $(document).ready(function(){
 			$('#customer-email').html(project.email);
 			$('#customer-name').html(project.owner);
 			$('#customer-phone').html(project.phone);
+			$('#download-button').attr('href', project.files);
 
 		},
 		error: function(err){
@@ -147,7 +147,6 @@ $(document).ready(function(){
 			});
 		}	
 	});
-
 
 	var submissions = new Parse.Query('Submissions');
 

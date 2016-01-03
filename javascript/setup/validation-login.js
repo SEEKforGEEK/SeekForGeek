@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#loginButton').on('click', function(event){
         event.preventDefault();
         loginForm();
@@ -11,7 +12,7 @@ $(document).ready(function () {
     });
 
     var queryProjects = new Parse.Query("Projects");
-    var queryUsers = new Parse.Query("_User");
+    var queryUsers = new Parse.Query(Parse.User);
     queryUsers.equalTo('type', 'geek');
     queryUsers.find({
         success: function(res){
@@ -23,7 +24,7 @@ $(document).ready(function () {
         success: function(res){
             $('#customersCounter').append(res.length + "  satisfied customers");
         }
-    })
+    });
     queryProjects.exists('title');
     queryProjects.find({
         success: function(res){
