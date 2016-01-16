@@ -168,7 +168,9 @@ $(document).ready(function(){
 				else if(res[i].get('title') == project.title && res[i].get('grade') == 'winner') {
 					$('.choose-winner').hide();
 					$('#customer-see-submissions').hide();
-					var paymentInfo = res[i].get('payment');
+					var paymentInfo = res[i].get('payment') || {};
+                    paymentInfo.cardHolder = paymentInfo.cardHolder || 'Waiting...';
+                    paymentInfo.IBAN = paymentInfo.IBAN || 'Waiting...';
 					$('#show-winner').html(
 						'<h3 id="winner-heading">We have a winner!</h3>' + 
 						'<table class="table table-striped table-hover ">' +

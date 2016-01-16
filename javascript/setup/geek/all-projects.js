@@ -76,10 +76,10 @@ $(document).ready(function(){
 		}
 	});
 	
-	var id;
+
 	$('#append-body-projects').on('click', '.check-project-winner', function(event){
 		event.preventDefault();
-		id = $('.check-project-winner').attr('data-id');
+		var id = $(this).attr('data-id');
 
 		winner(id);
 	});
@@ -97,6 +97,7 @@ function winner(id){
 		success: function(res){
 			if (res.get('grade') == 'winner') {
 				$('#payment-info-btn').on('click',function(event){
+
 					event.preventDefault();
 					var paymentData = {};
 					paymentData.cardHolder = $('#card-holder').val();
@@ -105,12 +106,14 @@ function winner(id){
 						res.set('payment', paymentData);
 						res.save()
 							.then(function(){
+								console.log('sadad');
+
 								$('.close').trigger('click');
 							})	
 					}
 					
 				})
-			};
+			}
 		}
 	})
 }
