@@ -15,14 +15,14 @@ $(document).ready(function(){
     });
     if (type == 'customer') {
     	$('#geek-add-submit').hide();
-    	$('#geek-watchlist').hide();
+    	$('#add-watchlist').hide();
     	$('#customer-submisions').show();
     	$('#customer-see-submissions').show();	
 
     }
     if (type == 'geek') {
     	$('#geek-add-submit').show();
-    	$('#geek-watchlist').show();
+    	$('#add-watchlist').show();
     	$('#customer-submisions').hide();
     	$('#customer-see-submissions').hide();
 
@@ -105,7 +105,7 @@ $(document).ready(function(){
 				};
 			}
 		}
-	})
+	});
 
 
 	$('#add-watchlist').on('click', function(){
@@ -157,12 +157,15 @@ $(document).ready(function(){
 				if (res[i].get('title') == project.title && res[i].get('grade') == 'in progress') {
 
 					$('#submissions').append(
-						'<tr>' +
-							'<td><input data-title="' + project.title + '" class="check-submission" type="radio" name="submissions" value="' + res[i].id + '"></td>' +
-			              	'<td>' + res[i].get('title') + '</td>' +
-			               	'<td>' + res[i].get('submissionOwner') + '</td>' +
-			               	'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
-			            '</tr>'
+
+							'<tr>' +
+
+								'<td><input data-title="' + project.title + '" class="check-submission" type="radio" id="' + res[i].id +'" name="submissions" value="' + res[i].id + '"></td>' +
+								'<td><label for="' + res[i].id + '">' + res[i].get('title') + '</label></td>' +
+                                '<td>' + res[i].get('submissionOwner') + '</td>' +
+								'<td><a href="' + res[i].get('files').url() + '">Download</a></td>' +
+
+							'</tr>'
 					);
 				}
 				else if(res[i].get('title') == project.title && res[i].get('grade') == 'winner') {
@@ -202,7 +205,8 @@ $(document).ready(function(){
 			success: function(res){
 				res.set('grade', 'winner');
 				res.save();
-		
+		        //TODO when factor js in this file and put all code in functions
+                //yield here a function that load winner data
 				var queryNotWinner = new Parse.Query('Submissions');
 				queryNotWinner.equalTo('title', projectTitle);
 				queryNotWinner.find({
