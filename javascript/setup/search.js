@@ -10,6 +10,7 @@ var SearchModule = function(settings){
 			btnAllProjects: '#all-projects',
 			btnDevProjects: '#dev-projects',
 			btnDesignProjects: '#design-projects',
+			slider: '#slider2',
 			urlAllProjects: '/#/search?index=all',
 			urlDevProjects: '/#/search?index=dev',
 			urlDesignProjects: '/#/search?index=design'
@@ -33,7 +34,7 @@ var SearchModule = function(settings){
 		options.parse.queryProjects = new Parse.Query('Projects');
 		options.variables.urlParameter = urlParam('index');
 		options.currentUser.type = options.parse.currentUser.get('type');
-		options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || []
+		options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || [];
 		moneySlider();
 	
 	    jQuery(options.selectors.btnAllProjects).on('click', function(){
@@ -53,18 +54,18 @@ var SearchModule = function(settings){
 			success: function(result){
 				for (var i = 0; i < result.length; i++) {
 					options.variables.projects[i] = result[i];
-				};
+				}
 			}
 		}).then(function(){
 		    if (parseInt(options.variables.urlParameter) >= 0) {
 		    	var url = parseInt(options.variables.urlParameter);
-				if (jQuery('#slider2').attr('max') < url){
+				if (jQuery(options.selectors.slider).attr('max') < url){
 					return;
 				}
-				jQuery('#slider2').attr('value', url);
+				jQuery(options.selectors.slider).attr('value', url);
 		        jQuery("#budget").html(url);
 		    	searchWithSlider(url, options.currentUser.type);
-		    };
+		    }
 		    
 			switch(options.variables.urlParameter){
 				case 'all': allProjects(options.currentUser.type); break;
@@ -90,8 +91,8 @@ var SearchModule = function(settings){
 		for (var i = 0; i < watchlist.length; i++) {
 			if (watchlist[i] == str) {
 				return true;
-			};
-		};
+			}
+		}
 		return false;
 	},
 
@@ -154,7 +155,7 @@ var SearchModule = function(settings){
 		for (var i = 0; i < options.variables.projects.length; i++) {
 			if (options.variables.projects[i].get('type') == type) {
 				typeProjects[j++] = options.variables.projects[i];
-			};
+			}
 		}
 
 		if (userType == 'customer') {
@@ -178,7 +179,7 @@ var SearchModule = function(settings){
 		for (var i = 0; i < options.variables.projects.length; i++) {
 			if (checkTypeDev(options.variables.projects[i].get('type'))) {
 				devProjects[j++] = options.variables.projects[i];
-			};
+			}
 		}
 		if (type == 'customer') {
 			successCustomerSearch(devProjects);	
@@ -195,7 +196,7 @@ var SearchModule = function(settings){
 		for (var i = 0; i < options.variables.projects.length; i++) {
 			if (!checkTypeDev(options.variables.projects[i].get('type'))) {
 				designProjects[j++] = options.variables.projects[i];
-			};
+			}
 		}
 		if (type == 'customer') {
 			successCustomerSearch(designProjects);	
@@ -212,16 +213,16 @@ var SearchModule = function(settings){
 				for (var i = 0; i < result.length; i++) {
 					if (result[i].get('price') > maxPrice) {
 						maxPrice = result[i].get('price');
-					};
-				};
-				jQuery('#slider2').attr('max', maxPrice);
+					}
+				}
+				jQuery(options.selectors.slider).attr('max', maxPrice);
 			},
-			error: function(err){
-				errorParse();
+			error: function(){
+				toastr.error("Sorry, something happen please refresh the page!");
 			}
 		});
 		var budget;
-		jQuery("#slider2").change( function(e){
+		jQuery(options.selectors.slider).change( function(e){
 	        budget = jQuery(this).val();
 	        jQuery("#budget").html(budget);
 	        jQuery(location).attr('href', '/#/search?index=' + budget);
@@ -230,13 +231,13 @@ var SearchModule = function(settings){
 
 	searchWithSlider = function(price, type){
 		var sliderProjects = [],
-			j = 0,
-			price = parseInt(price);
+			j = 0;
+		price = parseInt(price);
 
 		for (var i = 0; i < options.variables.projects.length; i++) {
 			if (options.variables.projects[i].get('price') > price) {
 				sliderProjects[j++] = options.variables.projects[i];
-			};
+			}
 		}
 		if (type == 'customer') {
 			successCustomerSearch(sliderProjects);	
@@ -293,7 +294,7 @@ var SearchModule = function(settings){
 			if(str[i] != dev[j++]){
 				return false;
 			}
-		};
+		}
 		return true;
 	},
 
@@ -310,10 +311,9 @@ var SearchModule = function(settings){
 	return{
 		initialize: initialize
 	};
-}
+};
 
 
 jQuery(document).ready(function(){
-	
 	SearchModule().initialize();
-})
+});

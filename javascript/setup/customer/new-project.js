@@ -1,218 +1,262 @@
-$(document).ready(function(){
- 	$(".navbarTemplate")
-        .removeClass("templateNone")
-        .addClass("templateOn");
-    $("#footerTemplate")
-        .removeClass("templateNone")
-        .addClass("templateOn");
-    
-    
-    var dateToday = new Date();
-	var dates = $("#datepicker").datepicker({
-	    defaultDate: "+1w",
-	    changeMonth: true,
-	    numberOfMonths: 1,
-	    minDate: dateToday,
-	    onSelect: function(selectedDate) {
-	        var option = this.id == "from" ? "minDate" : "maxDate",
-	            instance = $(this).data("datepicker"),
-	            date = $.datepicker.parseDate(instance.settings.dateFormat 
-	            	|| $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
-	        dates.not(this).datepicker("option", option, date);
-	    }
-	});
+var NewProjectModule = function(settings){
+	var options = {
+		parse: {
+		},
+		currentUser: {
+		},
+		selectors: {
+			btnDetailsNext: '#details-next',
+			btnDescriptionNext: '#description-next',
+			description: '#description',
+			payment: '#payment',
+			descriptionLink: '#description-link',
+			paymentLink: '#payment-link',
+			detailsLink: '#details-link',
+			btnDone: '#done',
+			title: '#title',
+			task: '#task',
+			datePicker: '#datepicker',
+			titleForm: '#describe-title-form',
+			taskForm: '#describe-task-form',
+			dateForm: '#describe-date-form',
+			paymentPrice: '#payment-price',
+			paymentEmail: '#payment-email',
+			paymentPhone: '#payment-phone',
+			paymentPriceForm: '#payment-price-form',
+			paymentPhoneForm: '#payment-phone-form',
+			paymentEmailForm: '#payment-email-form',
+			radioDetails: '#radioDetails',
+			picture: '#picture',
+			files: '#files',
+			projectDetails: '#project-details'
+		},
+		variables: {
+			patternForEmail: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+		}
+	},
 
-	var currentUser = Parse.User.current();
-	var email = currentUser.get('email');
-	$('#payment-email').val(email);
+	initialize = function(){
+		jQuery(".navbarTemplate")
+			.removeClass("templateNone")
+			.addClass("templateOn");
+		jQuery("#footerTemplate")
+			.removeClass("templateNone")
+			.addClass("templateOn");
 
+		date();
+		options.parse.currentUser = Parse.User.current();
+		options.currentUser.email = options.parse.currentUser.get('email');
+		options.currentUser.UserName = options.parse.currentUser.get('username');
 
+		jQuery(options.selectors.paymentEmail).val(options.currentUser.email);
+		jQuery(options.selectors.btnDetailsNext).on('click', detailsNext);
+		jQuery(options.selectors.btnDescriptionNext).on('click',descriptionNext);
+		jQuery(options.selectors.btnDone).on('click', isDone);
+	},
 
-	$('#details-next').on('click', function(){
-	
-		$('#description-link').attr('href', '#description')
+	date = function(){
+		var dateToday = new Date();
+		var dates = $("#datepicker").datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 1,
+			minDate: dateToday,
+			onSelect: function(selectedDate) {
+				var option = this.id == "from" ? "minDate" : "maxDate",
+					instance = $(this).data("datepicker"),
+					date = $.datepicker.parseDate(instance.settings.dateFormat
+						|| $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+				dates.not(this).datepicker("option", option, date);
+			}
+		});
+	},
+
+	detailsNext = function(){
+		jQuery(options.selectors.descriptionLink).attr('href', options.selectors.description)
 			.attr('data-toggle', 'tab')
 			.attr('aria-expanded', true)
 			.addClass('tabs');
-	    	
-    	$('#description-link').trigger('click');
-    	$('#details-link').removeAttr('href')
-    		.removeAttr('aria-expanded')
-    		.removeAttr('data-toggle');	
-		
-    });	
-	$('#description-next').on('click', function(){  		
-
-		if (validateDetails()) {
-	  		$('#payment-link').attr('href', '#payment')
-	  			.attr('data-toggle', 'tab')
-	  			.attr('aria-expanded', true)
-	  			.addClass('tabs');
-
-			$('#payment-link').trigger('click');
-
-
-			$('#description-link').removeAttr('href')
+		jQuery(options.selectors.projectDetails).css('display','none');
+		jQuery(options.selectors.descriptionLink).trigger('click');
+		jQuery(options.selectors.detailsLink).removeAttr('href')
 			.removeAttr('aria-expanded')
-			.removeAttr('data-toggle')
-			.removeClass('tabs');
-		};			
+			.removeAttr('data-toggle');
 
-    });
+	},
 
-    $('#done').on('click', function(){
-    	if (validatePayment()) {
-    		sendData();
-    	};
-    	
-    });
-})
+	descriptionNext = function(){
+		if (validateDetails()) {
+			jQuery(options.selectors.paymentLink).attr('href', options.selectors.payment)
+				.attr('data-toggle', 'tab')
+				.attr('aria-expanded', true)
+				.addClass('tabs');
 
-function validateDetails(){
-	var title = $('#title').val();
-	var task = $('#task').val();
-	var	date = $('#datepicker').val();
-	var titleForm = $('#describe-title-form');
-	var taskForm = $('#describe-task-form');
-	var dateForm = $('#describe-date-form');
-	if (title == '') {
-		if (titleForm.hasClass('has-success')) {
-            titleForm.removeClass('has-success');
-        }
-        titleForm.addClass('has-error');
-		return false;
-	}else{
-		if (titleForm.hasClass('has-error')) {
-            titleForm.removeClass('has-error');
-        }
-        titleForm.addClass('has-success');
-	}
-	if (task == '') {
-		if (taskForm.hasClass('has-success')) {
-            taskForm.removeClass('has-success');
-        }
-        taskForm.addClass('has-error');
-		return false;
-	}else{
-		if (taskForm.hasClass('has-error')) {
-            taskForm.removeClass('has-error');
-        }
-   		taskForm.addClass('has-success');
+			jQuery(options.selectors.paymentLink).trigger('click');
+
+			jQuery(options.selectors.descriptionLink).removeAttr('href')
+				.removeAttr('aria-expanded')
+				.removeAttr('data-toggle')
+				.removeClass('tabs');
+		}
+	},
+
+	isDone = function(){
+		if (validatePayment()) {
+			sendData();
+		}
+	},
+
+	validateDetails = function(){
+		var title = jQuery(options.selectors.title).val();
+		var task = jQuery(options.selectors.task).val();
+		var	date = jQuery(options.selectors.datePicker).val();
+		var titleForm = jQuery(options.selectors.titleForm);
+		var taskForm = jQuery(options.selectors.taskForm);
+		var dateForm = jQuery(options.selectors.dateForm);
+		if (title == '') {
+			if (titleForm.hasClass('has-success')) {
+				titleForm.removeClass('has-success');
+			}
+			titleForm.addClass('has-error');
+			return false;
+		}else{
+			if (titleForm.hasClass('has-error')) {
+				titleForm.removeClass('has-error');
+			}
+			titleForm.addClass('has-success');
+		}
+		if (task == '') {
+			if (taskForm.hasClass('has-success')) {
+				taskForm.removeClass('has-success');
+			}
+			taskForm.addClass('has-error');
+			return false;
+		}else{
+			if (taskForm.hasClass('has-error')) {
+				taskForm.removeClass('has-error');
+			}
+			taskForm.addClass('has-success');
+		}
+		if (date == '') {
+			if (dateForm.hasClass('has-success')) {
+				dateForm.removeClass('has-success');
+			}
+			dateForm.addClass('has-error');
+			return false;
+		}else{
+			if (dateForm.hasClass('has-error')) {
+				dateForm.removeClass('has-error');
+			}
+			dateForm.addClass('has-success');
+		}
+		return true;
+	},
+
+	validatePayment = function() {
+		var price = jQuery(options.selectors.paymentPrice).val();
+		var email = jQuery(options.selectors.paymentEmail).val();
+		var phone = jQuery(options.selectors.paymentPhone).val();
+		var priceForm = jQuery(options.selectors.paymentPriceForm);
+		var emailForm = jQuery(options.selectors.paymentEmailForm);
+		var phoneForm = jQuery(options.selectors.paymentPhoneForm);
+		var patternForEmail = options.variables.patternForEmail;
+
+		if (price == '' && parseInt(price) < 0) {
+			if (priceForm.hasClass('has-success')) {
+				priceForm.removeClass('has-success');
+			}
+			priceForm.addClass('has-error');
+			return false;
+		}else{
+			if (priceForm.hasClass('has-error')) {
+				priceForm.removeClass('has-error');
+			}
+			priceForm.addClass('has-success');
+		}
+		if (!email.match(patternForEmail)) {
+			if (emailForm.hasClass('has-success')) {
+				emailForm.removeClass('has-success');
+			}
+			emailForm.addClass('has-error');
+			return false;
+		}else{
+			if (emailForm.hasClass('has-error')) {
+				emailForm.removeClass('has-error');
+			}
+			emailForm.addClass('has-success');
+		}
+		if (phone == '') {
+			if (phoneForm.hasClass('has-success')) {
+				phoneForm.removeClass('has-success');
+			}
+			phoneForm.addClass('has-error');
+			return false;
+		}else{
+			if (phoneForm.hasClass('has-error')) {
+				phoneForm.removeClass('has-error');
+			}
+			phoneForm.addClass('has-success');
+		}
+		return true;
+	},
+
+	sendData = function() {
+		var details = {
+			title: jQuery(options.selectors.title).val(),
+			task: jQuery(options.selectors.task).val(),
+			date: jQuery(options.selectors.datePicker).val(),
+			type: jQuery('input[name=radioButtons]:checked', options.selectors.radioDetails).val(),
+			price: jQuery(options.selectors.paymentPrice).val(),
+			phone: jQuery(options.selectors.paymentPhone).val(),
+			email: jQuery(options.selectors.paymentEmail).val()
+		};
+		var fileUploadControl = jQuery(options.selectors.picture)[0];
+
+		if (fileUploadControl.files.length > 0) {
+			var file = fileUploadControl.files[0];
+			var name = 'picture.png';
+
+			var parseFile = new Parse.File(name, file);
+			parseFile.save()
+				.then(function() {
+					var fileUploadControlFiles = jQuery(options.selectors.files)[0];
+					if (fileUploadControlFiles.files.length > 0) {
+						var files = fileUploadControlFiles.files[0];
+						var nameFiles = "project-files.zip";
+						var parseFiles = new Parse.File(nameFiles, files);
+						parseFiles.save()
+							.then(function(){
+								var Projects = new Parse.Object("Projects");
+								Projects.set("title", details.title);
+								Projects.set('task', details.task);
+								Projects.set('endDate', details.date);
+								Projects.set('type', details.type);
+								Projects.set('price', parseInt(details.price));
+								Projects.set('phone', details.phone);
+								Projects.set("picture", parseFile);
+								Projects.set('files', parseFiles);
+								Projects.set('owner', options.currentUser.UserName);
+								Projects.set('ownerEmail', details.email);
+								Projects.save();
+								toastr.success('You successfully create new project!');
+								$(location).attr('href','/#/customer/projects');
+							},
+							function(){
+								toastr.error('Something happen, please try later!');
+							});
+					}
+				}, function() {
+					toastr.error('Something happen, please try later!');
+				});
+		}
 	};
-	if (date == '') {
-		if (dateForm.hasClass('has-success')) {
-            dateForm.removeClass('has-success');
-        }
-        dateForm.addClass('has-error');
-		return false;
-	}else{
-		if (dateForm.hasClass('has-error')) {
-            dateForm.removeClass('has-error');
-        }
-   		dateForm.addClass('has-success');
+
+	return{
+		initialize: initialize
 	};
-	return true;
-}
 
-function validatePayment(){
-	var price = $('#payment-price').val();
-	var email = $('#payment-email').val();
-	var phone = $('#payment-phone').val();
-	var priceForm = $('#contact-price-form');
-	var emailForm = $('#contact-email-form');
-	var phoneForm = $('#contact-phone-form');
-	 var patternForEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+};
 
-	if (price == '' && parseInt(price) < 0) {
-		if (priceForm.hasClass('has-success')) {
-            priceForm.removeClass('has-success');
-        }
-        priceForm.addClass('has-error');
-		return false;
-	}else{
-		if (priceForm.hasClass('has-error')) {
-            priceForm.removeClass('has-error');
-        }
-        priceForm.addClass('has-success');
-	}
-	if (!email.match(patternForEmail)) {
-		if (emailForm.hasClass('has-success')) {
-            emailForm.removeClass('has-success');
-        }
-        emailForm.addClass('has-error');
-		return false;
-	}else{
-		if (emailForm.hasClass('has-error')) {
-            emailForm.removeClass('has-error');
-        }
-   		emailForm.addClass('has-success');
-	};
-	if (phone == '') {
-		if (phoneForm.hasClass('has-success')) {
-            phoneForm.removeClass('has-success');
-        }
-        phoneForm.addClass('has-error');
-		return false;
-	}else{
-		if (phoneForm.hasClass('has-error')) {
-            phoneForm.removeClass('has-error');
-        }
-   		phoneForm.addClass('has-success');
-	};
-	return true;
-}
-
-function sendData(){
-	var details = {
-		title: $('#title').val(),
-		task: $('#task').val(),
-		date: $('#datepicker').val(),
-		type: $('input[name=radioButtons]:checked', '#radioDetails').val(),
-		price: $('#payment-price').val(),
-		phone: $('#payment-phone').val(),
-		email: $('#payment-email').val()
-	}
-	var fileUploadControl = $("#picture")[0];
-	var currentUser = Parse.User.current();
-	var currentUserName = currentUser.get('username');
-	if (fileUploadControl.files.length > 0) {
-	  	var file = fileUploadControl.files[0];
-	 	var name = 'picture.png';
-
-	 	var parseFile = new Parse.File(name, file);
-	 	parseFile.save()
-	 		.then(function() {
-	 			var fileUploadControlFiles = $('#files')[0];
-	 			if (fileUploadControlFiles.files.length > 0) {
-	 				console.log('sadasdadsadas');
-	 				var files = fileUploadControlFiles.files[0];
-	 				var nameFiles = "project-files.zip";
-	 				var parseFiles = new Parse.File(nameFiles, files);
-	 				parseFiles.save()
-	 					.then(function(){   
-
-	 						var Projects = new Parse.Object("Projects");
-							Projects.set("title", details.title);
-							Projects.set('task', details.task);
-							Projects.set('endDate', details.date);
-							Projects.set('type', details.type);
-							Projects.set('price', parseInt(details.price));
-							Projects.set('phone', details.phone);
-							Projects.set("picture", parseFile);
-							Projects.set('files', parseFiles);
-							Projects.set('owner', currentUserName);
-							Projects.set('ownerEmail', details.email);
-							Projects.save();
-							toastr.success('You successfully create new project!');
-							$(location).attr('href','/#/customer/projects');
-	 					},
-	 					function(error){
-	 						toastr.error('Something happen, please try later!');
-	 					});
-	 			};
-
-		}, function(error) {
-			toastr.error('Something happen, please try later!');
-		});
-	}	
-}
+jQuery(document).ready(function(){
+	NewProjectModule().initialize();
+});
