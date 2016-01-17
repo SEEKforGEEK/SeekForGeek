@@ -1,15 +1,15 @@
-$(document).ready(function(){
-	$(".navbarTemplate")
+jQuery(document).ready(function(){
+	jQuery(".navbarTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
-    $("#footerTemplate")
+    jQuery("#footerTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
 
 	var mail = {};
     var currentUser = Parse.User.current();
     var Messages = new Parse.Object("Messages");
-    $('#send-message').on('click', function(event){
+    jQuery('#send-message').on('click', function(event){
     	event.preventDefault();
 	   
 	    mail.currentEmail = $('#email').val() || currentUser.get('email');

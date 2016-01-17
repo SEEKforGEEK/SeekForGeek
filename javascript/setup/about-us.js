@@ -1,8 +1,8 @@
-$(document).ready(function(){
-	$(".navbarTemplate")
+jQuery(document).ready(function(){
+	jQuery(".navbarTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
-    $("#footerTemplate")
+    jQuery("#footerTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
 });
