@@ -1,83 +1,132 @@
-$(document).ready(function(){
+'use strict';
 
-    $(".navbarTemplate")
-        .removeClass("templateNone")
-        .addClass("templateOn");
-    $("#footerTemplate")
-        .removeClass("templateNone")
-        .addClass("templateOn");
-        
-    $('.browse-job').on('click',function(){
-        $(location).attr('href', '/#/search?index=all');
-    });
-
-
-    var currentUser = Parse.User.current();
-    var currentEmail = currentUser.get('email');
-    var currentName = currentUser.get('username');
-    var watchlist = currentUser.get('watchlist') || [];
-    $('#watchlist-badge').html(watchlist.length);
-    var query = new Parse.Query('Submissions');
-    query.equalTo('submissionOwner', currentName);
-    query.count({
-        success: function(count){
-            $('#projects-badge').html(count);
+var GeekProfile = function(settings){
+    var options = {
+            parse: {
+            },
+            currentUser: {
+            },
+            selectors: {
+                btnBrowseJob: '.browse-job',
+                browseJobLink: '/#/search?index=all',
+                watchlistBadge: '#watchlist-badge',
+                username: '#geek-username',
+                emailChange: '#geek-emailToChange',
+                emailInput: '#geek-emailInput',
+                cheerGeek: '#hello-geek',
+                changePassword: '#geek-changePassword',
+                alertForPassword: '#geek-alert-password',
+                btnChangeEmail: '#geek-changeEmail',
+                btnSaveEmail: '#geek-saveEmail',
+                projectsBadge: '#projects-badge'
+            },
+            variables: {
+            }
         },
-        error: function(err){
-        }
-    });
 
-    $('#geek-username').append(currentName);
-    $('#geek-emailToChange').append(currentEmail);
-    $('#geek-emailInput').val(currentEmail);
-    $('#hello-geek').html('Hello, ' + currentName + '!');
+        initialize = function(){
+            jQuery(".navbarTemplate")
+                .removeClass("templateNone")
+                .addClass("templateOn");
+            jQuery("#footerTemplate")
+                .removeClass("templateNone")
+                .addClass("templateOn");
 
-    $('#geek-changePassword').on('click', function(){
-        Parse.User.requestPasswordReset(currentEmail, {
-            success: function() {
-                $('#geek-alert-password').html('Successfully send email');
-            },
-            error: function(error) {
-                $('#geek-alert-password').html("Sorry, try again later!");
-            }
-        });
-    });
 
-    $('#geek-changeEmail').on('click', function(){
-        $('#geek-emailToChange').hide();
-        $('#geek-changeEmail').hide();
-        $('#geek-emailInput').show();
-        $('#geek-saveEmail').show();
-    });
+            jQuery(options.selectors.btnBrowseJob).on('click',function(){
+                jQuery(location).attr('href', options.selectors.browseJobLink);
+            });
 
-    $('#geek-saveEmail').on('click', function(){
-        var email = $('#geek-emailInput').val();
+            options.parse.currentUser = Parse.User.current();
+            options.currentUser.email = options.parse.currentUser.get('email');
+            options.currentUser.username = options.parse.currentUser.get('username');
+            options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || [];
 
-        currentUser.set('email', email);
-        currentUser.save(null, {
-            success: function(user){
-                currentUser.fetch({
-                    success: function(currentUser){
-                         $('#geek-emailToChange').show()
-                            .empty()
-                            .append(currentUser.get('email'));
-                        $('#geek-changeEmail').show();
-                        $('#geek-emailInput').hide();
-                        $('#geek-saveEmail').hide();
-                    },
-                    error: function(currentUser, error){
-                        toastr.error('Sorry something happen, please try later!');
-                    }
-                });
-               
-            },
-            error: function(user, error){
-                toastr.error('Failed to update ' + user + " with error: " + error);
-            }
+            jQuery(options.selectors.watchlistBadge).html(options.currentUser.watchlist.length);
 
-        });
-    });
+            options.currentUser.querySubmissions = new Parse.Query('Submissions');
 
-    
+            counterBadge(options.currentUser.querySubmissions);
+
+            jQuery(options.selectors.btnNewProject).on('click', function(event){
+                event.preventDefault();
+                $(location).attr('href', options.selectors.newProjectLink);
+            });
+
+            jQuery(options.selectors.username).append(options.currentUser.username);
+            jQuery(options.selectors.emailChange).append(options.currentUser.email);
+            jQuery(options.selectors.emailInput).val(options.currentUser.email);
+            jQuery(options.selectors.cheerGeek).html('Hello, ' + options.currentUser.username + '!');
+
+            jQuery(options.selectors.changePassword).on('click', resetPassword);
+
+            jQuery(options.selectors.btnChangeEmail).on('click', triggerBtnChangeEmail);
+            jQuery(options.selectors.btnSaveEmail).on('click', saveEmail);
+
+        },
+
+        saveEmail = function(){
+            var email = jQuery(options.selectors.emailInput).val();
+
+            options.parse.currentUser.set('email', email);
+            options.parse.currentUser.save(null, {
+                success: function(user){
+                    options.parse.currentUser.fetch({
+                        success: function(currentUser){
+                            jQuery(options.selectors.emailChange).show()
+                                .empty()
+                                .append(currentUser.get('email'));
+                            jQuery(options.selectors.btnChangeEmail).show();
+                            jQuery(options.selectors.emailInput).hide();
+                            jQuery(options.selectors.btnSaveEmail).hide();
+                        },
+                        error: function(){
+                            toastr.error('Sorry something happen, please try later!');
+                        }
+                    });
+
+                },
+                error: function(user, error){
+                    toastr.error('Failed to update ' + user + " with error: " + error);
+                }
+
+            });
+        },
+
+        triggerBtnChangeEmail = function(){
+            jQuery(options.selectors.emailChange).hide();
+            jQuery(options.selectors.btnChangeEmail).hide();
+            jQuery(options.selectors.emailInput).show();
+            jQuery(options.selectors.btnSaveEmail).show();
+        },
+
+        resetPassword = function(){
+            Parse.User.requestPasswordReset(options.currentUser.email, {
+                success: function() {
+                    jQuery(options.selectors.alertForPassword).html('Successfully send email');
+                },
+                error: function() {
+                    jQuery(options.selectors.alertForPassword).html("Sorry, try again later!");
+                }
+            });
+        },
+
+        counterBadge = function(query){
+            query.equalTo('submissionOwner', options.currentUser.username);
+            query.count({
+                success: function(count){
+                    jQuery(options.selectors.projectsBadge).html(count);
+                },
+                error: function(err){
+                }
+            });
+        };
+
+    return{
+        initialize: initialize
+    };
+};
+
+jQuery(document).ready(function(){
+    GeekProfile().initialize();
 });
-
