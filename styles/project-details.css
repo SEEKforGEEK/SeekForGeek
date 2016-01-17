@@ -89,6 +89,13 @@
 label{
     font-size: inherit;
 }
+#download-button,#download-button:hover{
+    color:#23D2FF;
+}
+#download-button:hover{
+    text-decoration: none;
+    color:#004A50;
+}
 
 /*RESPONSIVE*/
 @media(max-width:768px){

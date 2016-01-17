@@ -1,0 +1,75 @@
+.howItWorks{
+    min-height:380px !important;
+}
+.howItWorks{
+    background-color: rgba(255,255,255,0.5);
+    height:100%;
+    padding: 2%;
+    text-align: left;
+    font-size:1em;
+    line-height: 1em;
+	text-align: center;
+}
+.howItWorks>section .separatorCircle{
+	margin-top: 5%;
+
+}
+.howItWorks img{
+	display: inline !important;
+}
+.howItWorks p {
+	margin-top:5% !important;
+}
+.howItWorks h1{
+   width:100%;
+   border-bottom: 1px solid #B1EEFF;
+   padding-top:0.25%;
+}
+.howItWorks .heading{
+    margin-top:0 !important;
+	width: 100%;
+    border-bottom: 1px solid #B1EEFF;
+    padding-top: 0.25%;
+}
+.howItWorks section{
+    border-radius: 2%;
+	display:flex;
+	padding-left:10%;
+	margin-top: 2%;
+}
+
+.howItWorks a{
+    font-weight: bold;
+    color: #004A50;
+}
+.howItWorks a:hover{
+    color:#23D2FF;
+    text-decoration: none;
+}
+.separateSections {
+	margin-top:10% !important;
+}
+
+/*RESPONSIVE*/
+@media(max-width:768px){
+
+    .howItWorks,.contentALL {
+        min-height: auto !important;
+		margin-bottom:5%;
+		padding-bottom: 5%;
+    }
+    .howItWorks{
+        font-size: 1em;
+    } 
+	.howItWorks section{
+		flex-direction: column;
+		padding-left:0;
+	}
+	.separatorCircle{
+		margin-bottom: 5%;
+	}
+	.geekSection{
+		padding-bottom: 5%;
+		border-bottom: 1px solid #B1EEFF;
+	}
+}
