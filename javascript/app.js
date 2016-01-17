@@ -22,7 +22,7 @@ Parse.initialize("WYlKRrdVfAxC5qEDv8XNnTvYNYTaU2uoQnr6VFKe", "QCK577sPYWNBXdk6wk
 
     });
 
-    $(function () {
+    jQuery(function () {
         sammyApp.run('#/');
     })
 }());

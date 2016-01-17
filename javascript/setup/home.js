@@ -1,3 +1,5 @@
+'use strict';
+
 var HomeModule = function(settings){
     var options = {
         parse: {

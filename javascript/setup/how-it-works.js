@@ -1,8 +1,10 @@
-$(document).ready(function(){
-	$(".navbarTemplate")
+'use strict';
+
+jQuery(document).ready(function(){
+    jQuery(".navbarTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
-    $("#footerTemplate")
+    jQuery("#footerTemplate")
         .removeClass("templateNone")
         .addClass("templateOn");
 });

@@ -1,3 +1,5 @@
+'use strict';
+
 var WatchlistModule = function(settings){
 	var options = {
 		parse: {

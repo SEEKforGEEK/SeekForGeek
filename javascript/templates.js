@@ -1,14 +1,14 @@
+'use strict';
 
-//'use strict';
 (function(){
-    $(".navbarTemplate")
+    jQuery(".navbarTemplate")
         .addClass("templateNone")
         .removeClass("templateOn");
-    $("#footerTemplate")
+    jQuery("#footerTemplate")
         .addClass("templateNone")
         .removeClass("templateOn");
-    $("li.dropdown").on('click', function() {
-        $("nav.navbar").toggleClass("open");
+    jQuery("li.dropdown").on('click', function() {
+        jQuery("nav.navbar").toggleClass("open");
     });
 }());
 
@@ -19,7 +19,7 @@ var templates = (function () {
         return new Promise(function (resolve, reject) {
             var url = 'templates/' + name + '.handlebars';
 
-            $.get(url, function (html) {
+            jQuery.get(url, function (html) {
                 var template = handlebars.compile(html);
                 resolve(template);
             }).error(function (err) {
