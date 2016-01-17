@@ -1,3 +1,5 @@
+'use strict';
+
 var CustomerProfile = function(settings){
     var options = {
         parse: {
