@@ -1,5 +1,5 @@
 .aboutUs,.aboutUs section ,.aboutUs aside{
-    min-height:380px !important;
+    min-height:380px;
 }
 .aboutUs{
     background-color: rgba(255,255,255,0.5);
@@ -15,7 +15,7 @@
    padding-top:0.25%;
 }
 .aboutUs .heading{
-    margin-top:0 !important;
+    margin-top:0;
 }
 .aboutUs aside{
     border-radius: 2%;
@@ -56,7 +56,7 @@
         font-size:0.75em;
     }
     .aboutUs,.contentALL,.aboutUs section,.aboutUs aside {
-        min-height: auto !important;
+        min-height: auto;
     }
     .aboutUs aside{
         margin-left:1%;
@@ -69,7 +69,6 @@
     }
     .aboutUs{
         font-size: 1em;
-    }
-    
-    
+    }  
 }
+

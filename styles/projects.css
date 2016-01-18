@@ -6,14 +6,17 @@
 .pagination-projects{
 	float:right;
 }
-.pagination-projects a {
-	background-color:#B1EEFF !important;
-	color: #004A50 !important;
+.mainProfile .pagination-projects a,
+.Search .pagination-projects a {
+	background-color:#B1EEFF;
+	color: #004A50;
 }
-.pagination-projects a:hover {
-	background-color:#23D2FF !important;
-	color: #004A50 !important;
+.mainProfile .pagination-projects a:hover,
+.Search .pagination-projects a:hover {
+	background-color:#23D2FF;
+	color: #004A50;
 }
-.pagination-projects:after{
+.mainProfile .pagination-projects:after,
+.Search .pagination-projects:after{
 	clear:both;
 }

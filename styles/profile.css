@@ -1,7 +1,7 @@
 
 .geekProfile, .customerProfile{
     background:rgba(255,255,255,0.2);
-    height:100% !important;
+    height:100%;
 }
 #geek-emailInput, #geek-saveEmail{
     display:none;
@@ -12,7 +12,7 @@
 
 /*MENU*/
 .contentALL, .geekProfile,.customerProfile,.menuBox,.mainProfile{
-    min-height:380px !important;
+    min-height:380px;
 }
 .geekProfile,.customerProfile{
     display:flex;
@@ -31,7 +31,6 @@
 .navMenu a,.navMenu a:hover{
     text-decoration: none;
     color:#004A50;
-    /*text-shadow: 1px 1px #000;*/
     font-size: 1.5em;
     width:100%;
     box-sizing: border-box;
@@ -54,8 +53,7 @@
     width: 100%;
     margin-bottom: 5%;
     font-size:1.5em;
-    margin-top:20%;
-    
+    margin-top:20%;   
     border-radius:5px;
 }
 .menuBox .button:after{
@@ -97,11 +95,11 @@ input {
 /*RESPONSIVE*/
 @media(max-width:768px){
     .geekProfile div,.customerProfile div{
-        display:block !important;
+        display:block;
     }
     .geekProfile ,.customerProfile{
         flex-wrap: wrap;
-        min-height: auto !important;
+        min-height: auto;
     }
     .navMenu ul {
         display:flex;
@@ -113,27 +111,23 @@ input {
         padding:0%;
     }
     .menuBox{
-        min-height: auto !important;
+        min-height: auto;
         font-size: 1em;
     }
     .navMenu .button {
         margin:0;
         width:100%;
-        background-color: #004A50 !important;
+        background-color: #004A50;
     }
     .mainProfile span,.mainProfile input{
         font-size:0.75em;
     }
     .mainProfile,.contentALL {
-        min-height: auto !important;
+        min-height: auto;
     }
     .mainProfile .button{
-        background-color: #004A50 !important;
+        background-color: #004A50;
         padding: 0;
-    }
-    .button:hover {
-    background-color:#23D2FF !important; /* Green */
-    color: #004A50 !important;
     }
     #hello-geek,#hello-customer{
         font-size: 1.5em;

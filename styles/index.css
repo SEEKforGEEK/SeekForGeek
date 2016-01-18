@@ -1,7 +1,9 @@
+/*DEFAULT SETTING*/
+
 body {
-    background-color: #B1EEFF !important;
-    color: #004A50 !important;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    background-color: #B1EEFF;
+    color: #004A50;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #content {
     min-height:60%;
@@ -9,32 +11,21 @@ body {
     padding-left:8%;
     padding-right:8%;
 }
-@media (max-width:768px){
-    #content{
-        padding-left:0;
-        padding-right:0;
-    }
-}
+
 .badge{
-    background-color: #23D2FF !important;
-    color: #004A50 !important;    
+    background-color: #23D2FF;
+    color: #004A50;    
 }
+
 #footerTemplate{
     min-height: 30%;
 }
-@media (max-width:768px){
-    #footerTemplate,#footerTemplate section{
-        min-height: 25%;
-    }
-    .footerLinks{
-        display:none !important;
-    }
 
-}
 /*HEADER*/
 .navbarTemplate .navbar-header{
-    margin:0 !important;
+    margin:0;
 }
+
 #template-header .container-fluid {
     background-color: rgba(35, 210, 255, 0.5);
     padding: 0;
@@ -44,15 +35,23 @@ body {
     padding-left:5%;
     float:left;
     height: 45px;
-    margin-left:-15px !important;
+    margin-left:-15px;
 }
-@media(max-width:768px){
-    width:100%;
+
+#template-header .navbar-default .navbar-nav>.open>a,
+#template-header .nav .open>a{
+    background-color: transparent;
 }
-.dropdown>a{
-    background-color: transparent !important;
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    background-color: #23D2FF;
+}
+
+#template-header .dropdown>a,
+#template-header .dropdown>a:hover{
+    background-color: transparent;
     border: none;
-    color: #004A50 !important;
+    color: #004A50;
     text-align: center;
     text-decoration: none;
     font-size: 1.5em;
@@ -61,37 +60,38 @@ body {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
+
 #template-header .dropdown-menu{
     background:rgba(35, 210, 255, 0.95);
     border:0;
 }
+
 #template-header .dropdown ul a{
  font-size: 1.25em;
  color: #004A50 ;
 }
-@media(max-width:768px){
-    .dropdown{
-        display:none !important;
-    }
-    /*the menu options will be available in the footer*/
-}
+
 /*FOOTER*/
 #footerTemplate{
     background-image: url("../images/footer.png");
 }
+
 #footerTemplate a{
     font-style: none;
     color:#23D2FF;
 }
+
 #footerTemplate nav{
     display:flex;
 }
+
 #footerTemplate span{
     font-weight: bold;
     font-size: 1.5em;
     text-shadow: 1px 1px #000;
     line-height: 2em;
 }
+
 #footerTemplate ul li{
     font-size: 1em;
     list-style-type: none;
@@ -101,21 +101,26 @@ body {
     border-top: 1px solid #23D2FF;
     border-top-style: outset;
 }
+
 #footerTemplate ul li:first-of-type{
     border-top:none;
 }
+
 .navFooterTemplate {
     color:#23D2FF;
     display:inline-block;
     order:1;
 }
+
 .navFooterTemplate div {
     margin-left: 2%;
     margin-right:2%;
 }
+
 #footerTemplate .row{
     margin-right: 0 !important;
 }
+
 .footerLinks{
     display:inline-block;
     order:2;
@@ -123,15 +128,46 @@ body {
     border-left:1px solid #23D2FF;
     border-left-style: outset;
 }
+
 .footerLinks span{
     padding-left:5%;
 }
+
 .footerLinks img{
     display: inline-block;
     margin:3%;
 }
-@media(max-width:768px){
-    #template-header .logoBrand {
+
+#template-footer .copyright{
+    margin-top:0.5%;
+    text-align: right;
+    background:transparent url(../images/transFooter.png);
+}
+
+#template-header .navbar-toggle,
+#template-header .navbar-toggle:hover,
+#template-header .navbar-toggle:focus {
+    background-color: rgba(35,210,255,0.5);
+    margin-right: 0;
+}
+
+/*RESPONSIVE*/
+@media (max-width:768px){
+    #content{
+        padding-left:0;
+        padding-right:0;
+    }
+    #footerTemplate,#footerTemplate section{
+        min-height: 25%;
+    }
+    .footerLinks{
+        display:none;
+    }
+    #template-header .dropdown{
+        display:none;
+         /*the menu options will be available in the footer*/
+    }
+        #template-header .logoBrand {
         padding-left:0;
     }
     #footerTemplate nav{
@@ -145,11 +181,6 @@ body {
         margin:0;
         padding-left:2%;
         padding-right:2%;
-    }
-
-    .footerLinks{
-        display:block;
-        border-left:none;
     }
     #footerTemplate span{
         display:inline-block;
@@ -170,11 +201,4 @@ body {
         display:block;
         font-size:1em;
     }
-}
-
-
-#template-footer .copyright{
-    margin-top:0.5%;
-    text-align: right !important;
-    background:transparent url(../images/transFooter.png);
 }
