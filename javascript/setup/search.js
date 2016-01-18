@@ -15,7 +15,8 @@ var SearchModule = function(settings){
 			slider: '#slider2',
 			urlAllProjects: '/#/search?index=all',
 			urlDevProjects: '/#/search?index=dev',
-			urlDesignProjects: '/#/search?index=design'
+			urlDesignProjects: '/#/search?index=design',
+			budget: '#budget'
 		},
 		variables: {
 			projects: []
@@ -65,7 +66,7 @@ var SearchModule = function(settings){
 					return;
 				}
 				jQuery(options.selectors.slider).attr('value', url);
-		        jQuery("#budget").html(url);
+		        jQuery(options.selectors.budget).html(url);
 		    	searchWithSlider(url, options.currentUser.type);
 		    }
 		    
@@ -83,9 +84,7 @@ var SearchModule = function(settings){
 				case 'banner': typeSearch(options.currentUser.type, 'banner design'); break;
 				case 'brochure': typeSearch(options.currentUser.type, 'brochure design'); break;
 			}
-			//searchInput(options.currentUser.type);
-
-		})
+		});
 	},
 
 
@@ -248,23 +247,6 @@ var SearchModule = function(settings){
 		}
 	},
 
-	// searchInput = function(type){
-
-	// 	$('#search-input').bind("change paste keyup", function() {
-	// 	    var input = this.value;
-	// 	    options.parse.queryProjects.startsWith('title', input);
-	// 	    options.parse.queryProjects.find({
-	// 	    	success: function(res){
-	// 	    		if (type == 'customer') {
-	// 					successCustomerSearch(res);	
-	// 				}else if(type == 'geek'){
-	// 					successGeekSearch(res);
-	// 				}
-	// 			}
-	// 		});
-	// 	});
-	// },
-	
 	tableRowWithoutWatchlist = function(result){
 		var rowWithoutWatchlist = '<tr>' +
 			'<td class="search-project-title"><a href="/#/project-details?id='+ result.id + '">' + result.get('title') + '</a></td>' +

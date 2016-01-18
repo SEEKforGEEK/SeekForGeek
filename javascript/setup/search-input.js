@@ -1,18 +1,23 @@
+'use strict';
+
 jQuery(document).ready(function(){
 	
 	var currentUser = Parse.User.current();  	
 	var watchlistArray = currentUser.get('watchlist') || [];
-	var query = new Parse.Query('Projects');	
-	$('#search-input').bind("change paste keyup", function() {
+	var query = new Parse.Query('Projects');
+
+	var appendProjects = '#append-projects';
+
+	jQuery('#search-input').bind("change paste keyup", function() {
 	    var input = this.value;
 	    query.startsWith('title', input);
 	    query.find({
 	    	success: function(res){
-	    		$('#append-projects').empty();
+				jQuery(appendProjects).empty();
 	    		for (var i = 0; i < res.length; i++) {
 
 	    			if (currentUser.get('type') == 'customer') {
-	    				$('#append-projects').append(
+						jQuery(appendProjects).append(
 							'<tr>' +
 				               '<td class="search-project-title"><a href="/#/project-details?id='+ 
 				               res[i].id + '">' + res[i].get('title') + '</a></td>' +
@@ -24,7 +29,7 @@ jQuery(document).ready(function(){
 						);
 	    			}else{
 	    				if (checkWatchlist(watchlistArray, res[i].id)) {
-		    				$('#append-projects').append(
+							jQuery(appendProjects).append(
 								'<tr>' +
 					               '<td class="search-project-title"><a href="/#/project-details?id='+ 
 					               res[i].id + '">' + res[i].get('title') + '</a></td>' +
@@ -36,7 +41,7 @@ jQuery(document).ready(function(){
 							);
 		    			}
 		    			else{
-		    				$('#append-projects').append(
+							jQuery(appendProjects).append(
 			    				'<tr>' +
 					               	'<td class="search-project-title"><a href="/#/project-details?id='+ 
 					               	res[i].id + '">' + res[i].get('title') + '</a></td>' +
@@ -48,16 +53,16 @@ jQuery(document).ready(function(){
 				            );
 		    			}
 	    			}
-	    		};
+	    		}
 	    	}
 	    })
 
 
 	});
-	
 
-	
-	$('#append-projects').on('click', '.add-to-watchlist', function(){
+
+
+	jQuery(appendProjects).on('click', '.add-to-watchlist', function(){
 		var id = $(this).attr('data-id');
 		var handler = $(this);
 
@@ -76,7 +81,7 @@ function checkWatchlist(watchlist, str){
 	for (var i = 0; i < watchlist.length; i++) {
 		if (watchlist[i] == str) {
 			return true;
-		};
-	};
+		}
+	}
 	return false;
 }
