@@ -49,7 +49,7 @@ var LoginModule = function(settings){
 
     loginForm = function(event){
         var loginData = {
-            username: jQuery(options.selectors.loginPassword).val(),
+            username: jQuery(options.selectors.loginUsername).val(),
             password: jQuery(options.selectors.loginPassword).val()
         };
         var passwordForm = jQuery(options.selectors.loginPasswordForm);
