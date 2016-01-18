@@ -1,3 +1,5 @@
+'use strict';
+
 var SearchModule = function(settings){
 
 	var options = {

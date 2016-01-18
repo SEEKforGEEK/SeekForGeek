@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	
 	var currentUser = Parse.User.current();  	
 	var watchlistArray = currentUser.get('watchlist') || [];
