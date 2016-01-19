@@ -44,7 +44,7 @@ var WatchlistModule = function(settings){
 	removeFromWatchlist = function(element){
 
 		var id = jQuery(element).data('id');
-		console.log(id);
+
 		var newArray = [],
 			j = 0;
 		for (var i = 0; i < options.currentUser.watchlist.length; i++) {

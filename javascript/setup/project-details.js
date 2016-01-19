@@ -118,7 +118,7 @@ var ProjectDetailsModule = function(settings){
 		});
 	},
 
-	addToWatchlist = function(){
+	addToWatchlist = function(id){
 		options.currentUser.watchlist.push(id);
 		options.parse.currentUser.set('watchlist', options.currentUser.watchlist);
 		options.parse.currentUser.save()
@@ -138,11 +138,11 @@ var ProjectDetailsModule = function(settings){
 			parseFile.save()
 				.then(function() {
 					var Submissions = new Parse.Object("Submissions");
-					Submissions.set("title", project.title);
-					Submissions.set('endDate', project.date);
-					Submissions.set('price', parseInt(project.price));
+					Submissions.set("title", options.variables.project.title);
+					Submissions.set('endDate', options.variables.project.date);
+					Submissions.set('price', parseInt(options.variables.project.price));
 					Submissions.set('submissionOwner', options.currentUser.username);
-					Submissions.set('projectOwner', project.owner);
+					Submissions.set('projectOwner', options.variables.project.owner);
 					Submissions.set('files', parseFile);
 					Submissions.set('grade', 'in progress');
 					Submissions.save();
@@ -269,7 +269,9 @@ var ProjectDetailsModule = function(settings){
 
 		showProject(options.parse.queryProjects, id);
 
-		jQuery(options.selectors.geekAddWatchlist).on('click', addToWatchlist);
+		jQuery(options.selectors.geekAddWatchlist).on('click', function(){
+			addToWatchlist(id);
+		});
 
 		jQuery(options.selectors.btnUploadSubmision).on('click', uploadSubmision);
 
