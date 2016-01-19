@@ -1,23 +1,26 @@
-.button:hover {
-    background-color:#23D2FF !important; /* Green */
-    color: #004A50 !important;
+.searchOptions{
+    margin-top:10%;
 }
 .searchContent .button{
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: bold;
-    padding:1% 3% 1% 3% !important;
-    margin-right:2% !important;
+    padding:1% 3% 1% 3%;
+    margin-right:2%;
+    float:none;
+}
+.searchButtons{
+    padding:0;
 }
 .sliderDiv {
     display: flex;
     flex-direction:row;
 }
 button.add-to-watchlist  {
-    background-color: transparent !important;
+    background-color: transparent;
     border:none;
 }
-.glyphicon{
-    color: #004A50 !important;
+.searchContent .glyphicon{
+    color: #004A50;
 }
 div.heading{
     margin-bottom:5% ;
@@ -28,45 +31,29 @@ div.heading{
     background-color:rgba(255,255,255,0.5);
 }
 #search-input{
-    /*width:100%; */
     line-height: 2em;
+    font-size:1em;
+    width:70%;
 }
 .search-about{
-	font-size: 1.5em;
-    /*display: inline-block;*/
-    /*max-width: 100%;*/
-    /*margin-bottom: 2%;
-	margin-top:2%;*/
+	font-size: 1em;
     font-weight: bold;
     margin-right:1%;
 }
-@media (max-width:768px){
-	.search-about{
-		font-size:1em;
-	}
-	label{
-		font-size:1em;
-	}
-	div.heading h1{
-		font-size:1.5em !important;
-		font-weight: bold;
-	}
-    input[type=range] {
-        width:100% !important;
-    }
+.table-responsive a{
+    color:#004A50;
+    font-weight: bold;
 }
-.searchContent .button{
-	margin:0 0 2% 0;
+.table-responsive a:hover{
+    text-decoration: none;
+}
+.watchlist-func button{
+    padding:0;
 }
 input[type=range] {
-    display:inline !important;
-    /*removes default webkit styles*/
+    display:inline;
     -webkit-appearance: none;
-    
-    /*fix for FF unable to apply focus style bug */
     border: 1px solid white;
-    
-    /*required for proper track sizing in FF*/
 }
 input[type=range]::-webkit-slider-runnable-track {
     height: 5px;
@@ -103,8 +90,6 @@ input[type=range]::-moz-range-thumb {
     border-radius: 50%;
     background-color: #23D2FF;
 }
-
-/*hide the outline behind the border*/
 input[type=range]:-moz-focusring{
     outline: 1px solid white;
     outline-offset: -1px;
@@ -112,15 +97,9 @@ input[type=range]:-moz-focusring{
 
 input[type=range]::-ms-track {
     height: 5px;
-    
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
     border-color: transparent;
     border-width: 6px 0;
-
-    /*remove default tick marks*/
     color: transparent;
 }
 input[type=range]::-ms-fill-lower {
@@ -145,14 +124,43 @@ input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
 }
 #slider2{
-    background-color: transparent !important;
+    background-color: transparent;
     border:none;
 }
 @media(min-width:768px){
     #slider2{
-        width:60% !important;
+        width:70%;
     }
 }
 .searchContent th{
     text-align: center;
+}
+/*RESPONSIVE*/
+@media (max-width:768px){
+    .searchContent .button{
+        margin-bottom: 1%;
+    }
+	.search-about{
+		font-size:1em;
+	}
+    #search-input{
+        width:100%;
+    }
+	label{
+		font-size:1em;
+	}
+	div.heading h1{
+		font-size:1.5em;
+		font-weight: bold;
+	}
+    input[type=range] {
+        width:100%;
+    }
+    .sliderDiv{
+        margin-top: 35%;
+        margin-bottom: 5%;
+    }
+    .searchButtons{
+        margin-top:5%;
+    }
 }

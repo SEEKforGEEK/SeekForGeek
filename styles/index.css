@@ -167,7 +167,7 @@ body {
         display:none;
          /*the menu options will be available in the footer*/
     }
-        #template-header .logoBrand {
+    #template-header .logoBrand {
         padding-left:0;
     }
     #footerTemplate nav{

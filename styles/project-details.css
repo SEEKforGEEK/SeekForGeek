@@ -75,7 +75,7 @@
     margin-top: 5%;
     font-weight: bold;
 }
-label{
+.projectDetails label{
     font-size: inherit;
 }
 #download-button,#download-button:hover{
@@ -84,6 +84,27 @@ label{
 #download-button:hover{
     text-decoration: none;
     color:#004A50;
+}
+ .modals .close span{
+    color:#000;
+}
+input[type="file"] {
+    display:flex;
+    flex-flow: wrap;
+    padding:0;
+}
+input[type="file"]::-webkit-file-upload-button, button{
+    background-color: #004A50;
+    border: none;
+    color: #23D2FF;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    height:100%;
+    font-weight: normal;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
 /*RESPONSIVE*/
