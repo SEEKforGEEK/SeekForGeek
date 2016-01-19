@@ -12,35 +12,35 @@
     border-bottom:1px solid #8FC4C1;
 }
 .modal-content {
-    background-color: rgba(143,196,193,1) !important;    
+    background-color:rgb(100,210,255);    
 }
 .form-control{
-    background-color: #80B0AD;
+    background-color:rgba(35,210,255,0.8);
     border: 1px inset rgba(157, 157, 157, 0.22);
 }
-::-webkit-input-placeholder {
-    color: #004A50 !important;
+.modals ::-webkit-input-placeholder {
+    color: #004A50;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-    color: #004A50 !important;  
+.modals :-moz-placeholder { /* Firefox 18- */
+    color: #004A50;  
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-    color: #004A50 !important; 
+.modals ::-moz-placeholder {  /* Firefox 19+ */
+    color: #004A50; 
 }
 
-:-ms-input-placeholder {  
-    color: #004A50 !important;
+.modals :-ms-input-placeholder {  
+    color: #004A50;
 }
 label{
     text-align: left;
     font-size: 1.5em;
 }
 #registerButton,#loginButton,#passButton{
-    background-color: #004A50; /* Green */
+    background-color: #004A50;
     border: none;
-    color: #8FC4C1 !important;
+    color: #8FC4C1;
     padding: 5px 20px;
     text-align: center;
     text-decoration: none;
@@ -62,7 +62,7 @@ label{
     background: none;
 }
 #btnForgotPass{
-    padding-left:15px;
+    padding-left:20%;
 }
 #modal-login .modal-footer{
     border:none;
@@ -76,6 +76,25 @@ label{
 }
 #modal-forgot-pass .modal-footer{
     border:none;
+}
+.form-horizontal div{
+    padding-top:1%;
+}
+.modals .form-horizontal label{
+    padding-top:2%;
+}
+@media(max-width:768px){
+        #btnForgotPass{
+            padding-left:5%;
+        }
+        .radioButtons div{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .radioButtons label:first-of-type{
+            padding-left: 0;
+        }
 }
 
 /*MODALS FOR PROJECT STATUS*/
