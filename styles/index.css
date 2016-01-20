@@ -112,7 +112,7 @@ body {
     order:1;
 }
 
-.navFooterTemplate div {
+.navFooterTemplate section {
     margin-left: 2%;
     margin-right:2%;
 }
@@ -177,7 +177,7 @@ body {
         color:#23D2FF;  
         display:block;
     }
-    .navFooterTemplate div{
+    .navFooterTemplate section{
         margin:0;
         padding-left:2%;
         padding-right:2%;
@@ -194,7 +194,7 @@ body {
         border-top:0;
         
     }
-    .navFooterTemplate div:first-of-type{
+    .navFooterTemplate section:first-of-type{
         margin-left:5%;
     }
     #template-footer{

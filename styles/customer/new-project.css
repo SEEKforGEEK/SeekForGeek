@@ -9,6 +9,10 @@
     font-size:1em;
     line-height: 2em;
 }
+#project-details .container-fluid{
+    width:100%;
+    margin:0;
+}
 .newProject h1{
    width:100%;
    border-bottom: 1px solid #B1EEFF;
@@ -43,6 +47,9 @@
 }
 #radioDetails h3{
     font-size:2em;
+}
+.newProject input,.newProject textarea{
+    background: #B1EEFF;
 }
 
 #myTabContent{

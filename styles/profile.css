@@ -94,9 +94,6 @@ input {
 }
 /*RESPONSIVE*/
 @media(max-width:768px){
-    .geekProfile div,.customerProfile div{
-        display:block;
-    }
     .geekProfile ,.customerProfile{
         flex-wrap: wrap;
         min-height: auto;

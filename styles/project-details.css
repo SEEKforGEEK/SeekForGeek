@@ -81,6 +81,9 @@
 #download-button,#download-button:hover{
     color:#23D2FF;
 }
+#download-files:hover a{
+    color: #004A50;
+}
 #download-button:hover{
     text-decoration: none;
     color:#004A50;
@@ -93,7 +96,7 @@ input[type="file"] {
     flex-flow: wrap;
     padding:0;
 }
-input[type="file"]::-webkit-file-upload-button,.projectDetails button{
+input[type="file"]::-webkit-file-upload-button{
     background-color: #004A50;
     border: none;
     color: #23D2FF;

@@ -108,7 +108,7 @@ var AllProjectModule = function(settings){
 			'<td>' + project.get('endDate') + '</td>' +
 			'<td>' + project.get('price') + '</td>' +
 			'<td><a href="' + project.get('files').url() + '">Download</a></td>' +
-			'<td><button data-id="' + project.id + '" data-toggle="modal" data-target="#' + grade + '" class="button check-project-winner">+</button></td>' +
+			'<td><button data-id="' + project.id + '" data-toggle="modal" data-target="#' + grade + '" class="check-project-winner">+</button></td>' +
 		'</tr>'
 	},
 

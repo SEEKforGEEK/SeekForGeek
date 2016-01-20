@@ -1,6 +1,6 @@
 <div class="container-fluid contentALL">
-    <div class="geekProfile row">
-        <div class="menuBox col-sm-2 col-md-2 col-lg-2 col-xs-12">
+    <section class="geekProfile row">
+        <aside class="menuBox col-sm-2 col-md-2 col-lg-2 col-xs-12">
             <nav class="navMenu">
                 <ul>
                     <li><a href="/#/geek/profile">My profile</a></li>
@@ -9,8 +9,8 @@
                     <li><button class="button browse-job">Browse Job</button></li>
                 </ul>
             </nav>
-        </div>
-        <div class="mainProfile col-sm-10 col-md-10 col-lg-10 col-xs-12">
+        </aside>
+        <section class="mainProfile col-sm-10 col-md-10 col-lg-10 col-xs-12">
             <span class="contentAbout">All projects you sent submissions to:</span>
             <div class="table-responsive">
                 <table class="table table-striped table-hover ">
@@ -29,24 +29,21 @@
                 </table> 
                 <ul id="pagination-demo" class="pagination pagination-projects pagination-sm"></ul>
             </div>
-        </div>
-    </div>
+        </section>
+    </section>
 </div>
 
 <!-- In Progress -->
 <div class="modals modal fade" id="progress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <header class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img class="img-responsive" src="../../images/logo.png" alt="logo"/>
-      </div>
-      <div class="modal-body">
+      </header>
+      <section class="modal-body">
         <p class="inProgress">The Submission is in progress!</p>
-      </div>
-      <div class="modal-footer">
-        
-      </div>
+      </header>
     </div>
   </div>
 </div>
@@ -55,17 +52,13 @@
 <div class="modals modal fade" id="notWinner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <header class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img class="img-responsive" src="../../images/logo.png" alt="logo"/>
-
-      </div>
-      <div class="modal-body">
+      </header>
+      <section class="modal-body">
         <p class="notWinner">Sorry, but you are not a winner.</p>
-      </div>
-      <div class="modal-footer">
-        
-      </div>
+      </section>
     </div>
   </div>
 </div>
@@ -74,11 +67,11 @@
 <div class="modals modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <header class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <img class="img-responsive" src="../../images/logo.png" alt="logo"/>
-            </div>
-            <div class="modal-body">
+            </header>
+            <section class="modal-body">
                 <h1 class="winner">Congratulations!You are the WINNER!</h1>
                 <span class="winnerInfo">/please include the following information/</span>
                 <form>
@@ -91,10 +84,10 @@
                         <input type="text" class="form-control" id="IBAN" placeholder="****************">
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+            </section>
+            <footer class="modal-footer">
                 <button id="payment-info-btn" class="button">Send Payment Info</button>
-            </div>
+            </footer>
         </div>
     </div>
 </div>

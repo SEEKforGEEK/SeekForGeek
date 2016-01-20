@@ -21,6 +21,9 @@
 .contactUs input,.contactUs textarea {
     background-color: #B1EEFF;
 }
+.contactUs .glyphicon {
+    color:#004A50;
+}
 /*RESPONSIVE*/
 @media(max-width:768px){
     .contactUs{

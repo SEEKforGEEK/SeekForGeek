@@ -1,186 +1,174 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seek for Geek</title>
-    <link rel="icon" type="image/ico" href="glasses.ico"/>
-    <link rel="stylesheet" href="bower_components/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/modals.css">
-    <link rel="stylesheet" href="styles/profile.css">
-    <link rel="stylesheet" href="styles/geek/watchlist.css">
-    <link rel="stylesheet" href="styles/projects.css">
-    <link rel="stylesheet" href="styles/search.css">
-    <link rel="stylesheet" href="styles/contact-us.css">
-    <link rel="stylesheet" href="styles/project-details.css">
-    <link rel="stylesheet" href="styles/about-us.css">
-    <link rel="stylesheet" href="styles/how-it-works.css">
-    <link rel="stylesheet" href="styles/customer/new-project.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.css">
-</head>
-<body>
-    <!--NAVIGATION-->
-    <div class="navbarTemplate">
-        <header id="template-header">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img class="logoBrand img-responsive" src="../images/logo.png">
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div  >
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/#/search?index=web">Web Development</a></li>
-                                <li><a href="/#/search?index=software">Software Development</a></li>
-                                <li><a href="/#/search?index=mobile">Mobile Development</a></li>
-                                <li><a href="/#/search?index=game">Game Development</a></li>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Seek for Geek</title>
+        <link rel="icon" type="image/ico" href="glasses.ico"/>
+        <link rel="stylesheet" href="bower_components/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/modals.css">
+        <link rel="stylesheet" href="styles/profile.css">
+        <link rel="stylesheet" href="styles/geek/watchlist.css">
+        <link rel="stylesheet" href="styles/projects.css">
+        <link rel="stylesheet" href="styles/search.css">
+        <link rel="stylesheet" href="styles/contact-us.css">
+        <link rel="stylesheet" href="styles/project-details.css">
+        <link rel="stylesheet" href="styles/about-us.css">
+        <link rel="stylesheet" href="styles/how-it-works.css">
+        <link rel="stylesheet" href="styles/customer/new-project.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.css">
+    </head>
+    <body>
+        <!--NAVIGATION-->
+        <div class="navbarTemplate">
+            <header id="template-header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <img class="logoBrand img-responsive" src="../images/logo.png">
+                        </div>
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/#/search?index=web">Web Development</a></li>
+                                        <li><a href="/#/search?index=software">Software Development</a></li>
+                                        <li><a href="/#/search?index=mobile">Mobile Development</a></li>
+                                        <li><a href="/#/search?index=game">Game Development</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/#/search?index=graphic">Graphic Design</a></li>
+                                        <li><a href="/#/search?index=web-design">Web Design</a></li>
+                                        <li><a href="/#/search?index=logo">Logo Design</a></li>
+                                        <li><a href="/#/search?index=banner">Banner Ad Design</a></li>
+                                        <li><a href="/#/search?index=brochure">Brochure Design</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/#/about-us">About us</a></li>
+                                        <li><a href="/#/contact-us">Contact us</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/#/how-it-works">How it works?</a></li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/#/search?index=graphic">Graphic Design</a></li>
-                                <li><a href="/#/search?index=web-design">Web Design</a></li>
-                                <li><a href="/#/search?index=logo">Logo Design</a></li>
-                                <li><a href="/#/search?index=banner">Banner Ad Design</a></li>
-                                <li><a href="/#/search?index=brochure">Brochure Design</a></li>
+                        </nav>  
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                            <ul class="form-nav nav navbar-nav navbar-right">
+                                <li>
+                                    <button id="profile-button" class="button" type="button">My Profile</button>
+                                </li>
+                                <li>
+                                    <button id="logout-button" class="button" type="button">Log out</button>
+                                </li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/#/about-us">About us</a></li>
-                                <li><a href="/#/contact-us">Contact us</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="/#/how-it-works">How it works?</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>  
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="form-nav nav navbar-nav navbar-right">
-                        <li>
-                            <button id="profile-button" class="button" type="button">My Profile</button>
-                        </li>
-                        <li>
-                            <button id="logout-button" class="button" type="button">Log out</button>
-                        </li>
-                    </ul>
-                </div>
-                <!--  -->
-
-               
-                
-
-                <!--  -->
-
-
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </header>
-</div>
-
-
-<div id="content">
-
-</div>
-<!--FOOTER-->
-<footer id="footerTemplate">
-    <section>
-        <nav class="navFooterTemplate row">
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-4">
-                <span class="navFooterTitles">Development</span>
-                <ul class="navFooterLists">
-                    <li><a href="/#/search?index=web">Web Development</a></li>
-                    <li><a href="/#/search?index=software">Software Development</a></li>
-                    <li><a href="/#/search?index=game">Game Development</a></li>
-                    <li><a href="/#/search?index=mobile">Mobile Development</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-4">
-                <span class="navFooterTitles">Design</span>
-                <ul class="navFooterLists">
-                    <li><a href="/#/search?index=graphic">Graphic Design</a></li>
-                    <li><a href="/#/search?index=web-design">Web Design</a></li>
-                    <li><a href="/#/search?index=logo">Logo Design</a></li>
-                    <li><a href="/#/search?index=banner">Banner Design</a></li>
-                    <li><a href="/#/search?index=brochure">Brochure Design</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
-                <span class="navFooterTitles">About us</span>
-                <ul class="navFooterLists">
-                    <li><a href="/#/about-us">About us</a></li>
-                    <li><a href="/#/contact-us">Contact us</a></li>
-                    <li><a href="/#/how-it-works">How it works?</a></li>
-                </ul>
-            </div>
-            
-            <div class="footerLinks col-sm-3 col-lg-3 col-md-3 col-xs-6">
-                <span>Find us</span>
-                <div class="linkIcons">
-                    <img class="img-responsive" src="../images/icons/Facebook.png" alt="Facebook">
-                    <img class="img-responsive" src="../images/icons/Github.png" alt="Github">
-                    <img class="img-responsive" src="../images/icons/Tumblr.png" alt="Tumblr">
-                    <img class="img-responsive" src="../images/icons/Twitter.png" alt="Twitter">
-                    <img class="img-responsive" src="../images/icons/Google+.png" alt="Google+">
-                    <img class="img-responsive" src="../images/icons/Linkedin.png" alt="LinkedIn">
-                </div>
-            </div>
-        </nav>
-    </section>
-    <footer id="template-footer">
-        <p class="copyright">
-            &copy; 2015 Seek for Geek - Elena Stoyanova & Valentin Georgiev All rights reserved .
-        </p>
-    </footer>
-</footer>
-
-
-<!--    Libs     -->
-<script src="bower_components/parse-1.6.7.min/index.js"></script>
-
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/sammy/lib/sammy.js"></script>
-<script src="bower_components/handlebars/handlebars.js"></script>
-<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
-<script src="bower_components/es6-promise-master/dist/es6-promise.js"></script>
-<script src="bower_components/esimakin-twbs-pagination/jquery.twbsPagination.min.js"></script>
-<script src="bower_components/toastr/toastr.min.js"></script>
-
-<!--    App    -->
-
-
-<!--    App: Controllers    -->
-<script src="javascript/controllers/homeController.js"></script>
-<script src="javascript/controllers/geekController.js"></script>
-<script src="javascript/controllers/searchController.js"></script>
-<script src="javascript/controllers/customerController.js"></script>
-<script src="javascript/controllers/projectController.js"></script>
-<script src="javascript/controllers/basicController.js"></script>
-
-
-<!--    App: Setup   -->
-<script src="javascript/templates.js"></script>
-<script src="javascript/app.js"></script>
-<script src="javascript/basicTemplate.js"></script>
-
-</body>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    
+        <!--CONTENT(for handlebars)-->
+        <section id="content">
+        
+        </section>
+        
+        <!--FOOTER-->
+        <footer id="footerTemplate">
+            <section>
+                <nav class="navFooterTemplate row">
+                    <section class="col-sm-3 col-md-3 col-lg-3 col-xs-4">
+                        <span class="navFooterTitles">Development</span>
+                        <ul class="navFooterLists">
+                            <li><a href="/#/search?index=web">Web Development</a></li>
+                            <li><a href="/#/search?index=software">Software Development</a></li>
+                            <li><a href="/#/search?index=game">Game Development</a></li>
+                            <li><a href="/#/search?index=mobile">Mobile Development</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-3 col-md-3 col-lg-3 col-xs-4">
+                        <span class="navFooterTitles">Design</span>
+                        <ul class="navFooterLists">
+                            <li><a href="/#/search?index=graphic">Graphic Design</a></li>
+                            <li><a href="/#/search?index=web-design">Web Design</a></li>
+                            <li><a href="/#/search?index=logo">Logo Design</a></li>
+                            <li><a href="/#/search?index=banner">Banner Design</a></li>
+                            <li><a href="/#/search?index=brochure">Brochure Design</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        <span class="navFooterTitles">About us</span>
+                        <ul class="navFooterLists">
+                            <li><a href="/#/about-us">About us</a></li>
+                            <li><a href="/#/contact-us">Contact us</a></li>
+                            <li><a href="/#/how-it-works">How it works?</a></li>
+                        </ul>
+                    </section> 
+                    <section class="footerLinks col-sm-3 col-lg-3 col-md-3 col-xs-6">
+                        <span>Find us</span>
+                        <div class="linkIcons">
+                            <img class="img-responsive" src="../images/icons/Facebook.png" alt="Facebook">
+                            <img class="img-responsive" src="../images/icons/Github.png" alt="Github">
+                            <img class="img-responsive" src="../images/icons/Tumblr.png" alt="Tumblr">
+                            <img class="img-responsive" src="../images/icons/Twitter.png" alt="Twitter">
+                            <img class="img-responsive" src="../images/icons/Google+.png" alt="Google+">
+                            <img class="img-responsive" src="../images/icons/Linkedin.png" alt="LinkedIn">
+                        </div>
+                    </section>
+                </nav>
+            </section>
+            <footer id="template-footer">
+                <p class="copyright">
+                    &copy; 2015 Seek for Geek - Elena Stoyanova & Valentin Georgiev All rights reserved .
+                </p>
+            </footer>
+        </footer>
+        
+    
+        <!--    Libs     -->
+        <script src="bower_components/parse-1.6.7.min/index.js"></script>
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/sammy/lib/sammy.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+        <script src="bower_components/es6-promise-master/dist/es6-promise.js"></script>
+        <script src="bower_components/esimakin-twbs-pagination/jquery.twbsPagination.min.js"></script>
+        <script src="bower_components/toastr/toastr.min.js"></script>
+        
+        <!--    App    -->
+        
+        
+        <!--    App: Controllers    -->
+        <script src="javascript/controllers/homeController.js"></script>
+        <script src="javascript/controllers/geekController.js"></script>
+        <script src="javascript/controllers/searchController.js"></script>
+        <script src="javascript/controllers/customerController.js"></script>
+        <script src="javascript/controllers/projectController.js"></script>
+        <script src="javascript/controllers/basicController.js"></script>
+        
+        
+        <!--    App: Setup   -->
+        <script src="javascript/templates.js"></script>
+        <script src="javascript/app.js"></script>
+        <script src="javascript/basicTemplate.js"></script>
+    
+    </body>
 </html>

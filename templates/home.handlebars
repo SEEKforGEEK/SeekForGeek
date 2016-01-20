@@ -1,7 +1,6 @@
  <header id="main-header">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -12,33 +11,29 @@
                 </button>
                 <img class="logoBrand img-responsive" src="../images/logo.png">
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="form-nav nav navbar-nav navbar-right">
                     <li>
-                        <button id="register-button" class="button" type="button" data-toggle="modal"
-                                data-target="#modal-register">Register
+                        <button id="register-button" class="button" type="button" data-toggle="modal" data-target="#modal-register">
+                            Register
                         </button>
                     </li>
                     <li>
-                        <button id="login-button" class="button" type="button" data-toggle="modal"
-                                data-target="#modal-login">Log in
+                        <button id="login-button" class="button" type="button" data-toggle="modal" data-target="#modal-login">
+                            Log in
                         </button>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 </header>
 
+<!--MAIN-->
 <section id="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-xs-12 col-lg-8
-                        col-sm-offset-2 col-sm-8 col-sm-offset-2
-                       ">
+        <section class="row">
+            <div class="col-md-8 col-xs-12 col-lg-8 col-sm-offset-2 col-sm-8 col-sm-offset-2">
                 <header>
                     <h1 id="main-h">What do you want to do?</h1>
                 </header>
@@ -49,8 +44,8 @@
                     <button id="register-geek"></button>
                 </div>
             </div>
-        </div>
-        <div id="statistics" class="row">
+        </section>
+        <section id="statistics" class="row">
             <div class="col-md-12 col-xs-18 col-lg-12 col-sm-12 ">
             <div id="geek-stat" >
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -65,10 +60,12 @@
                 <span id="customersCounter"></span>
             </div>
             </div>
-        </div>
+        </section>
     </div>
 </section>
 
+
+<!--FOOTER-->
 <footer id="main-footer" class="footer">
     <p class="copyright">
         &copy; 2015 Seek for Geek - Elena Stoyanova & Valentin Georgiev All rights reserved .
@@ -80,12 +77,12 @@
 <div class="modals modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <header class="modal-header">
                 <button type="button" id="closeRegister" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <img class="img-responsive" src="../images/logo.png" alt="logo"/>
-            </div>
-            <div class="modal-body">
+            </header>
+            <section class="modal-body">
                 <form class="form-horizontal">
                     <div id="email-form" class="form-group">
                         <label for="register-email" class="col-sm-2 col-lg-2 col-md-2 col-xs-3 control-label">Email</label>
@@ -135,12 +132,12 @@
 
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+            </section>
+            <footer class="modal-footer">
                 <button type="button" id="loginInRegister" data-toggle="modal" data-target="#modal-login">Do you have an
                     account?
                 </button>
-            </div>
+            </footer>
         </div>
     </div>
 </div>
@@ -149,12 +146,12 @@
 <div class="modals modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <header class="modal-header">
                 <button type="button" id="closeLogIn" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <img src="../images/logo.png" class="img-responsive" alt="logo"/>
-            </div>
-            <div class="modal-body">
+            </header>
+            <section class="modal-body">
                 <form class="form-horizontal">
                     <div id="lg-username-form" class="form-group">
                         <label for="login-username" class="col-sm-2 col-lg-2 col-md-2 col-xs-3  control-label">Username</label>
@@ -179,12 +176,12 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+            </section>
+            <footer class="modal-footer">
                 <button type="button" id="registerInLogin" data-toggle="modal" data-target="#modal-register">
                     Don't have an account yet?
                 </button>
-            </div>
+            </footer>
         </div>
     </div>
 </div>
@@ -194,12 +191,12 @@
 <div class="modals modal fade" id="modal-forgot-pass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <header class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <img src="../images/logo.png" class="img-responsive" alt="logo"/>
-            </div>
-            <div class="modal-body">
+            </header>
+            <section class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="forgot-pass-email" class="col-sm-2 col-lg-2 col-md-2 col-xs-3  control-label">Email</label>
@@ -210,14 +207,14 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+            </section>
+            <footer class="modal-footer">
                 <button id="passButton" type="button">Send Password</button>
-            </div>
+            </footer>
         </div>
     </div>
 </div>
 
-
+<!--JAVASCRIPT-->
 <script src="../javascript/setup/home.js"></script>
 <script src="../javascript/setup/validation-login.js"></script>
