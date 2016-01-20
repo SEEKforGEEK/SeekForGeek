@@ -38,7 +38,9 @@ var WatchlistModule = function(settings){
 		counterBadge(options.parse.submissionsQuery);
 		showSubmissions();
 
-		jQuery('body').on('click', '.remove-buttons', removeFromWatchlist(this));
+		jQuery(document).on('click', '.remove-buttons', function(){
+			removeFromWatchlist(this);
+		});
 	},
 
 	removeFromWatchlist = function(element){

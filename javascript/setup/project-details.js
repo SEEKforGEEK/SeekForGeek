@@ -180,12 +180,13 @@ var ProjectDetailsModule = function(settings){
 	},
 
 	showSubmissions = function(query){
+		var isHasSubmissions = false;
 		query.equalTo('projectOwner', options.currentUser.username);
 		query.find({
 			success: function(res){
 				for (var i = 0; i < res.length; i++) {
 					if (res[i].get('title') == options.variables.project.title && res[i].get('grade') == 'in progress') {
-
+						isHasSubmissions = true;
 						jQuery(options.selectors.submissions).append(paintRow(res[i]));
 
 					}
@@ -199,6 +200,10 @@ var ProjectDetailsModule = function(settings){
 						paymentInfo.IBAN = paymentInfo.IBAN || 'Waiting...';
 						jQuery(options.selectors.showWinner).html(winnerTable(paymentInfo));
 					}
+				}
+				if (!isHasSubmissions){
+					jQuery(options.selectors.chooseWinner).hide();
+					jQuery(options.selectors.customerSeeSubmissions).hide();
 				}
 			}
 		});
@@ -268,6 +273,7 @@ var ProjectDetailsModule = function(settings){
 		}
 
 		showProject(options.parse.queryProjects, id);
+		showSubmissions(options.parse.querySubmissions);
 
 		jQuery(options.selectors.geekAddWatchlist).on('click', function(){
 			addToWatchlist(id);
@@ -275,7 +281,7 @@ var ProjectDetailsModule = function(settings){
 
 		jQuery(options.selectors.btnUploadSubmision).on('click', uploadSubmision);
 
-		showSubmissions(options.parse.querySubmissions);
+
 
 		jQuery(options.selectors.chooseWinner).on('click',function(event){
 			event.preventDefault();
