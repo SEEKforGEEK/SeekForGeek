@@ -1,5 +1,7 @@
-
-#modal-register, #modal-login,#modal-forgot-pass{
+/*MODALS*/
+#modal-register,
+#modal-login,
+#modal-forgot-pass{
     max-height: 95%;
     max-width:95%;
     vertical-align: center;
@@ -33,20 +35,22 @@
 .modals :-ms-input-placeholder {  
     color: #004A50;
 }
-.modals abel{
+.modals label{
     text-align: left;
     font-size: 1.5em;
 }
-#registerButton,#loginButton,#passButton{
-    background-color: #004A50;
-    border: none;
-    color: #8FC4C1;
+#registerButton,
+#loginButton,
+#passButton{
     padding: 5px 20px;
+    float: right;
+    border: none;
+    background-color: #004A50;
+    color: #8FC4C1;
     text-align: center;
     text-decoration: none;
     font-size: 1.5em;
     font-weight: normal;
-    float: right;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
@@ -57,9 +61,9 @@
     padding-right:0;
 }
 #loginInRegister,#btnForgotPass,#registerInLogin{
-    border:none;
     background-color:transapent;
     background: none;
+    border:none;
 }
 #btnForgotPass{
     padding-left:20%;
@@ -83,6 +87,8 @@
 .modals .form-horizontal label{
     padding-top:2%;
 }
+
+/*RESPONSIVE*/
 @media(max-width:768px){
         #btnForgotPass{
             padding-left:5%;
@@ -98,7 +104,8 @@
 }
 
 /*MODALS FOR PROJECT STATUS*/
-.inProgress , .notWinner{
+.inProgress,
+.notWinner{
     font-style: italic;
     font-weight: bold;
     font-size: 1.5em;
@@ -108,7 +115,7 @@ h1.winner{
     font-weight: bold;
 }
 .winnerInfo{
+    padding-bottom:10%;
     font-size:1em;
     font-style: italic;
-    padding-bottom:10%;
 }

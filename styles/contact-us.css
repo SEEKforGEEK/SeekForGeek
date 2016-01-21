@@ -1,24 +1,23 @@
-
+/*CONTENT*/
 .contactUs{
     min-height:380px;
-}
-.contactUs{
-    background-color: rgba(255,255,255,0.5);
     height:100%;
     padding: 2%;
+    background-color: rgba(255,255,255,0.5);
     text-align: left;
     font-size:1.5em;
     line-height: 2em;
 }
 .contactUs .button{
-    font-size: 1em;
-    line-height: 1.5em;
-    float:  none;
     margin-top:1%;
     padding:1%;
+    float:none;
     border-radius:5px;
+    font-size: 1em;
+    line-height: 1.5em;
 }
-.contactUs input,.contactUs textarea {
+.contactUs input,
+.contactUs textarea {
     background-color: #B1EEFF;
 }
 .contactUs .glyphicon {
@@ -29,15 +28,16 @@
     .contactUs{
         padding-top:10%;
     }
-    .contactUs span,.contactUs input{
+    .contactUs span,
+    .contactUs input{
         font-size:0.75em;
     }
     .contactUs,.contentALL {
         min-height: auto;
     }
     .contactUs .button{
-        background-color: #004A50;
         padding: 0;
+        background-color: #004A50;
     }
     .button:hover {
         background-color:#23D2FF;

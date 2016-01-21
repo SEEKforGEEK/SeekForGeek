@@ -1,10 +1,9 @@
+/*CONTENT*/
 .howItWorks{
     min-height:380px;
-}
-.howItWorks{
-    background-color: rgba(255,255,255,0.5);
     height:100%;
     padding: 2%;
+    background-color: rgba(255,255,255,0.5);
     text-align: left;
     font-size:1em;
     line-height: 1em;
@@ -20,26 +19,25 @@
 	margin-top:5%;
 }
 .howItWorks h1{
-   width:100%;
-   border-bottom: 1px solid #B1EEFF;
-   padding-top:0.25%;
+    width:100%;
+    padding-top:0.25%;
+    border-bottom: 1px solid #B1EEFF;
 }
 .howItWorks .heading{
+    width: 100%;
     margin-top:0;
-	width: 100%;
-    border-bottom: 1px solid #B1EEFF;
     padding-top: 0.25%;
+    border-bottom: 1px solid #B1EEFF;
 }
 .howItWorks section{
-    border-radius: 2%;
-	display:flex;
-	padding-left:10%;
+    padding-left:10%;
 	margin-top: 2%;
+	display:flex;
+    border-radius: 2%;
 }
-
 .howItWorks a{
-    font-weight: bold;
     color: #004A50;
+    font-weight: bold;
 }
 .howItWorks a:hover{
     color:#23D2FF;
@@ -51,19 +49,19 @@
 
 /*RESPONSIVE*/
 @media(max-width:768px){
-
-    .howItWorks,.contentALL {
-        min-height: auto;
-		margin-bottom:5%;
-		padding-bottom: 5%;
-    }
     .howItWorks{
         font-size: 1em;
     } 
 	.howItWorks section{
+        padding-left:0;
 		flex-direction: column;
-		padding-left:0;
 	}
+    .howItWorks,
+    .contentALL {
+        min-height: auto;
+		margin-bottom:5%;
+		padding-bottom: 5%;
+    }
 	.separatorCircle{
 		margin-bottom: 5%;
 	}

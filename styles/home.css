@@ -1,16 +1,4 @@
-/*START*/
-
-body,div,header,section,ul,li,input,h1,hr,p{
-	margin:0;
-	padding:0;
-}
-html{
-    height: 100%;
-}
-body {
-    height:100%;
-    position: relative;
-}
+/*RESET FOR CERTAIN PAGE*/
 #main-content {
     min-height:65%;
 }
@@ -18,17 +6,22 @@ body {
     height:30%;
     width:100%;
 }
+/*FOR JAVASCRIPT...*/
+/*.content-styles {
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+    height:100%;
+}*/
 
 /*NAVIGATION*/
 .navbar-default {
     background-color: transparent;
 }
-
 #main-header .container-fluid {
     background-color: rgba(35,210,255,0.5);
     padding: 0;
 }
-
 #main-header .logoBrand {
     position: absolute;
     float: left;
@@ -41,54 +34,27 @@ body {
 #main-header .navbar-header img{
     margin-left:-15px;
 }
-
-
-.button {
-    background-color: #004A50;
-    border: none;
-    color: #23D2FF;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: normal;
-    float: right;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-.button:hover,.dropdown>a:hover {
-    background-color:#23D2FF;
-    color: #004A50;
-}
-
 #main-header .navbar-toggle,
 #main-header .navbar-toggle:hover,
 #main-header .navbar-toggle:focus {
-    background-color: rgba(35,210,255,0.5);
     margin-right: 0;
-}
-.templateNone{
-    display: none;
-}
-.templateOn{
-    display: block;
+    background-color: rgba(35,210,255,0.5);
 }
 
 /*MAIN CONTENT*/
 #main-content {
+    margin-top:5%;
+    margin-bottom:5%;
     clear: both;
     text-align: center;
     align-content: center;
-    margin-top:5%;
-    margin-bottom:5%;
 }
 
 #main-h {
-    font-size: 300%;
-    font-weight: bolder;
     margin-top: 1%;
     margin-bottom: 3%;
+    font-size: 300%;
+    font-weight: bolder;
 }
 
 .image-logo {
@@ -100,91 +66,80 @@ body {
     display: inline;
 }
 
+#register-customer,
 #register-customer {
-    position: absolute;
     width: 40%;
     height: 80%;
+    position: absolute;
     top: 15px;
     left: 40px;
     background-color: transparent;
     border: none;
     outline: none;
 }
-
-#register-geek {
-    position: absolute;
-    width: 40%;
-    height: 80%;
-    top: 15px;
-    right: 40px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
 #statistics {
     margin-top: 5%;
     font-size: 2em;
-    text-align: center;
-    
+    text-align: center;  
 }
-#statistics div{
-    display:inline-block;
+#statistics div {
     padding-right:1%;
     padding-left:1%;
+    display:inline-block;
 }
-
 .glyphicon {
     color: black;
     font-size:150%;
 }
+
 /*FOOTER*/
 #main-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 20px;
+    width: 100%;
+    height: 20px;   
+    position: absolute;
+    bottom: 0;
 }
-
 #main-footer .copyright{
+    background-color: rgba(35,210,255,0.5);
     text-align: right;
-    background-color: rgba(35,210,255,0.5) ;
 }
 
 /*RESPONSIVE*/
 @media (max-width: 768px) {
+    /*DEFAULT*/
+    body{
+        height: auto;
+        min-height: 100%;
+    }
+    .button{
+        width: 100%;
+        padding: 0;
+        float: left;
+        font-weight: bold;
+        border-bottom: 1px solid #004A50;
+    }
+    /*NAVIGATION*/
     .form-nav{
         width:100%;
     }
      .navbar-nav {
-        margin: 0;
         width:100%;
+        margin: 0;
     }
     .navbar-default .navbar-collapse{
         width:100%;
         padding:0;
         margin:0;
     }
-
+    /*CONTENT*/
     #main-content .button {
         background-color: transparent;
-    }
-    .button{
-        float: left;
-        width: 100%;
-        font-weight: bold;
-        border-bottom: 1px solid #004A50;
-        padding: 0;
     }
     #statistics {
         font-size:1.5em;
     }
+    /*FOOTER*/
     #main-footer{
         height: 20px;
-    }
-    body{
-        height: auto;
-        min-height: 100%;
     }
 }

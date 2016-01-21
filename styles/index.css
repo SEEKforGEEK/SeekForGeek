@@ -1,9 +1,41 @@
-/*DEFAULT SETTING*/
-
+/*RESETS AND DEFAULT SETTING*/
+body,div,header,aside,article,section,ul,li,input,h1,hr,p{
+	margin:0;
+	padding:0;
+}
+html{
+    height: 100%;
+}
 body {
+    height:100%;
+    position: relative;
     background-color: #B1EEFF;
     color: #004A50;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.templateNone{
+    display: none;
+}
+.templateOn{
+    display: block;
+}
+.button {
+    padding: 10px 20px;
+    float: right;
+    background-color: #004A50;
+    color: #23D2FF;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: normal;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button:hover,.dropdown>a:hover {
+    background-color:#23D2FF;
+    color: #004A50;
 }
 #content {
     min-height:60%;
@@ -11,12 +43,10 @@ body {
     padding-left:8%;
     padding-right:8%;
 }
-
 .badge{
     background-color: #23D2FF;
     color: #004A50;    
 }
-
 #footerTemplate{
     min-height: 30%;
 }
@@ -27,15 +57,15 @@ body {
 }
 
 #template-header .container-fluid {
-    background-color: rgba(35, 210, 255, 0.5);
     padding: 0;
+    background-color: rgba(35, 210, 255, 0.5);
 }
 
 #template-header .logoBrand {
+    height: 45px;
+    margin-left:-15px;  
     padding-left:5%;
     float:left;
-    height: 45px;
-    margin-left:-15px;
 }
 
 #template-header .navbar-default .navbar-nav>.open>a,
@@ -49,26 +79,26 @@ body {
 
 #template-header .dropdown>a,
 #template-header .dropdown>a:hover{
+    float: right;
     background-color: transparent;
-    border: none;
     color: #004A50;
+    border: none;
     text-align: center;
     text-decoration: none;
     font-size: 1.5em;
     font-weight: normal;
-    float: right;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
 #template-header .dropdown-menu{
-    background:rgba(35, 210, 255, 0.95);
     border:0;
+    background:rgba(35, 210, 255, 0.95);
 }
 
 #template-header .dropdown ul a{
- font-size: 1.25em;
- color: #004A50 ;
+    color: #004A50 ;
+    font-size: 1.25em;
 }
 
 /*FOOTER*/
@@ -77,8 +107,8 @@ body {
 }
 
 #footerTemplate a{
-    font-style: none;
     color:#23D2FF;
+    font-style: none;
 }
 
 #footerTemplate nav{
@@ -93,13 +123,13 @@ body {
 }
 
 #footerTemplate ul li{
+    border-top: 1px solid #23D2FF;
+    border-top-style: outset;
     font-size: 1em;
     list-style-type: none;
     font-weight: bold;
     text-shadow: 1px 1px #000;
     line-height: 2em;
-    border-top: 1px solid #23D2FF;
-    border-top-style: outset;
 }
 
 #footerTemplate ul li:first-of-type{
@@ -107,9 +137,9 @@ body {
 }
 
 .navFooterTemplate {
-    color:#23D2FF;
     display:inline-block;
     order:1;
+    color:#23D2FF;
 }
 
 .navFooterTemplate section {
@@ -118,15 +148,15 @@ body {
 }
 
 #footerTemplate .row{
-    margin-right: 0 !important;
+    margin-right: 0;
 }
 
 .footerLinks{
     display:inline-block;
     order:2;
-    color:#23D2FF;
     border-left:1px solid #23D2FF;
     border-left-style: outset;
+    color:#23D2FF;
 }
 
 .footerLinks span{
@@ -134,21 +164,21 @@ body {
 }
 
 .footerLinks img{
-    display: inline-block;
     margin:3%;
+    display: inline-block;
 }
 
 #template-footer .copyright{
     margin-top:0.5%;
-    text-align: right;
     background:transparent url(../images/transFooter.png);
+    text-align: right;
 }
 
 #template-header .navbar-toggle,
 #template-header .navbar-toggle:hover,
 #template-header .navbar-toggle:focus {
-    background-color: rgba(35,210,255,0.5);
     margin-right: 0;
+    background-color: rgba(35,210,255,0.5);
 }
 
 /*RESPONSIVE*/
@@ -157,12 +187,7 @@ body {
         padding-left:0;
         padding-right:0;
     }
-    #footerTemplate,#footerTemplate section{
-        min-height: 25%;
-    }
-    .footerLinks{
-        display:none;
-    }
+    /*HEADER*/
     #template-header .dropdown{
         display:none;
          /*the menu options will be available in the footer*/
@@ -170,32 +195,39 @@ body {
     #template-header .logoBrand {
         padding-left:0;
     }
+    /*FOOTER*/
+    #footerTemplate,
+    #footerTemplate section{
+        min-height: 25%;
+    }
+    #footerTemplate span{
+        width:100%;
+        display:inline-block;
+        font-size: 1em;
+        text-align: center;
+    }
+    #footerTemplate ul li{
+        border-top:0;   
+        font-size: 0.75em;
+        text-align: center;
+    }
     #footerTemplate nav{
         display:block;
     }
     .navFooterTemplate {
-        color:#23D2FF;  
         display:block;
+        color:#23D2FF;  
     }
     .navFooterTemplate section{
         margin:0;
         padding-left:2%;
         padding-right:2%;
     }
-    #footerTemplate span{
-        display:inline-block;
-        font-size: 1em;
-        text-align: center;
-        width:100%;
-    }
-    #footerTemplate ul li{
-        font-size: 0.75em;
-        text-align: center;
-        border-top:0;
-        
-    }
     .navFooterTemplate section:first-of-type{
         margin-left:5%;
+    }
+    .footerLinks{
+        display:none;
     }
     #template-footer{
         display:block;
