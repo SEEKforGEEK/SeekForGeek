@@ -66,13 +66,22 @@
     display: inline;
 }
 
-#register-customer,
 #register-customer {
     width: 40%;
     height: 80%;
     position: absolute;
     top: 15px;
     left: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+#register-geek {
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    top: 15px;
+    right: 40px;
     background-color: transparent;
     border: none;
     outline: none;
