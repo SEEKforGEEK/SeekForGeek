@@ -38,9 +38,9 @@ var HomeModule = function(settings){
 
     initialize = function(){
 
-        $('#content').css('padding-bottom', '0%').css('padding-left', '0%')
+        jQuery('#content').css('padding-bottom', '0%').css('padding-left', '0%')
             .css('padding-right', '0%').css('height','100%');
-        $('body').css('margin-bottom' ,'-20px');
+        jQuery('body').css('margin-bottom' ,'-20px');
 
         jQuery(options.selectors.loginInRegister).on('click', loginInRegister);
         jQuery(options.selectors.registerInLogin).on('click', registerInLogin);
@@ -104,11 +104,11 @@ var HomeModule = function(settings){
                     }
 
                     location.reload();
-                    toastr.success('Hello ' + user + '! Have a nice day!');
+                    toastr.success('Hello ' + registerData.username + '! Have a nice day!');
 
                 },
-                error: function () {
-                    toastr.error('Wrong data! Please try again!');
+                error: function (err) {
+                    //toastr.error(err.message);
                 }
             });
         }

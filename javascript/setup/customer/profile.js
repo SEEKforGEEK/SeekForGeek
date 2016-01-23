@@ -24,6 +24,7 @@ var CustomerProfile = function(settings){
     },
 
     initialize = function(){
+
         jQuery(".navbarTemplate")
             .removeClass("templateNone")
             .addClass("templateOn");

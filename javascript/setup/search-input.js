@@ -48,7 +48,8 @@ jQuery(document).ready(function(){
 					               	'<td class="search-project-category">' + res[i].get('type') + '</td>' +
 					               	'<td class="search-project-date">' + res[i].get('endDate') + '</td>' +
 					               	'<td class="search-project-price">' + res[i].get('price') + '</td>' +
-				            		'<td class="watchlist-func"><button data-id="'+ res[i].id + '" class=" add-to-watchlist" alt="Add to watchlist"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
+				            		'<td class="watchlist-func"><button data-id="'+ res[i].id + '" class=" add-to-watchlist" alt="Add to watchlist">' +
+									'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></td>' +
 					            '</tr>'
 				            );
 		    			}
@@ -63,8 +64,8 @@ jQuery(document).ready(function(){
 
 
 	jQuery(appendProjects).on('click', '.add-to-watchlist', function(){
-		var id = $(this).attr('data-id');
-		var handler = $(this);
+		var id = jQuery(this).attr('data-id');
+		var handler = jQuery(this);
 
 		watchlistArray.push(id);
 		currentUser.set('watchlist', watchlistArray);

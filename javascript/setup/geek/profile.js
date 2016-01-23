@@ -50,7 +50,7 @@ var GeekProfile = function(settings){
 
             jQuery(options.selectors.btnNewProject).on('click', function(event){
                 event.preventDefault();
-                $(location).attr('href', options.selectors.newProjectLink);
+                jQuery(location).attr('href', options.selectors.newProjectLink);
             });
 
             jQuery(options.selectors.username).append(options.currentUser.username);
