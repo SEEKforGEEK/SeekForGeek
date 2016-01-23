@@ -1,10 +1,11 @@
 /*RESET FOR CERTAIN PAGE*/
+
 #main-content {
-    min-height:65%;
+    min-height: 65%;
 }
-.main-header{
-    height:30%;
-    width:100%;
+.main-header {
+    height: 30%;
+    width: 100%;
 }
 /*FOR JAVASCRIPT...*/
 /*.content-styles {
@@ -13,13 +14,13 @@
     padding-right:0;
     height:100%;
 }*/
-
 /*NAVIGATION*/
+
 .navbar-default {
     background-color: transparent;
 }
 #main-header .container-fluid {
-    background-color: rgba(35,210,255,0.5);
+    background-color: rgba(35, 210, 255, 0.5);
     padding: 0;
 }
 #main-header .logoBrand {
@@ -27,45 +28,41 @@
     float: left;
     height: 45px;
 }
-#main-header .navbar-header{
-    width:100%;
-    margin:0;
+#main-header .navbar-header {
+    width: 100%;
+    margin: 0;
 }
-#main-header .navbar-header img{
-    margin-left:-15px;
+#main-header .navbar-header img {
+    margin-left: -15px;
 }
 #main-header .navbar-toggle,
 #main-header .navbar-toggle:hover,
 #main-header .navbar-toggle:focus {
     margin-right: 0;
-    background-color: rgba(35,210,255,0.5);
+    background-color: rgba(35, 210, 255, 0.5);
 }
-
 /*MAIN CONTENT*/
+
 #main-content {
-    margin-top:5%;
-    margin-bottom:5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     clear: both;
     text-align: center;
     align-content: center;
 }
-
 #main-h {
     margin-top: 1%;
     margin-bottom: 3%;
     font-size: 300%;
     font-weight: bolder;
 }
-
 .image-logo {
     width: 100%;
     position: relative;
 }
-
 .image-logo .img-responsive {
     display: inline;
 }
-
 #register-customer {
     width: 40%;
     height: 80%;
@@ -89,38 +86,39 @@
 #statistics {
     margin-top: 5%;
     font-size: 2em;
-    text-align: center;  
+    text-align: center;
 }
 #statistics div {
-    padding-right:1%;
-    padding-left:1%;
-    display:inline-block;
+    padding-right: 1%;
+    padding-left: 1%;
+    display: inline-block;
 }
 .glyphicon {
     color: black;
-    font-size:150%;
+    font-size: 150%;
 }
-
 /*FOOTER*/
-#main-footer{
+
+#main-footer {
     width: 100%;
-    height: 20px;   
+    height: 20px;
     position: absolute;
     bottom: 0;
 }
-#main-footer .copyright{
-    background-color: rgba(35,210,255,0.5);
+#main-footer .copyright {
+    background-color: rgba(35, 210, 255, 0.5);
     text-align: right;
 }
-
 /*RESPONSIVE*/
+
 @media (max-width: 768px) {
     /*DEFAULT*/
-    body{
+    
+    body {
         height: auto;
         min-height: 100%;
     }
-    .button{
+    .button {
         width: 100%;
         padding: 0;
         float: left;
@@ -128,27 +126,30 @@
         border-bottom: 1px solid #004A50;
     }
     /*NAVIGATION*/
-    .form-nav{
-        width:100%;
+    
+    .form-nav {
+        width: 100%;
     }
-     .navbar-nav {
-        width:100%;
+    .navbar-nav {
+        width: 100%;
         margin: 0;
     }
-    .navbar-default .navbar-collapse{
-        width:100%;
-        padding:0;
-        margin:0;
+    .navbar-default .navbar-collapse {
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
     /*CONTENT*/
+    
     #main-content .button {
         background-color: transparent;
     }
     #statistics {
-        font-size:1.5em;
+        font-size: 1.5em;
     }
     /*FOOTER*/
-    #main-footer{
+    
+    #main-footer {
         height: 20px;
     }
 }

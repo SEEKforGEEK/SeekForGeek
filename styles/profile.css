@@ -1,96 +1,104 @@
 /*GEEK AND CUSTOMER PROFILE*/
-
 /*DEFAULTS AND RESETS*/
-.geekProfile, .customerProfile{
-    background:rgba(255,255,255,0.2);
-    height:100%;
+
+.geekProfile,
+.customerProfile {
+    background: rgba(255, 255, 255, 0.2);
+    height: 100%;
 }
-#geek-emailInput, #geek-saveEmail{
-    display:none;
+#geek-emailInput,
+#geek-saveEmail {
+    display: none;
 }
-#customer-emailInput, #customer-saveEmail{
-    display:none;
+#customer-emailInput,
+#customer-saveEmail {
+    display: none;
 }
-.contentALL, .geekProfile,.customerProfile,.menuBox,.mainProfile{
-    min-height:380px;
+.contentALL,
+.geekProfile,
+.customerProfile,
+.menuBox,
+.mainProfile {
+    min-height: 380px;
 }
-.geekProfile,.customerProfile{
-    display:flex;
+.geekProfile,
+.customerProfile {
+    display: flex;
     align-items: stretch;
 }
-
 /*MENU*/
+
 .menuBox {
-    padding:2%;
+    padding: 2%;
 }
-.navMenu ul li{
+.navMenu ul li {
     padding-bottom: 5%;
     padding-top: 5%;
-    border-bottom:1px solid #004A50;
+    border-bottom: 1px solid #004A50;
     list-style-type: none;
     text-align: center;
 }
 .navMenu a,
-.navMenu a:hover{
-    width:100%;
+.navMenu a:hover {
+    width: 100%;
     box-sizing: border-box;
-    color:#004A50;
+    color: #004A50;
     font-size: 1.5em;
     text-decoration: none;
 }
-.navMenu a:hover{
+.navMenu a:hover {
     font-weight: bold;
 }
-@media(min-width:768px){
-    .navMenu li:last-of-type{
-        padding:2% 2% 2% 2%;
+@media(min-width:768px) {
+    .navMenu li:last-of-type {
+        padding: 2% 2% 2% 2%;
     }
 }
 .navMenu li:nth-of-type(3),
-.navMenu li:nth-of-type(4){
-    border:0;
+.navMenu li:nth-of-type(4) {
+    border: 0;
 }
-.customerProfile .navMenu li:nth-of-type(2){
-    border:0;
+.customerProfile .navMenu li:nth-of-type(2) {
+    border: 0;
 }
-.menuBox .button{
+.menuBox .button {
     width: 100%;
     margin-bottom: 5%;
-    margin-top:20%;   
-    border-radius:5px;
-    font-size:1.5em;
+    margin-top: 20%;
+    border-radius: 5px;
+    font-size: 1.5em;
 }
-.menuBox .button:after{
-    clear:both;
+.menuBox .button:after {
+    clear: both;
 }
-
 /*CONTENT*/
-.contentAbout{
+
+.contentAbout {
     font-weight: bold;
     font-size: 1.25em;
 }
-.mainProfile{
-    height:100%;
+.mainProfile {
+    height: 100%;
     padding: 2%;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: left;
-    font-size:1.5em;
+    font-size: 1.5em;
     line-height: 2em;
 }
-.mainProfile h1{
-    width:100%;
-    padding-top:0.25%;
+.mainProfile h1 {
+    width: 100%;
+    padding-top: 0.25%;
     border-bottom: 1px solid #004A50;
     text-align: right;
 }
-.infoType{
+.infoType {
     font-weight: bold;
 }
-.mainProfile .button{
-    float:  none;
-    margin-top:1%;
-    padding:1%;
-    border-radius:5px;
+.mainProfile .button {
+    float: none;
+    margin-top: 1%;
+    padding: 1%;
+    border-radius: 5px;
     font-size: 1em;
     line-height: 1.5em;
 }
@@ -98,43 +106,48 @@ input {
     background-color: #B1EEFF;
 }
 /*RESPONSIVE*/
-@media(max-width:768px){
-    .geekProfile ,.customerProfile{
+
+@media(max-width:768px) {
+    .geekProfile, .customerProfile {
         flex-wrap: wrap;
         min-height: auto;
     }
     /*MENU*/
-    .menuBox{
+    
+    .menuBox {
         min-height: auto;
         font-size: 1em;
     }
     .navMenu .button {
-        margin:0;
-        width:100%;
+        margin: 0;
+        width: 100%;
         background-color: #004A50;
     }
     .navMenu ul {
-        margin:1%;
-        display:flex;
+        margin: 1%;
+        display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
     .navMenu ul li {
-        padding:0%;
+        padding: 0%;
     }
     /*CONTENT*/
-    .mainProfile span,.mainProfile input{
-        font-size:0.75em;
+    
+    .mainProfile span,
+    .mainProfile input {
+        font-size: 0.75em;
     }
-    .mainProfile,.contentALL {
+    .mainProfile,
+    .contentALL {
         min-height: auto;
     }
-    .mainProfile .button{
-        padding: 0; 
+    .mainProfile .button {
+        padding: 0;
         background-color: #004A50;
     }
-    #hello-geek,#hello-customer{
+    #hello-geek,
+    #hello-customer {
         font-size: 1.5em;
     }
-    
 }

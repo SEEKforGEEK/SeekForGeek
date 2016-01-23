@@ -1,8 +1,9 @@
 /*FORMAT TABLES*/
-.table .button{
-	width:100%;		
-	padding:2%;
+
+.table .button {
+    width: 100%;
+    padding: 2%;
 }
-.table tbody tr:nth-of-type(2n+1){
-	background-color: #B1EEFF;
+.table tbody tr:nth-of-type(2n+1) {
+    background-color: #B1EEFF;
 }

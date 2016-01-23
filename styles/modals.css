@@ -1,47 +1,49 @@
 /*MODALS*/
+
 #modal-register,
 #modal-login,
-#modal-forgot-pass{
+#modal-forgot-pass {
     max-height: 95%;
-    max-width:95%;
+    max-width: 95%;
     vertical-align: center;
 }
-.modal-header{
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-right:15px; 
-    padding-left:0;
-    border-bottom:1px solid #8FC4C1;
+.modal-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 0;
+    border-bottom: 1px solid #8FC4C1;
 }
 .modal-content {
-    background-color:rgb(100,210,255);    
+    background-color: rgb(100, 210, 255);
 }
-.form-control{
-    background-color:rgba(35,210,255,0.8);
+.form-control {
+    background-color: rgba(35, 210, 255, 0.8);
     border: 1px inset rgba(157, 157, 157, 0.22);
 }
-.modals ::-webkit-input-placeholder {
+.modals::-webkit-input-placeholder {
     color: #004A50;
 }
-
-.modals :-moz-placeholder { /* Firefox 18- */
-    color: #004A50;  
-}
-
-.modals ::-moz-placeholder {  /* Firefox 19+ */
-    color: #004A50; 
-}
-
-.modals :-ms-input-placeholder {  
+.modals:-moz-placeholder {
+    /* Firefox 18- */
+    
     color: #004A50;
 }
-.modals label{
+.modals::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: #004A50;
+}
+.modals:-ms-input-placeholder {
+    color: #004A50;
+}
+.modals label {
     text-align: left;
     font-size: 1.5em;
 }
 #registerButton,
 #loginButton,
-#passButton{
+#passButton {
     padding: 5px 20px;
     float: right;
     border: none;
@@ -51,71 +53,75 @@
     text-decoration: none;
     font-size: 1.5em;
     font-weight: normal;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    
     transition-duration: 0.4s;
 }
-#modal-register .modal-footer{
-    border-top:1px solid #8FC4C1;
+#modal-register .modal-footer {
+    border-top: 1px solid #8FC4C1;
 }
-#div-submit{
-    padding-right:0;
+#div-submit {
+    padding-right: 0;
 }
-#loginInRegister,#btnForgotPass,#registerInLogin{
-    background-color:transapent;
+#loginInRegister,
+#btnForgotPass,
+#registerInLogin {
+    background-color: transapent;
     background: none;
-    border:none;
+    border: none;
 }
-#btnForgotPass{
-    padding-left:20%;
+#btnForgotPass {
+    padding-left: 3%;
 }
-#modal-login .modal-footer{
-    border:none;
+#modal-login .modal-footer {
+    border: none;
     padding: 0px 10px 10px 0px;
 }
-#modal-login .modal-body{
-    padding-bottom:0; 
+#modal-login .modal-body {
+    padding-bottom: 0;
 }
-#modal-login .form-group{
-    margin-bottom:0;
+#modal-login .form-group {
+    margin-bottom: 0;
 }
-#modal-forgot-pass .modal-footer{
-    border:none;
+#modal-forgot-pass .modal-footer {
+    border: none;
 }
-.form-horizontal div{
-    padding-top:1%;
+.form-horizontal div {
+    padding-top: 1%;
 }
-.modals .form-horizontal label{
-    padding-top:2%;
+.modals .form-horizontal label {
+    padding-top: 2%;
 }
-
 /*RESPONSIVE*/
-@media(max-width:768px){
-        #btnForgotPass{
-            padding-left:5%;
-        }
-        .radioButtons div{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .radioButtons label:first-of-type{
-            padding-left: 0;
-        }
-}
 
+@media(max-width:768px) {
+    #btnForgotPass {
+        padding-left: 5%;
+    }
+    .radioButtons div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .radioButtons label:first-of-type {
+        padding-left: 0;
+    }
+}
 /*MODALS FOR PROJECT STATUS*/
+
 .inProgress,
-.notWinner{
+.notWinner {
     font-style: italic;
     font-weight: bold;
     font-size: 1.5em;
 }
-h1.winner{
+h1.winner {
     font-size: 2em;
     font-weight: bold;
 }
-.winnerInfo{
-    padding-bottom:10%;
-    font-size:1em;
+.winnerInfo {
+    padding-bottom: 10%;
+    font-size: 1em;
     font-style: italic;
 }

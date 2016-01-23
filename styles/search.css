@@ -1,59 +1,61 @@
 /*CONTENT*/
-.searchOptions{
-    margin-top:10%;
+
+.searchOptions {
+    margin-top: 10%;
 }
-.searchContent .button{
-    padding:1% 3% 1% 3%;
-    margin-right:2%;
-    float:none;
+.searchContent .button {
+    padding: 1% 3% 1% 3%;
+    margin-right: 2%;
+    float: none;
     font-size: 1em;
     font-weight: bold;
 }
-.searchButtons{
-    padding:0;
+.searchButtons {
+    padding: 0;
 }
 .sliderDiv {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 }
-button.add-to-watchlist  {
+button.add-to-watchlist {
     background-color: transparent;
-    border:none;
+    border: none;
 }
-.searchContent .glyphicon{
+.searchContent .glyphicon {
     color: #004A50;
 }
-div.heading{
-    margin-bottom:5% ;
-    margin-top:5%;
+div.heading {
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 .searchContent {
-    background-color:rgba(255,255,255,0.5); 
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
 }
-#search-input{
-    width:70%;
+#search-input {
+    width: 70%;
     line-height: 2em;
-    font-size:1em;
+    font-size: 1em;
 }
-.search-about{
-    margin-right:1%;
-	font-size: 1em;
+.search-about {
+    margin-right: 1%;
+    font-size: 1em;
     font-weight: bold;
 }
-.table-responsive a{
-    color:#004A50;
+.table-responsive a {
+    color: #004A50;
     font-weight: bold;
 }
-.table-responsive a:hover{
+.table-responsive a:hover {
     text-decoration: none;
 }
-.watchlist-func button{
-    padding:0;
+.watchlist-func button {
+    padding: 0;
 }
 /*SLIDER STYLES AND SETTINGS*/
+
 input[type=range] {
-    display:inline;
+    display: inline;
     -webkit-appearance: none;
     border: 1px solid white;
 }
@@ -78,7 +80,6 @@ input[type=range]:focus {
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ccc;
 }
-
 input[type=range]::-moz-range-track {
     height: 5px;
     border: none;
@@ -92,11 +93,10 @@ input[type=range]::-moz-range-thumb {
     border: none;
     background-color: #23D2FF;
 }
-input[type=range]:-moz-focusring{
+input[type=range]:-moz-focusring {
     outline: 1px solid white;
     outline-offset: -1px;
 }
-
 input[type=range]::-ms-track {
     height: 5px;
     background: transparent;
@@ -125,44 +125,45 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
 }
-#slider2{
-    border:none;
+#slider2 {
+    border: none;
     background-color: transparent;
 }
-@media(min-width:768px){
-    #slider2{
-        width:70%;
+@media(min-width:768px) {
+    #slider2 {
+        width: 70%;
     }
 }
-.searchContent th{
+.searchContent th {
     text-align: center;
 }
 /*RESPONSIVE*/
-@media (max-width:768px){
-    .searchContent .button{
+
+@media (max-width: 768px) {
+    .searchContent .button {
         margin-bottom: 1%;
     }
-	.search-about{
-		font-size:1em;
-	}
-    #search-input{
-        width:100%;
+    .search-about {
+        font-size: 1em;
     }
-	label{
-		font-size:1em;
-	}
-	div.heading h1{
-		font-size:1.5em;
-		font-weight: bold;
-	}
+    #search-input {
+        width: 100%;
+    }
+    label {
+        font-size: 1em;
+    }
+    div.heading h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
     input[type=range] {
-        width:100%;
+        width: 100%;
     }
-    .sliderDiv{
+    .sliderDiv {
         margin-top: 35%;
         margin-bottom: 5%;
     }
-    .searchButtons{
-        margin-top:5%;
+    .searchButtons {
+        margin-top: 5%;
     }
 }

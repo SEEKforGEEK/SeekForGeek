@@ -1,77 +1,82 @@
 /*CONTENT*/
-.aboutUs{
-    min-height:380px;
-    height:100%;
+
+.aboutUs {
+    min-height: 380px;
+    height: 100%;
     padding: 2%;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: left;
-    font-size:1.5em;
+    font-size: 1.5em;
     line-height: 2em;
 }
-.aboutUs h1{
-    width:100%;
-    padding-top:0.25%;
+.aboutUs h1 {
+    width: 100%;
+    padding-top: 0.25%;
     border-bottom: 1px solid #B1EEFF;
 }
-.aboutUs .heading{
-    margin-top:0;
+.aboutUs .heading {
+    margin-top: 0;
 }
-.aboutUs aside{
-    min-height:380px;
-    margin:1%;
-    border-radius:2%;
-    font-style: italic;
-    line-height:1em;
-    font-size:0.75em;
-}
-.aboutUs section{
-    min-height:380px;
-    margin:1%;
+.aboutUs aside {
+    min-height: 380px;
+    margin: 1%;
     border-radius: 2%;
-    background-color: rgba(255,255,255,0.5);
+    font-style: italic;
+    line-height: 1em;
+    font-size: 0.75em;
 }
-.aboutUs a{
+.aboutUs section {
+    min-height: 380px;
+    margin: 1%;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.aboutUs a {
     color: #004A50;
     font-weight: bold;
 }
-.aboutUs a:hover{
-    color:#23D2FF;
+.aboutUs a:hover {
+    color: #23D2FF;
     text-decoration: none;
 }
-.textAbout{
-    padding:1%;
+.textAbout {
+    padding: 1%;
     font-style: italic;
     font-size: 0.75em;
     line-height: 1.75em;
 }
-.valentin,.elena{
+.valentin,
+.elena {
     text-align: center;
 }
-.valentin img,.elena img{
-    margin:2%;
+.valentin img,
+.elena img {
+    margin: 2%;
     border-radius: 2%;
 }
-
 /*RESPONSIVE*/
-@media(max-width:768px){
-    .aboutUs{
+
+@media(max-width:768px) {
+    .aboutUs {
         font-size: 1em;
-    }  
-    .aboutUs,.contentALL,
+    }
+    .aboutUs,
+    .contentALL,
     .aboutUs section,
     .aboutUs aside {
         min-height: auto;
     }
-    .aboutUs aside{
-        margin-left:1%;
+    .aboutUs aside {
+        margin-left: 1%;
         display: flex;
         flex-direction: row;
     }
-    .aboutUs span{
-        font-size:0.75em;
+    .aboutUs span {
+        font-size: 0.75em;
     }
-    .valentin img,.elena img{
-        padding:2%;
+    .valentin img,
+    .elena img {
+        padding: 2%;
         box-shadow: none;
     }
 }

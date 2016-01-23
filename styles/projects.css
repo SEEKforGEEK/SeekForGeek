@@ -1,35 +1,36 @@
 /*PAGINATION STYLES*/
-.pagination-projects{
-	float:right;
+
+.pagination-projects {
+    float: right;
 }
 .mainProfile .pagination-projects a,
 .Search .pagination-projects a {
-	background-color:#B1EEFF;
-	color: #004A50;
+    background-color: #B1EEFF;
+    color: #004A50;
 }
 .mainProfile .pagination-projects a:hover,
 .Search .pagination-projects a:hover {
-	background-color:#23D2FF;
-	color: #004A50;
+    background-color: #23D2FF;
+    color: #004A50;
 }
 .mainProfile .pagination-projects:after,
-.Search .pagination-projects:after{
-	clear:both;
+.Search .pagination-projects:after {
+    clear: both;
 }
-
 /*CONTENT*/
-.check-project-winner{
-	border:none;
-	background-color: transparent;
-	color:#004A50;
-}
-.check-project-winner:hover{
-	color:#23D2FF;
-}
 
+.check-project-winner {
+    border: none;
+    background-color: transparent;
+    color: #004A50;
+}
+.check-project-winner:hover {
+    color: #23D2FF;
+}
 /*RESPONSIVE*/
-@media (max-width:768px){
-	.table-responsive{
-		font-size: 0.75em;
-	}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.75em;
+    }
 }
