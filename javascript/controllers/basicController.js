@@ -1,3 +1,4 @@
+'use strict';
 
 var basicController = function () {
     function aboutUs(context) {

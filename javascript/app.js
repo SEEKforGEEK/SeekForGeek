@@ -1,3 +1,5 @@
+'use strict';
+
 Parse.initialize("WYlKRrdVfAxC5qEDv8XNnTvYNYTaU2uoQnr6VFKe", "QCK577sPYWNBXdk6wkWSa0YMoFkslkP2JkpmMt0m");
 (function () {
     var sammyApp = Sammy('#content', function () {

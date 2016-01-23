@@ -1,4 +1,5 @@
 'use strict';
+
 var ProjectsModule = function(settings){
 	var options = {
 		parse: {

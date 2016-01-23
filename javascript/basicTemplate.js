@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 jQuery(document).ready(function(){
 	jQuery("#logout-button").on('click', function(){
