@@ -47,6 +47,14 @@
 .separateSections {
     margin-top: 10%;
 }
+@-moz-document url-prefix() {
+    .separatorCircle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 /*RESPONSIVE*/
 
 @media(max-width:768px) {
