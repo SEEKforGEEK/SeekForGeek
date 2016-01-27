@@ -14,11 +14,11 @@ jQuery(document).ready(function(){
     jQuery('#send-message').on('click', function(event){
     	event.preventDefault();
 	   
-	    mail.currentEmail = $('#email').val() || currentUser.get('email');
-	    mail.firstName = $('#fname').val();
-	    mail.lastName = $('#lname').val();
-	    mail.phone = $('#phone').val();
-	    mail.message = $('#message').val();
+	    mail.currentEmail = jQuery('#email').val() || currentUser.get('email');
+	    mail.firstName = jQuery('#fname').val();
+	    mail.lastName = jQuery('#lname').val();
+	    mail.phone = jQuery('#phone').val();
+	    mail.message = jQuery('#message').val();
 	    
 	    Messages.set('firstName', mail.firstName);
 	    Messages.set('lastName', mail.lastName);
@@ -29,11 +29,11 @@ jQuery(document).ready(function(){
 	    Messages.save()
 	    	.then(function(){
 	    		toastr.success('Successfully send message! Thank you!');
-	    		$('#email').val('');
-	    		$('#fname').val('');
-	    		$('#lname').val('');
-	    		$('#phone').val('');
-	    		$('#message').val('');
+	    		jQuery('#email').val('');
+	    		jQuery('#fname').val('');
+	    		jQuery('#lname').val('');
+	    		jQuery('#phone').val('');
+	    		jQuery('#message').val('');
 	    	});
 	});
 });

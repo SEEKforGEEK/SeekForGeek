@@ -58,7 +58,7 @@ var NewProjectModule = function(settings){
 
 	date = function(){
 		var dateToday = new Date();
-		var dates = $("#datepicker").datepicker({
+		var dates = jQuery("#datepicker").datepicker({
 			defaultDate: "+1w",
 			changeMonth: true,
 			numberOfMonths: 1,
@@ -241,7 +241,7 @@ var NewProjectModule = function(settings){
 								Projects.set('ownerEmail', details.email);
 								Projects.save();
 								toastr.success('You successfully create new project!');
-								$(location).attr('href','/#/customer/projects');
+								jQuery(location).attr('href','/#/customer/projects');
 							},
 							function(){
 								toastr.error('Something happen, please try later!');

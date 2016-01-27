@@ -48,11 +48,14 @@ var ProjectDetailsModule = function(settings){
 		jQuery(options.selectors.customerSeeSubmissions).hide();
 
 		options.currentUser.watchlist = options.parse.currentUser.get('watchlist') || [];
+
+
+
 	},
 
 	urlParam = function(name){
 		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-		if (results==null){
+		if (results == null){
 			return null;
 		}
 		else{
@@ -101,6 +104,19 @@ var ProjectDetailsModule = function(settings){
 				var projectDay = options.variables.project.date.substring(options.variables.project.date.indexOf("/")+1, options.variables.project.date.lastIndexOf("/"));
 				var projectYear = options.variables.project.date.substr(options.variables.project.date.length - 4);
 				var projectMonth = options.variables.project.date.substr(0, 2);
+
+				options.parse.querySubmissions = new Parse.Query('Submissions');
+				options.parse.querySubmissions.equalTo('title', options.variables.project.title);
+				options.parse.querySubmissions.find({
+					success: function(res){
+						for(var i = 0; i < res.length; i++){
+							if(res[i].get('grade') != 'in progress'){
+								jQuery(options.selectors.geekAddSubmit).hide();
+								break;
+							}
+						}
+					}
+				});
 
 				if (projectYear < year) {
 					jQuery(options.selectors.geekAddSubmit).hide();
@@ -184,13 +200,14 @@ var ProjectDetailsModule = function(settings){
 		query.equalTo('projectOwner', options.currentUser.username);
 		query.find({
 			success: function(res){
+
 				for (var i = 0; i < res.length; i++) {
 					if (res[i].get('title') == options.variables.project.title && res[i].get('grade') == 'in progress') {
 						isHasSubmissions = true;
 						jQuery(options.selectors.submissions).append(paintRow(res[i]));
-
 					}
 					else if(res[i].get('title') == options.variables.project.title && res[i].get('grade') == 'winner') {
+						jQuery(options.selectors.geekAddSubmit).hide();
 						jQuery(options.selectors.chooseWinner).hide();
 						jQuery(options.selectors.customerSeeSubmissions).hide();
 
@@ -257,6 +274,9 @@ var ProjectDetailsModule = function(settings){
 			jQuery(location).attr('href', '/#/' + options.currentUser.type + '/projects');
 		});
 
+		var id = urlParam('id');
+		showProject(options.parse.queryProjects, id);
+
 		if (options.currentUser.type == 'customer') {
 			customerType();
 		}
@@ -264,7 +284,7 @@ var ProjectDetailsModule = function(settings){
 			geekType();
 		}
 
-		var id = urlParam('id');
+
 
 		for(var i in options.currentUser.watchlist){
 			if(options.currentUser.watchlist[i] == id){
@@ -272,7 +292,7 @@ var ProjectDetailsModule = function(settings){
 			}
 		}
 
-		showProject(options.parse.queryProjects, id);
+
 		showSubmissions(options.parse.querySubmissions);
 
 		jQuery(options.selectors.geekAddWatchlist).on('click', function(){

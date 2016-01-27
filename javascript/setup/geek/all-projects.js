@@ -82,7 +82,7 @@ var AllProjectModule = function(settings){
 								}else{
 									grade = 'notWinner';
 								}
-								$(options.selectors.bodyProjects).append(tableRow(res[i], grade));
+								jQuery(options.selectors.bodyProjects).append(tableRow(res[i], grade));
 							}
 						}
 					});
