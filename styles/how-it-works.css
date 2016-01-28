@@ -54,7 +54,11 @@
         justify-content: center;
     }
 }
-
+_:-ms-lang(x), _:-webkit-full-screen, .separatorCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
 /*RESPONSIVE*/
 
 @media(max-width:768px) {
